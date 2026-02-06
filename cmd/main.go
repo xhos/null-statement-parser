@@ -11,6 +11,7 @@ import (
 	"strings"
 
 	"arian-statement-parser/internal/client"
+	"arian-statement-parser/internal/domain"
 	pb "arian-statement-parser/internal/gen/arian/v1"
 	"arian-statement-parser/internal/mapping"
 	"arian-statement-parser/internal/parser"
@@ -43,16 +44,18 @@ func findMatchingAccount(accounts []*pb.Account, accountName string, accountType
 
 func main() {
 	pdfPath := flag.String("pdf", "", "")
+	csvPath := flag.String("csv", "", "Optional RBC CSV export file to merge with statements")
 	configPath := flag.String("config", "", "")
 	flag.Parse()
 
 	godotenv.Load()
 
+	// Allow either PDF or CSV (or both)
 	if *pdfPath == "" {
 		if envPath := os.Getenv("PDF_PATH"); envPath != "" {
 			*pdfPath = envPath
-		} else {
-			fmt.Fprintf(os.Stderr, "need -pdf flag\n")
+		} else if *csvPath == "" {
+			fmt.Fprintf(os.Stderr, "need -pdf or -csv flag\n")
 			os.Exit(1)
 		}
 	}
@@ -75,24 +78,50 @@ func main() {
 		os.Exit(1)
 	}
 
-	pythonParser := parser.NewPythonParser()
+	var parseResult *parser.ParseResult
+	var transactions []*domain.Transaction
 
-	fmt.Printf("parsing %s\n", *pdfPath)
-	parseResult, transactions, err := pythonParser.ParseStatements(*pdfPath, *configPath)
-	if err != nil {
-		log.Fatalf("parse failed: %v", err)
+	// Parse PDF statements if provided
+	if *pdfPath != "" {
+		pythonParser := parser.NewPythonParser()
+
+		fmt.Printf("parsing %s\n", *pdfPath)
+		var err error
+		parseResult, transactions, err = pythonParser.ParseStatements(*pdfPath, *configPath)
+		if err != nil {
+			log.Fatalf("parse failed: %v", err)
+		}
+
+		fmt.Printf("files: %d/%d, transactions: %d\n",
+			parseResult.Summary.ProcessedFiles,
+			parseResult.Summary.TotalFiles,
+			parseResult.Summary.TotalTransactions)
+
+		for _, fileResult := range parseResult.FileResults {
+			fileName := filepath.Base(fileResult.File)
+			if fileResult.Processed {
+				fmt.Printf("  %s: %d\n", fileName, fileResult.TransactionCount)
+			}
+		}
 	}
 
-	fmt.Printf("files: %d/%d, transactions: %d\n",
-		parseResult.Summary.ProcessedFiles,
-		parseResult.Summary.TotalFiles,
-		parseResult.Summary.TotalTransactions)
-
-	for _, fileResult := range parseResult.FileResults {
-		fileName := filepath.Base(fileResult.File)
-		if fileResult.Processed {
-			fmt.Printf("  %s: %d\n", fileName, fileResult.TransactionCount)
+	// Parse and merge CSV file if provided
+	if *csvPath != "" {
+		csvParser := parser.NewCSVParser()
+		fmt.Printf("\nparsing CSV %s\n", *csvPath)
+		csvTransactions, err := csvParser.ParseCSV(*csvPath)
+		if err != nil {
+			log.Fatalf("CSV parse failed: %v", err)
 		}
+
+		fmt.Printf("CSV transactions: %d\n", len(csvTransactions))
+
+		// Merge with smart deduplication
+		originalCount := len(transactions)
+		transactions = parser.MergeCSVWithStatements(transactions, csvTransactions)
+		newCount := len(transactions) - originalCount
+
+		fmt.Printf("merged: %d new from CSV (after deduplication)\n", newCount)
 	}
 
 	if len(transactions) == 0 {
