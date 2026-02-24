@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"time"
 
-	"arian-statement-parser/internal/domain"
+	"null-statement-parser/internal/domain"
 )
 
 type PythonTransaction struct {

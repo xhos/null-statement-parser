@@ -2,9 +2,9 @@
 // versions:
 // 	protoc-gen-go v1.36.10
 // 	protoc        (unknown)
-// source: arian/v1/account.proto
+// source: null/v1/account.proto
 
-package arianv1
+package nullv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
@@ -30,7 +30,7 @@ type Account struct {
 	OwnerId       string                 `protobuf:"bytes,2,opt,name=owner_id,json=ownerId,proto3" json:"owner_id,omitempty"`
 	Name          string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
 	Bank          string                 `protobuf:"bytes,4,opt,name=bank,proto3" json:"bank,omitempty"`
-	Type          AccountType            `protobuf:"varint,5,opt,name=type,proto3,enum=arian.v1.AccountType" json:"type,omitempty"`
+	Type          AccountType            `protobuf:"varint,5,opt,name=type,proto3,enum=null.v1.AccountType" json:"type,omitempty"`
 	AnchorBalance *money.Money           `protobuf:"bytes,6,opt,name=anchor_balance,json=anchorBalance,proto3" json:"anchor_balance,omitempty"`
 	AnchorDate    *timestamppb.Timestamp `protobuf:"bytes,7,opt,name=anchor_date,json=anchorDate,proto3" json:"anchor_date,omitempty"`
 	CreatedAt     *timestamppb.Timestamp `protobuf:"bytes,8,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
@@ -45,7 +45,7 @@ type Account struct {
 
 func (x *Account) Reset() {
 	*x = Account{}
-	mi := &file_arian_v1_account_proto_msgTypes[0]
+	mi := &file_null_v1_account_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -57,7 +57,7 @@ func (x *Account) String() string {
 func (*Account) ProtoMessage() {}
 
 func (x *Account) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_account_proto_msgTypes[0]
+	mi := &file_null_v1_account_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -70,7 +70,7 @@ func (x *Account) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Account.ProtoReflect.Descriptor instead.
 func (*Account) Descriptor() ([]byte, []int) {
-	return file_arian_v1_account_proto_rawDescGZIP(), []int{0}
+	return file_null_v1_account_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Account) GetId() int64 {
@@ -168,7 +168,7 @@ type AccountBalance struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
 	Id             int64                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name           string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	AccountType    AccountType            `protobuf:"varint,3,opt,name=account_type,json=accountType,proto3,enum=arian.v1.AccountType" json:"account_type,omitempty"`
+	AccountType    AccountType            `protobuf:"varint,3,opt,name=account_type,json=accountType,proto3,enum=null.v1.AccountType" json:"account_type,omitempty"`
 	CurrentBalance *money.Money           `protobuf:"bytes,4,opt,name=current_balance,json=currentBalance,proto3" json:"current_balance,omitempty"`
 	Currency       string                 `protobuf:"bytes,5,opt,name=currency,proto3" json:"currency,omitempty"`
 	unknownFields  protoimpl.UnknownFields
@@ -177,7 +177,7 @@ type AccountBalance struct {
 
 func (x *AccountBalance) Reset() {
 	*x = AccountBalance{}
-	mi := &file_arian_v1_account_proto_msgTypes[1]
+	mi := &file_null_v1_account_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -189,7 +189,7 @@ func (x *AccountBalance) String() string {
 func (*AccountBalance) ProtoMessage() {}
 
 func (x *AccountBalance) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_account_proto_msgTypes[1]
+	mi := &file_null_v1_account_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -202,7 +202,7 @@ func (x *AccountBalance) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AccountBalance.ProtoReflect.Descriptor instead.
 func (*AccountBalance) Descriptor() ([]byte, []int) {
-	return file_arian_v1_account_proto_rawDescGZIP(), []int{1}
+	return file_null_v1_account_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *AccountBalance) GetId() int64 {
@@ -240,17 +240,17 @@ func (x *AccountBalance) GetCurrency() string {
 	return ""
 }
 
-var File_arian_v1_account_proto protoreflect.FileDescriptor
+var File_null_v1_account_proto protoreflect.FileDescriptor
 
-const file_arian_v1_account_proto_rawDesc = "" +
+const file_null_v1_account_proto_rawDesc = "" +
 	"\n" +
-	"\x16arian/v1/account.proto\x12\barian.v1\x1a\x14arian/v1/enums.proto\x1a\x1bbuf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17google/type/money.proto\"\xf6\x04\n" +
+	"\x15null/v1/account.proto\x12\anull.v1\x1a\x13null/v1/enums.proto\x1a\x1bbuf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17google/type/money.proto\"\xf5\x04\n" +
 	"\aAccount\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x03R\x02id\x12#\n" +
 	"\bowner_id\x18\x02 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\aownerId\x12\x1d\n" +
 	"\x04name\x18\x03 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\x04name\x12\x1d\n" +
-	"\x04bank\x18\x04 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\x04bank\x123\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x15.arian.v1.AccountTypeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x04type\x129\n" +
+	"\x04bank\x18\x04 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\x04bank\x122\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x14.null.v1.AccountTypeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x04type\x129\n" +
 	"\x0eanchor_balance\x18\x06 \x01(\v2\x12.google.type.MoneyR\ranchorBalance\x12;\n" +
 	"\vanchor_date\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\n" +
 	"anchorDate\x129\n" +
@@ -264,44 +264,44 @@ const file_arian_v1_account_proto_rawDesc = "" +
 	"^[A-Z]{3}$\x98\x01\x03R\fmainCurrency\x12<\n" +
 	"\x06colors\x18\f \x03(\tB$\xbaH!\x92\x01\x1e\b\x03\x10\x03\"\x18r\x162\x11^#[0-9a-fA-F]{6}$\x98\x01\aR\x06colors\x12,\n" +
 	"\abalance\x18\r \x01(\v2\x12.google.type.MoneyR\abalanceB\b\n" +
-	"\x06_alias\"\xc7\x01\n" +
+	"\x06_alias\"\xc6\x01\n" +
 	"\x0eAccountBalance\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x03R\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x128\n" +
-	"\faccount_type\x18\x03 \x01(\x0e2\x15.arian.v1.AccountTypeR\vaccountType\x12;\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x127\n" +
+	"\faccount_type\x18\x03 \x01(\x0e2\x14.null.v1.AccountTypeR\vaccountType\x12;\n" +
 	"\x0fcurrent_balance\x18\x04 \x01(\v2\x12.google.type.MoneyR\x0ecurrentBalance\x12\x1a\n" +
-	"\bcurrency\x18\x05 \x01(\tR\bcurrencyB\x89\x01\n" +
-	"\fcom.arian.v1B\fAccountProtoP\x01Z*arian-parser/internal/gen/arian/v1;arianv1\xa2\x02\x03AXX\xaa\x02\bArian.V1\xca\x02\bArian\\V1\xe2\x02\x14Arian\\V1\\GPBMetadata\xea\x02\tArian::V1b\x06proto3"
+	"\bcurrency\x18\x05 \x01(\tR\bcurrencyB\x8d\x01\n" +
+	"\vcom.null.v1B\fAccountProtoP\x01Z1null-statement-parser/internal/gen/null/v1;nullv1\xa2\x02\x03NXX\xaa\x02\aNull.V1\xca\x02\bNull_\\V1\xe2\x02\x14Null_\\V1\\GPBMetadata\xea\x02\bNull::V1b\x06proto3"
 
 var (
-	file_arian_v1_account_proto_rawDescOnce sync.Once
-	file_arian_v1_account_proto_rawDescData []byte
+	file_null_v1_account_proto_rawDescOnce sync.Once
+	file_null_v1_account_proto_rawDescData []byte
 )
 
-func file_arian_v1_account_proto_rawDescGZIP() []byte {
-	file_arian_v1_account_proto_rawDescOnce.Do(func() {
-		file_arian_v1_account_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_arian_v1_account_proto_rawDesc), len(file_arian_v1_account_proto_rawDesc)))
+func file_null_v1_account_proto_rawDescGZIP() []byte {
+	file_null_v1_account_proto_rawDescOnce.Do(func() {
+		file_null_v1_account_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_null_v1_account_proto_rawDesc), len(file_null_v1_account_proto_rawDesc)))
 	})
-	return file_arian_v1_account_proto_rawDescData
+	return file_null_v1_account_proto_rawDescData
 }
 
-var file_arian_v1_account_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
-var file_arian_v1_account_proto_goTypes = []any{
-	(*Account)(nil),               // 0: arian.v1.Account
-	(*AccountBalance)(nil),        // 1: arian.v1.AccountBalance
-	(AccountType)(0),              // 2: arian.v1.AccountType
+var file_null_v1_account_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_null_v1_account_proto_goTypes = []any{
+	(*Account)(nil),               // 0: null.v1.Account
+	(*AccountBalance)(nil),        // 1: null.v1.AccountBalance
+	(AccountType)(0),              // 2: null.v1.AccountType
 	(*money.Money)(nil),           // 3: google.type.Money
 	(*timestamppb.Timestamp)(nil), // 4: google.protobuf.Timestamp
 }
-var file_arian_v1_account_proto_depIdxs = []int32{
-	2, // 0: arian.v1.Account.type:type_name -> arian.v1.AccountType
-	3, // 1: arian.v1.Account.anchor_balance:type_name -> google.type.Money
-	4, // 2: arian.v1.Account.anchor_date:type_name -> google.protobuf.Timestamp
-	4, // 3: arian.v1.Account.created_at:type_name -> google.protobuf.Timestamp
-	4, // 4: arian.v1.Account.updated_at:type_name -> google.protobuf.Timestamp
-	3, // 5: arian.v1.Account.balance:type_name -> google.type.Money
-	2, // 6: arian.v1.AccountBalance.account_type:type_name -> arian.v1.AccountType
-	3, // 7: arian.v1.AccountBalance.current_balance:type_name -> google.type.Money
+var file_null_v1_account_proto_depIdxs = []int32{
+	2, // 0: null.v1.Account.type:type_name -> null.v1.AccountType
+	3, // 1: null.v1.Account.anchor_balance:type_name -> google.type.Money
+	4, // 2: null.v1.Account.anchor_date:type_name -> google.protobuf.Timestamp
+	4, // 3: null.v1.Account.created_at:type_name -> google.protobuf.Timestamp
+	4, // 4: null.v1.Account.updated_at:type_name -> google.protobuf.Timestamp
+	3, // 5: null.v1.Account.balance:type_name -> google.type.Money
+	2, // 6: null.v1.AccountBalance.account_type:type_name -> null.v1.AccountType
+	3, // 7: null.v1.AccountBalance.current_balance:type_name -> google.type.Money
 	8, // [8:8] is the sub-list for method output_type
 	8, // [8:8] is the sub-list for method input_type
 	8, // [8:8] is the sub-list for extension type_name
@@ -309,28 +309,28 @@ var file_arian_v1_account_proto_depIdxs = []int32{
 	0, // [0:8] is the sub-list for field type_name
 }
 
-func init() { file_arian_v1_account_proto_init() }
-func file_arian_v1_account_proto_init() {
-	if File_arian_v1_account_proto != nil {
+func init() { file_null_v1_account_proto_init() }
+func file_null_v1_account_proto_init() {
+	if File_null_v1_account_proto != nil {
 		return
 	}
-	file_arian_v1_enums_proto_init()
-	file_arian_v1_account_proto_msgTypes[0].OneofWrappers = []any{}
+	file_null_v1_enums_proto_init()
+	file_null_v1_account_proto_msgTypes[0].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_arian_v1_account_proto_rawDesc), len(file_arian_v1_account_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_null_v1_account_proto_rawDesc), len(file_null_v1_account_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_arian_v1_account_proto_goTypes,
-		DependencyIndexes: file_arian_v1_account_proto_depIdxs,
-		MessageInfos:      file_arian_v1_account_proto_msgTypes,
+		GoTypes:           file_null_v1_account_proto_goTypes,
+		DependencyIndexes: file_null_v1_account_proto_depIdxs,
+		MessageInfos:      file_null_v1_account_proto_msgTypes,
 	}.Build()
-	File_arian_v1_account_proto = out.File
-	file_arian_v1_account_proto_goTypes = nil
-	file_arian_v1_account_proto_depIdxs = nil
+	File_null_v1_account_proto = out.File
+	file_null_v1_account_proto_goTypes = nil
+	file_null_v1_account_proto_depIdxs = nil
 }

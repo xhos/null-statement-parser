@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             (unknown)
-// source: arian/v1/dashboard_services.proto
+// source: null/v1/dashboard_services.proto
 
-package arianv1
+package nullv1
 
 import (
 	context "context"
@@ -19,14 +19,14 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	DashboardService_GetDashboardSummary_FullMethodName           = "/arian.v1.DashboardService/GetDashboardSummary"
-	DashboardService_GetMonthlyComparison_FullMethodName          = "/arian.v1.DashboardService/GetMonthlyComparison"
-	DashboardService_GetTopCategories_FullMethodName              = "/arian.v1.DashboardService/GetTopCategories"
-	DashboardService_GetTopMerchants_FullMethodName               = "/arian.v1.DashboardService/GetTopMerchants"
-	DashboardService_GetSpendingTrends_FullMethodName             = "/arian.v1.DashboardService/GetSpendingTrends"
-	DashboardService_GetFinancialSummary_FullMethodName           = "/arian.v1.DashboardService/GetFinancialSummary"
-	DashboardService_GetCategorySpendingComparison_FullMethodName = "/arian.v1.DashboardService/GetCategorySpendingComparison"
-	DashboardService_GetNetWorthHistory_FullMethodName            = "/arian.v1.DashboardService/GetNetWorthHistory"
+	DashboardService_GetDashboardSummary_FullMethodName           = "/null.v1.DashboardService/GetDashboardSummary"
+	DashboardService_GetMonthlyComparison_FullMethodName          = "/null.v1.DashboardService/GetMonthlyComparison"
+	DashboardService_GetTopCategories_FullMethodName              = "/null.v1.DashboardService/GetTopCategories"
+	DashboardService_GetTopMerchants_FullMethodName               = "/null.v1.DashboardService/GetTopMerchants"
+	DashboardService_GetSpendingTrends_FullMethodName             = "/null.v1.DashboardService/GetSpendingTrends"
+	DashboardService_GetFinancialSummary_FullMethodName           = "/null.v1.DashboardService/GetFinancialSummary"
+	DashboardService_GetCategorySpendingComparison_FullMethodName = "/null.v1.DashboardService/GetCategorySpendingComparison"
+	DashboardService_GetNetWorthHistory_FullMethodName            = "/null.v1.DashboardService/GetNetWorthHistory"
 )
 
 // DashboardServiceClient is the client API for DashboardService service.
@@ -352,7 +352,7 @@ func _DashboardService_GetNetWorthHistory_Handler(srv interface{}, ctx context.C
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var DashboardService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "arian.v1.DashboardService",
+	ServiceName: "null.v1.DashboardService",
 	HandlerType: (*DashboardServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -389,5 +389,5 @@ var DashboardService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "arian/v1/dashboard_services.proto",
+	Metadata: "null/v1/dashboard_services.proto",
 }

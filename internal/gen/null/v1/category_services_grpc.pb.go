@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             (unknown)
-// source: arian/v1/category_services.proto
+// source: null/v1/category_services.proto
 
-package arianv1
+package nullv1
 
 import (
 	context "context"
@@ -19,11 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	CategoryService_ListCategories_FullMethodName = "/arian.v1.CategoryService/ListCategories"
-	CategoryService_GetCategory_FullMethodName    = "/arian.v1.CategoryService/GetCategory"
-	CategoryService_CreateCategory_FullMethodName = "/arian.v1.CategoryService/CreateCategory"
-	CategoryService_UpdateCategory_FullMethodName = "/arian.v1.CategoryService/UpdateCategory"
-	CategoryService_DeleteCategory_FullMethodName = "/arian.v1.CategoryService/DeleteCategory"
+	CategoryService_ListCategories_FullMethodName = "/null.v1.CategoryService/ListCategories"
+	CategoryService_GetCategory_FullMethodName    = "/null.v1.CategoryService/GetCategory"
+	CategoryService_CreateCategory_FullMethodName = "/null.v1.CategoryService/CreateCategory"
+	CategoryService_UpdateCategory_FullMethodName = "/null.v1.CategoryService/UpdateCategory"
+	CategoryService_DeleteCategory_FullMethodName = "/null.v1.CategoryService/DeleteCategory"
 )
 
 // CategoryServiceClient is the client API for CategoryService service.
@@ -242,7 +242,7 @@ func _CategoryService_DeleteCategory_Handler(srv interface{}, ctx context.Contex
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CategoryService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "arian.v1.CategoryService",
+	ServiceName: "null.v1.CategoryService",
 	HandlerType: (*CategoryServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -267,5 +267,5 @@ var CategoryService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "arian/v1/category_services.proto",
+	Metadata: "null/v1/category_services.proto",
 }

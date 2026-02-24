@@ -2,9 +2,9 @@
 // versions:
 // 	protoc-gen-go v1.36.10
 // 	protoc        (unknown)
-// source: arian/v1/dashboard.proto
+// source: null/v1/dashboard.proto
 
-package arianv1
+package nullv1
 
 import (
 	date "google.golang.org/genproto/googleapis/type/date"
@@ -34,7 +34,7 @@ type TrendPoint struct {
 
 func (x *TrendPoint) Reset() {
 	*x = TrendPoint{}
-	mi := &file_arian_v1_dashboard_proto_msgTypes[0]
+	mi := &file_null_v1_dashboard_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -46,7 +46,7 @@ func (x *TrendPoint) String() string {
 func (*TrendPoint) ProtoMessage() {}
 
 func (x *TrendPoint) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_dashboard_proto_msgTypes[0]
+	mi := &file_null_v1_dashboard_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -59,7 +59,7 @@ func (x *TrendPoint) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TrendPoint.ProtoReflect.Descriptor instead.
 func (*TrendPoint) Descriptor() ([]byte, []int) {
-	return file_arian_v1_dashboard_proto_rawDescGZIP(), []int{0}
+	return file_null_v1_dashboard_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *TrendPoint) GetDate() *date.Date {
@@ -95,7 +95,7 @@ type MonthlyComparison struct {
 
 func (x *MonthlyComparison) Reset() {
 	*x = MonthlyComparison{}
-	mi := &file_arian_v1_dashboard_proto_msgTypes[1]
+	mi := &file_null_v1_dashboard_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -107,7 +107,7 @@ func (x *MonthlyComparison) String() string {
 func (*MonthlyComparison) ProtoMessage() {}
 
 func (x *MonthlyComparison) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_dashboard_proto_msgTypes[1]
+	mi := &file_null_v1_dashboard_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -120,7 +120,7 @@ func (x *MonthlyComparison) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MonthlyComparison.ProtoReflect.Descriptor instead.
 func (*MonthlyComparison) Descriptor() ([]byte, []int) {
-	return file_arian_v1_dashboard_proto_rawDescGZIP(), []int{1}
+	return file_null_v1_dashboard_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *MonthlyComparison) GetMonth() string {
@@ -165,7 +165,7 @@ type DashboardSummary struct {
 
 func (x *DashboardSummary) Reset() {
 	*x = DashboardSummary{}
-	mi := &file_arian_v1_dashboard_proto_msgTypes[2]
+	mi := &file_null_v1_dashboard_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -177,7 +177,7 @@ func (x *DashboardSummary) String() string {
 func (*DashboardSummary) ProtoMessage() {}
 
 func (x *DashboardSummary) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_dashboard_proto_msgTypes[2]
+	mi := &file_null_v1_dashboard_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -190,7 +190,7 @@ func (x *DashboardSummary) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DashboardSummary.ProtoReflect.Descriptor instead.
 func (*DashboardSummary) Descriptor() ([]byte, []int) {
-	return file_arian_v1_dashboard_proto_rawDescGZIP(), []int{2}
+	return file_null_v1_dashboard_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *DashboardSummary) GetTotalAccounts() int64 {
@@ -248,7 +248,7 @@ type TopCategory struct {
 
 func (x *TopCategory) Reset() {
 	*x = TopCategory{}
-	mi := &file_arian_v1_dashboard_proto_msgTypes[3]
+	mi := &file_null_v1_dashboard_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -260,7 +260,7 @@ func (x *TopCategory) String() string {
 func (*TopCategory) ProtoMessage() {}
 
 func (x *TopCategory) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_dashboard_proto_msgTypes[3]
+	mi := &file_null_v1_dashboard_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -273,7 +273,7 @@ func (x *TopCategory) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TopCategory.ProtoReflect.Descriptor instead.
 func (*TopCategory) Descriptor() ([]byte, []int) {
-	return file_arian_v1_dashboard_proto_rawDescGZIP(), []int{3}
+	return file_null_v1_dashboard_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *TopCategory) GetSlug() string {
@@ -323,7 +323,7 @@ type TopMerchant struct {
 
 func (x *TopMerchant) Reset() {
 	*x = TopMerchant{}
-	mi := &file_arian_v1_dashboard_proto_msgTypes[4]
+	mi := &file_null_v1_dashboard_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -335,7 +335,7 @@ func (x *TopMerchant) String() string {
 func (*TopMerchant) ProtoMessage() {}
 
 func (x *TopMerchant) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_dashboard_proto_msgTypes[4]
+	mi := &file_null_v1_dashboard_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -348,7 +348,7 @@ func (x *TopMerchant) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TopMerchant.ProtoReflect.Descriptor instead.
 func (*TopMerchant) Descriptor() ([]byte, []int) {
-	return file_arian_v1_dashboard_proto_rawDescGZIP(), []int{4}
+	return file_null_v1_dashboard_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *TopMerchant) GetMerchant() string {
@@ -390,7 +390,7 @@ type PeriodInfo struct {
 
 func (x *PeriodInfo) Reset() {
 	*x = PeriodInfo{}
-	mi := &file_arian_v1_dashboard_proto_msgTypes[5]
+	mi := &file_null_v1_dashboard_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -402,7 +402,7 @@ func (x *PeriodInfo) String() string {
 func (*PeriodInfo) ProtoMessage() {}
 
 func (x *PeriodInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_dashboard_proto_msgTypes[5]
+	mi := &file_null_v1_dashboard_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -415,7 +415,7 @@ func (x *PeriodInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PeriodInfo.ProtoReflect.Descriptor instead.
 func (*PeriodInfo) Descriptor() ([]byte, []int) {
-	return file_arian_v1_dashboard_proto_rawDescGZIP(), []int{5}
+	return file_null_v1_dashboard_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *PeriodInfo) GetStartDate() *date.Date {
@@ -449,7 +449,7 @@ type PeriodSpending struct {
 
 func (x *PeriodSpending) Reset() {
 	*x = PeriodSpending{}
-	mi := &file_arian_v1_dashboard_proto_msgTypes[6]
+	mi := &file_null_v1_dashboard_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -461,7 +461,7 @@ func (x *PeriodSpending) String() string {
 func (*PeriodSpending) ProtoMessage() {}
 
 func (x *PeriodSpending) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_dashboard_proto_msgTypes[6]
+	mi := &file_null_v1_dashboard_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -474,7 +474,7 @@ func (x *PeriodSpending) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PeriodSpending.ProtoReflect.Descriptor instead.
 func (*PeriodSpending) Descriptor() ([]byte, []int) {
-	return file_arian_v1_dashboard_proto_rawDescGZIP(), []int{6}
+	return file_null_v1_dashboard_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *PeriodSpending) GetAmount() *money.Money {
@@ -502,7 +502,7 @@ type CategorySpendingComparison struct {
 
 func (x *CategorySpendingComparison) Reset() {
 	*x = CategorySpendingComparison{}
-	mi := &file_arian_v1_dashboard_proto_msgTypes[7]
+	mi := &file_null_v1_dashboard_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -514,7 +514,7 @@ func (x *CategorySpendingComparison) String() string {
 func (*CategorySpendingComparison) ProtoMessage() {}
 
 func (x *CategorySpendingComparison) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_dashboard_proto_msgTypes[7]
+	mi := &file_null_v1_dashboard_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -527,7 +527,7 @@ func (x *CategorySpendingComparison) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CategorySpendingComparison.ProtoReflect.Descriptor instead.
 func (*CategorySpendingComparison) Descriptor() ([]byte, []int) {
-	return file_arian_v1_dashboard_proto_rawDescGZIP(), []int{7}
+	return file_null_v1_dashboard_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *CategorySpendingComparison) GetCategoryId() int64 {
@@ -561,7 +561,7 @@ type CategorySpendingTotals struct {
 
 func (x *CategorySpendingTotals) Reset() {
 	*x = CategorySpendingTotals{}
-	mi := &file_arian_v1_dashboard_proto_msgTypes[8]
+	mi := &file_null_v1_dashboard_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -573,7 +573,7 @@ func (x *CategorySpendingTotals) String() string {
 func (*CategorySpendingTotals) ProtoMessage() {}
 
 func (x *CategorySpendingTotals) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_dashboard_proto_msgTypes[8]
+	mi := &file_null_v1_dashboard_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -586,7 +586,7 @@ func (x *CategorySpendingTotals) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CategorySpendingTotals.ProtoReflect.Descriptor instead.
 func (*CategorySpendingTotals) Descriptor() ([]byte, []int) {
-	return file_arian_v1_dashboard_proto_rawDescGZIP(), []int{8}
+	return file_null_v1_dashboard_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *CategorySpendingTotals) GetCurrentPeriodTotal() *money.Money {
@@ -613,7 +613,7 @@ type NetWorthPoint struct {
 
 func (x *NetWorthPoint) Reset() {
 	*x = NetWorthPoint{}
-	mi := &file_arian_v1_dashboard_proto_msgTypes[9]
+	mi := &file_null_v1_dashboard_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -625,7 +625,7 @@ func (x *NetWorthPoint) String() string {
 func (*NetWorthPoint) ProtoMessage() {}
 
 func (x *NetWorthPoint) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_dashboard_proto_msgTypes[9]
+	mi := &file_null_v1_dashboard_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -638,7 +638,7 @@ func (x *NetWorthPoint) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NetWorthPoint.ProtoReflect.Descriptor instead.
 func (*NetWorthPoint) Descriptor() ([]byte, []int) {
-	return file_arian_v1_dashboard_proto_rawDescGZIP(), []int{9}
+	return file_null_v1_dashboard_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *NetWorthPoint) GetDate() *date.Date {
@@ -655,11 +655,11 @@ func (x *NetWorthPoint) GetNetWorth() *money.Money {
 	return nil
 }
 
-var File_arian_v1_dashboard_proto protoreflect.FileDescriptor
+var File_null_v1_dashboard_proto protoreflect.FileDescriptor
 
-const file_arian_v1_dashboard_proto_rawDesc = "" +
+const file_null_v1_dashboard_proto_rawDesc = "" +
 	"\n" +
-	"\x18arian/v1/dashboard.proto\x12\barian.v1\x1a\x17arian/v1/category.proto\x1a\x16google/type/date.proto\x1a\x17google/type/money.proto\"\x8f\x01\n" +
+	"\x17null/v1/dashboard.proto\x12\anull.v1\x1a\x16null/v1/category.proto\x1a\x16google/type/date.proto\x1a\x17google/type/money.proto\"\x8f\x01\n" +
 	"\n" +
 	"TrendPoint\x12%\n" +
 	"\x04date\x18\x01 \x01(\v2\x11.google.type.DateR\x04date\x12*\n" +
@@ -697,69 +697,69 @@ const file_arian_v1_dashboard_proto_rawDesc = "" +
 	"\x05label\x18\x03 \x01(\tR\x05label\"i\n" +
 	"\x0ePeriodSpending\x12*\n" +
 	"\x06amount\x18\x01 \x01(\v2\x12.google.type.MoneyR\x06amount\x12+\n" +
-	"\x11transaction_count\x18\x02 \x01(\x03R\x10transactionCount\"\xd6\x01\n" +
+	"\x11transaction_count\x18\x02 \x01(\x03R\x10transactionCount\"\xd4\x01\n" +
 	"\x1aCategorySpendingComparison\x12$\n" +
 	"\vcategory_id\x18\x01 \x01(\x03H\x00R\n" +
-	"categoryId\x88\x01\x01\x12?\n" +
-	"\x0ecurrent_period\x18\x02 \x01(\v2\x18.arian.v1.PeriodSpendingR\rcurrentPeriod\x12A\n" +
-	"\x0fprevious_period\x18\x03 \x01(\v2\x18.arian.v1.PeriodSpendingR\x0epreviousPeriodB\x0e\n" +
+	"categoryId\x88\x01\x01\x12>\n" +
+	"\x0ecurrent_period\x18\x02 \x01(\v2\x17.null.v1.PeriodSpendingR\rcurrentPeriod\x12@\n" +
+	"\x0fprevious_period\x18\x03 \x01(\v2\x17.null.v1.PeriodSpendingR\x0epreviousPeriodB\x0e\n" +
 	"\f_category_id\"\xa6\x01\n" +
 	"\x16CategorySpendingTotals\x12D\n" +
 	"\x14current_period_total\x18\x01 \x01(\v2\x12.google.type.MoneyR\x12currentPeriodTotal\x12F\n" +
 	"\x15previous_period_total\x18\x02 \x01(\v2\x12.google.type.MoneyR\x13previousPeriodTotal\"g\n" +
 	"\rNetWorthPoint\x12%\n" +
 	"\x04date\x18\x01 \x01(\v2\x11.google.type.DateR\x04date\x12/\n" +
-	"\tnet_worth\x18\x02 \x01(\v2\x12.google.type.MoneyR\bnetWorthB\x8b\x01\n" +
-	"\fcom.arian.v1B\x0eDashboardProtoP\x01Z*arian-parser/internal/gen/arian/v1;arianv1\xa2\x02\x03AXX\xaa\x02\bArian.V1\xca\x02\bArian\\V1\xe2\x02\x14Arian\\V1\\GPBMetadata\xea\x02\tArian::V1b\x06proto3"
+	"\tnet_worth\x18\x02 \x01(\v2\x12.google.type.MoneyR\bnetWorthB\x8f\x01\n" +
+	"\vcom.null.v1B\x0eDashboardProtoP\x01Z1null-statement-parser/internal/gen/null/v1;nullv1\xa2\x02\x03NXX\xaa\x02\aNull.V1\xca\x02\bNull_\\V1\xe2\x02\x14Null_\\V1\\GPBMetadata\xea\x02\bNull::V1b\x06proto3"
 
 var (
-	file_arian_v1_dashboard_proto_rawDescOnce sync.Once
-	file_arian_v1_dashboard_proto_rawDescData []byte
+	file_null_v1_dashboard_proto_rawDescOnce sync.Once
+	file_null_v1_dashboard_proto_rawDescData []byte
 )
 
-func file_arian_v1_dashboard_proto_rawDescGZIP() []byte {
-	file_arian_v1_dashboard_proto_rawDescOnce.Do(func() {
-		file_arian_v1_dashboard_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_arian_v1_dashboard_proto_rawDesc), len(file_arian_v1_dashboard_proto_rawDesc)))
+func file_null_v1_dashboard_proto_rawDescGZIP() []byte {
+	file_null_v1_dashboard_proto_rawDescOnce.Do(func() {
+		file_null_v1_dashboard_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_null_v1_dashboard_proto_rawDesc), len(file_null_v1_dashboard_proto_rawDesc)))
 	})
-	return file_arian_v1_dashboard_proto_rawDescData
+	return file_null_v1_dashboard_proto_rawDescData
 }
 
-var file_arian_v1_dashboard_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
-var file_arian_v1_dashboard_proto_goTypes = []any{
-	(*TrendPoint)(nil),                 // 0: arian.v1.TrendPoint
-	(*MonthlyComparison)(nil),          // 1: arian.v1.MonthlyComparison
-	(*DashboardSummary)(nil),           // 2: arian.v1.DashboardSummary
-	(*TopCategory)(nil),                // 3: arian.v1.TopCategory
-	(*TopMerchant)(nil),                // 4: arian.v1.TopMerchant
-	(*PeriodInfo)(nil),                 // 5: arian.v1.PeriodInfo
-	(*PeriodSpending)(nil),             // 6: arian.v1.PeriodSpending
-	(*CategorySpendingComparison)(nil), // 7: arian.v1.CategorySpendingComparison
-	(*CategorySpendingTotals)(nil),     // 8: arian.v1.CategorySpendingTotals
-	(*NetWorthPoint)(nil),              // 9: arian.v1.NetWorthPoint
+var file_null_v1_dashboard_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
+var file_null_v1_dashboard_proto_goTypes = []any{
+	(*TrendPoint)(nil),                 // 0: null.v1.TrendPoint
+	(*MonthlyComparison)(nil),          // 1: null.v1.MonthlyComparison
+	(*DashboardSummary)(nil),           // 2: null.v1.DashboardSummary
+	(*TopCategory)(nil),                // 3: null.v1.TopCategory
+	(*TopMerchant)(nil),                // 4: null.v1.TopMerchant
+	(*PeriodInfo)(nil),                 // 5: null.v1.PeriodInfo
+	(*PeriodSpending)(nil),             // 6: null.v1.PeriodSpending
+	(*CategorySpendingComparison)(nil), // 7: null.v1.CategorySpendingComparison
+	(*CategorySpendingTotals)(nil),     // 8: null.v1.CategorySpendingTotals
+	(*NetWorthPoint)(nil),              // 9: null.v1.NetWorthPoint
 	(*date.Date)(nil),                  // 10: google.type.Date
 	(*money.Money)(nil),                // 11: google.type.Money
 }
-var file_arian_v1_dashboard_proto_depIdxs = []int32{
-	10, // 0: arian.v1.TrendPoint.date:type_name -> google.type.Date
-	11, // 1: arian.v1.TrendPoint.income:type_name -> google.type.Money
-	11, // 2: arian.v1.TrendPoint.expenses:type_name -> google.type.Money
-	11, // 3: arian.v1.MonthlyComparison.income:type_name -> google.type.Money
-	11, // 4: arian.v1.MonthlyComparison.expenses:type_name -> google.type.Money
-	11, // 5: arian.v1.MonthlyComparison.net:type_name -> google.type.Money
-	11, // 6: arian.v1.DashboardSummary.total_income:type_name -> google.type.Money
-	11, // 7: arian.v1.DashboardSummary.total_expenses:type_name -> google.type.Money
-	11, // 8: arian.v1.TopCategory.total_amount:type_name -> google.type.Money
-	11, // 9: arian.v1.TopMerchant.total_amount:type_name -> google.type.Money
-	11, // 10: arian.v1.TopMerchant.avg_amount:type_name -> google.type.Money
-	10, // 11: arian.v1.PeriodInfo.start_date:type_name -> google.type.Date
-	10, // 12: arian.v1.PeriodInfo.end_date:type_name -> google.type.Date
-	11, // 13: arian.v1.PeriodSpending.amount:type_name -> google.type.Money
-	6,  // 14: arian.v1.CategorySpendingComparison.current_period:type_name -> arian.v1.PeriodSpending
-	6,  // 15: arian.v1.CategorySpendingComparison.previous_period:type_name -> arian.v1.PeriodSpending
-	11, // 16: arian.v1.CategorySpendingTotals.current_period_total:type_name -> google.type.Money
-	11, // 17: arian.v1.CategorySpendingTotals.previous_period_total:type_name -> google.type.Money
-	10, // 18: arian.v1.NetWorthPoint.date:type_name -> google.type.Date
-	11, // 19: arian.v1.NetWorthPoint.net_worth:type_name -> google.type.Money
+var file_null_v1_dashboard_proto_depIdxs = []int32{
+	10, // 0: null.v1.TrendPoint.date:type_name -> google.type.Date
+	11, // 1: null.v1.TrendPoint.income:type_name -> google.type.Money
+	11, // 2: null.v1.TrendPoint.expenses:type_name -> google.type.Money
+	11, // 3: null.v1.MonthlyComparison.income:type_name -> google.type.Money
+	11, // 4: null.v1.MonthlyComparison.expenses:type_name -> google.type.Money
+	11, // 5: null.v1.MonthlyComparison.net:type_name -> google.type.Money
+	11, // 6: null.v1.DashboardSummary.total_income:type_name -> google.type.Money
+	11, // 7: null.v1.DashboardSummary.total_expenses:type_name -> google.type.Money
+	11, // 8: null.v1.TopCategory.total_amount:type_name -> google.type.Money
+	11, // 9: null.v1.TopMerchant.total_amount:type_name -> google.type.Money
+	11, // 10: null.v1.TopMerchant.avg_amount:type_name -> google.type.Money
+	10, // 11: null.v1.PeriodInfo.start_date:type_name -> google.type.Date
+	10, // 12: null.v1.PeriodInfo.end_date:type_name -> google.type.Date
+	11, // 13: null.v1.PeriodSpending.amount:type_name -> google.type.Money
+	6,  // 14: null.v1.CategorySpendingComparison.current_period:type_name -> null.v1.PeriodSpending
+	6,  // 15: null.v1.CategorySpendingComparison.previous_period:type_name -> null.v1.PeriodSpending
+	11, // 16: null.v1.CategorySpendingTotals.current_period_total:type_name -> google.type.Money
+	11, // 17: null.v1.CategorySpendingTotals.previous_period_total:type_name -> google.type.Money
+	10, // 18: null.v1.NetWorthPoint.date:type_name -> google.type.Date
+	11, // 19: null.v1.NetWorthPoint.net_worth:type_name -> google.type.Money
 	20, // [20:20] is the sub-list for method output_type
 	20, // [20:20] is the sub-list for method input_type
 	20, // [20:20] is the sub-list for extension type_name
@@ -767,28 +767,28 @@ var file_arian_v1_dashboard_proto_depIdxs = []int32{
 	0,  // [0:20] is the sub-list for field type_name
 }
 
-func init() { file_arian_v1_dashboard_proto_init() }
-func file_arian_v1_dashboard_proto_init() {
-	if File_arian_v1_dashboard_proto != nil {
+func init() { file_null_v1_dashboard_proto_init() }
+func file_null_v1_dashboard_proto_init() {
+	if File_null_v1_dashboard_proto != nil {
 		return
 	}
-	file_arian_v1_category_proto_init()
-	file_arian_v1_dashboard_proto_msgTypes[7].OneofWrappers = []any{}
+	file_null_v1_category_proto_init()
+	file_null_v1_dashboard_proto_msgTypes[7].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_arian_v1_dashboard_proto_rawDesc), len(file_arian_v1_dashboard_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_null_v1_dashboard_proto_rawDesc), len(file_null_v1_dashboard_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   10,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_arian_v1_dashboard_proto_goTypes,
-		DependencyIndexes: file_arian_v1_dashboard_proto_depIdxs,
-		MessageInfos:      file_arian_v1_dashboard_proto_msgTypes,
+		GoTypes:           file_null_v1_dashboard_proto_goTypes,
+		DependencyIndexes: file_null_v1_dashboard_proto_depIdxs,
+		MessageInfos:      file_null_v1_dashboard_proto_msgTypes,
 	}.Build()
-	File_arian_v1_dashboard_proto = out.File
-	file_arian_v1_dashboard_proto_goTypes = nil
-	file_arian_v1_dashboard_proto_depIdxs = nil
+	File_null_v1_dashboard_proto = out.File
+	file_null_v1_dashboard_proto_goTypes = nil
+	file_null_v1_dashboard_proto_depIdxs = nil
 }

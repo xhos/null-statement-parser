@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"arian-statement-parser/internal/domain"
+	"null-statement-parser/internal/domain"
 )
 
 type CSVParser struct{}

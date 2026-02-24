@@ -10,11 +10,11 @@ import (
 	"strconv"
 	"strings"
 
-	"arian-statement-parser/internal/client"
-	"arian-statement-parser/internal/domain"
-	pb "arian-statement-parser/internal/gen/arian/v1"
-	"arian-statement-parser/internal/mapping"
-	"arian-statement-parser/internal/parser"
+	"null-statement-parser/internal/client"
+	"null-statement-parser/internal/domain"
+	pb "null-statement-parser/internal/gen/null/v1"
+	"null-statement-parser/internal/mapping"
+	"null-statement-parser/internal/parser"
 
 	"github.com/joho/godotenv"
 )

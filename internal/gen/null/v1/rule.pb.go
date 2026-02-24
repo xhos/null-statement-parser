@@ -2,9 +2,9 @@
 // versions:
 // 	protoc-gen-go v1.36.10
 // 	protoc        (unknown)
-// source: arian/v1/rule.proto
+// source: null/v1/rule.proto
 
-package arianv1
+package nullv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
@@ -45,7 +45,7 @@ type Rule struct {
 
 func (x *Rule) Reset() {
 	*x = Rule{}
-	mi := &file_arian_v1_rule_proto_msgTypes[0]
+	mi := &file_null_v1_rule_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -57,7 +57,7 @@ func (x *Rule) String() string {
 func (*Rule) ProtoMessage() {}
 
 func (x *Rule) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_rule_proto_msgTypes[0]
+	mi := &file_null_v1_rule_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -70,7 +70,7 @@ func (x *Rule) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Rule.ProtoReflect.Descriptor instead.
 func (*Rule) Descriptor() ([]byte, []int) {
-	return file_arian_v1_rule_proto_rawDescGZIP(), []int{0}
+	return file_null_v1_rule_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Rule) GetRuleId() string {
@@ -164,11 +164,11 @@ func (x *Rule) GetMerchant() string {
 	return ""
 }
 
-var File_arian_v1_rule_proto protoreflect.FileDescriptor
+var File_null_v1_rule_proto protoreflect.FileDescriptor
 
-const file_arian_v1_rule_proto_rawDesc = "" +
+const file_null_v1_rule_proto_rawDesc = "" +
 	"\n" +
-	"\x13arian/v1/rule.proto\x12\barian.v1\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bbuf/validate/validate.proto\"\x8b\x05\n" +
+	"\x12null/v1/rule.proto\x12\anull.v1\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bbuf/validate/validate.proto\"\x8b\x05\n" +
 	"\x04Rule\x12\x17\n" +
 	"\arule_id\x18\x01 \x01(\tR\x06ruleId\x12\x17\n" +
 	"\auser_id\x18\x02 \x01(\tR\x06userId\x12'\n" +
@@ -193,32 +193,32 @@ const file_arian_v1_rule_proto_rawDesc = "" +
 	"\bmerchant\x18\r \x01(\tH\x02R\bmerchant\x88\x01\x01B\x0e\n" +
 	"\f_category_idB\x12\n" +
 	"\x10_last_applied_atB\v\n" +
-	"\t_merchantB\x86\x01\n" +
-	"\fcom.arian.v1B\tRuleProtoP\x01Z*arian-parser/internal/gen/arian/v1;arianv1\xa2\x02\x03AXX\xaa\x02\bArian.V1\xca\x02\bArian\\V1\xe2\x02\x14Arian\\V1\\GPBMetadata\xea\x02\tArian::V1b\x06proto3"
+	"\t_merchantB\x8a\x01\n" +
+	"\vcom.null.v1B\tRuleProtoP\x01Z1null-statement-parser/internal/gen/null/v1;nullv1\xa2\x02\x03NXX\xaa\x02\aNull.V1\xca\x02\bNull_\\V1\xe2\x02\x14Null_\\V1\\GPBMetadata\xea\x02\bNull::V1b\x06proto3"
 
 var (
-	file_arian_v1_rule_proto_rawDescOnce sync.Once
-	file_arian_v1_rule_proto_rawDescData []byte
+	file_null_v1_rule_proto_rawDescOnce sync.Once
+	file_null_v1_rule_proto_rawDescData []byte
 )
 
-func file_arian_v1_rule_proto_rawDescGZIP() []byte {
-	file_arian_v1_rule_proto_rawDescOnce.Do(func() {
-		file_arian_v1_rule_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_arian_v1_rule_proto_rawDesc), len(file_arian_v1_rule_proto_rawDesc)))
+func file_null_v1_rule_proto_rawDescGZIP() []byte {
+	file_null_v1_rule_proto_rawDescOnce.Do(func() {
+		file_null_v1_rule_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_null_v1_rule_proto_rawDesc), len(file_null_v1_rule_proto_rawDesc)))
 	})
-	return file_arian_v1_rule_proto_rawDescData
+	return file_null_v1_rule_proto_rawDescData
 }
 
-var file_arian_v1_rule_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_arian_v1_rule_proto_goTypes = []any{
-	(*Rule)(nil),                  // 0: arian.v1.Rule
+var file_null_v1_rule_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_null_v1_rule_proto_goTypes = []any{
+	(*Rule)(nil),                  // 0: null.v1.Rule
 	(*structpb.Struct)(nil),       // 1: google.protobuf.Struct
 	(*timestamppb.Timestamp)(nil), // 2: google.protobuf.Timestamp
 }
-var file_arian_v1_rule_proto_depIdxs = []int32{
-	1, // 0: arian.v1.Rule.conditions:type_name -> google.protobuf.Struct
-	2, // 1: arian.v1.Rule.created_at:type_name -> google.protobuf.Timestamp
-	2, // 2: arian.v1.Rule.updated_at:type_name -> google.protobuf.Timestamp
-	2, // 3: arian.v1.Rule.last_applied_at:type_name -> google.protobuf.Timestamp
+var file_null_v1_rule_proto_depIdxs = []int32{
+	1, // 0: null.v1.Rule.conditions:type_name -> google.protobuf.Struct
+	2, // 1: null.v1.Rule.created_at:type_name -> google.protobuf.Timestamp
+	2, // 2: null.v1.Rule.updated_at:type_name -> google.protobuf.Timestamp
+	2, // 3: null.v1.Rule.last_applied_at:type_name -> google.protobuf.Timestamp
 	4, // [4:4] is the sub-list for method output_type
 	4, // [4:4] is the sub-list for method input_type
 	4, // [4:4] is the sub-list for extension type_name
@@ -226,27 +226,27 @@ var file_arian_v1_rule_proto_depIdxs = []int32{
 	0, // [0:4] is the sub-list for field type_name
 }
 
-func init() { file_arian_v1_rule_proto_init() }
-func file_arian_v1_rule_proto_init() {
-	if File_arian_v1_rule_proto != nil {
+func init() { file_null_v1_rule_proto_init() }
+func file_null_v1_rule_proto_init() {
+	if File_null_v1_rule_proto != nil {
 		return
 	}
-	file_arian_v1_rule_proto_msgTypes[0].OneofWrappers = []any{}
+	file_null_v1_rule_proto_msgTypes[0].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_arian_v1_rule_proto_rawDesc), len(file_arian_v1_rule_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_null_v1_rule_proto_rawDesc), len(file_null_v1_rule_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_arian_v1_rule_proto_goTypes,
-		DependencyIndexes: file_arian_v1_rule_proto_depIdxs,
-		MessageInfos:      file_arian_v1_rule_proto_msgTypes,
+		GoTypes:           file_null_v1_rule_proto_goTypes,
+		DependencyIndexes: file_null_v1_rule_proto_depIdxs,
+		MessageInfos:      file_null_v1_rule_proto_msgTypes,
 	}.Build()
-	File_arian_v1_rule_proto = out.File
-	file_arian_v1_rule_proto_goTypes = nil
-	file_arian_v1_rule_proto_depIdxs = nil
+	File_null_v1_rule_proto = out.File
+	file_null_v1_rule_proto_goTypes = nil
+	file_null_v1_rule_proto_depIdxs = nil
 }

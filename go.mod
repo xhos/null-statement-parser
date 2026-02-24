@@ -1,4 +1,4 @@
-module arian-statement-parser
+module null-statement-parser
 
 go 1.25.1
 

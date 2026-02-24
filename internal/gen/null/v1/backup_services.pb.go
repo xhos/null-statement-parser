@@ -2,9 +2,9 @@
 // versions:
 // 	protoc-gen-go v1.36.10
 // 	protoc        (unknown)
-// source: arian/v1/backup_services.proto
+// source: null/v1/backup_services.proto
 
-package arianv1
+package nullv1
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -29,7 +29,7 @@ type ExportBackupRequest struct {
 
 func (x *ExportBackupRequest) Reset() {
 	*x = ExportBackupRequest{}
-	mi := &file_arian_v1_backup_services_proto_msgTypes[0]
+	mi := &file_null_v1_backup_services_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -41,7 +41,7 @@ func (x *ExportBackupRequest) String() string {
 func (*ExportBackupRequest) ProtoMessage() {}
 
 func (x *ExportBackupRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_backup_services_proto_msgTypes[0]
+	mi := &file_null_v1_backup_services_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -54,7 +54,7 @@ func (x *ExportBackupRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExportBackupRequest.ProtoReflect.Descriptor instead.
 func (*ExportBackupRequest) Descriptor() ([]byte, []int) {
-	return file_arian_v1_backup_services_proto_rawDescGZIP(), []int{0}
+	return file_null_v1_backup_services_proto_rawDescGZIP(), []int{0}
 }
 
 type ExportBackupResponse struct {
@@ -66,7 +66,7 @@ type ExportBackupResponse struct {
 
 func (x *ExportBackupResponse) Reset() {
 	*x = ExportBackupResponse{}
-	mi := &file_arian_v1_backup_services_proto_msgTypes[1]
+	mi := &file_null_v1_backup_services_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -78,7 +78,7 @@ func (x *ExportBackupResponse) String() string {
 func (*ExportBackupResponse) ProtoMessage() {}
 
 func (x *ExportBackupResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_backup_services_proto_msgTypes[1]
+	mi := &file_null_v1_backup_services_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -91,7 +91,7 @@ func (x *ExportBackupResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExportBackupResponse.ProtoReflect.Descriptor instead.
 func (*ExportBackupResponse) Descriptor() ([]byte, []int) {
-	return file_arian_v1_backup_services_proto_rawDescGZIP(), []int{1}
+	return file_null_v1_backup_services_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ExportBackupResponse) GetBackup() *Backup {
@@ -110,7 +110,7 @@ type ImportBackupRequest struct {
 
 func (x *ImportBackupRequest) Reset() {
 	*x = ImportBackupRequest{}
-	mi := &file_arian_v1_backup_services_proto_msgTypes[2]
+	mi := &file_null_v1_backup_services_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -122,7 +122,7 @@ func (x *ImportBackupRequest) String() string {
 func (*ImportBackupRequest) ProtoMessage() {}
 
 func (x *ImportBackupRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_backup_services_proto_msgTypes[2]
+	mi := &file_null_v1_backup_services_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -135,7 +135,7 @@ func (x *ImportBackupRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ImportBackupRequest.ProtoReflect.Descriptor instead.
 func (*ImportBackupRequest) Descriptor() ([]byte, []int) {
-	return file_arian_v1_backup_services_proto_rawDescGZIP(), []int{2}
+	return file_null_v1_backup_services_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *ImportBackupRequest) GetBackup() *Backup {
@@ -157,7 +157,7 @@ type ImportBackupResponse struct {
 
 func (x *ImportBackupResponse) Reset() {
 	*x = ImportBackupResponse{}
-	mi := &file_arian_v1_backup_services_proto_msgTypes[3]
+	mi := &file_null_v1_backup_services_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -169,7 +169,7 @@ func (x *ImportBackupResponse) String() string {
 func (*ImportBackupResponse) ProtoMessage() {}
 
 func (x *ImportBackupResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_backup_services_proto_msgTypes[3]
+	mi := &file_null_v1_backup_services_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -182,7 +182,7 @@ func (x *ImportBackupResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ImportBackupResponse.ProtoReflect.Descriptor instead.
 func (*ImportBackupResponse) Descriptor() ([]byte, []int) {
-	return file_arian_v1_backup_services_proto_rawDescGZIP(), []int{3}
+	return file_null_v1_backup_services_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *ImportBackupResponse) GetCategoriesImported() int32 {
@@ -213,53 +213,53 @@ func (x *ImportBackupResponse) GetRulesImported() int32 {
 	return 0
 }
 
-var File_arian_v1_backup_services_proto protoreflect.FileDescriptor
+var File_null_v1_backup_services_proto protoreflect.FileDescriptor
 
-const file_arian_v1_backup_services_proto_rawDesc = "" +
+const file_null_v1_backup_services_proto_rawDesc = "" +
 	"\n" +
-	"\x1earian/v1/backup_services.proto\x12\barian.v1\x1a\x15arian/v1/backup.proto\"\x15\n" +
-	"\x13ExportBackupRequest\"@\n" +
-	"\x14ExportBackupResponse\x12(\n" +
-	"\x06backup\x18\x01 \x01(\v2\x10.arian.v1.BackupR\x06backup\"?\n" +
-	"\x13ImportBackupRequest\x12(\n" +
-	"\x06backup\x18\x01 \x01(\v2\x10.arian.v1.BackupR\x06backup\"\xd0\x01\n" +
+	"\x1dnull/v1/backup_services.proto\x12\anull.v1\x1a\x14null/v1/backup.proto\"\x15\n" +
+	"\x13ExportBackupRequest\"?\n" +
+	"\x14ExportBackupResponse\x12'\n" +
+	"\x06backup\x18\x01 \x01(\v2\x0f.null.v1.BackupR\x06backup\">\n" +
+	"\x13ImportBackupRequest\x12'\n" +
+	"\x06backup\x18\x01 \x01(\v2\x0f.null.v1.BackupR\x06backup\"\xd0\x01\n" +
 	"\x14ImportBackupResponse\x12/\n" +
 	"\x13categories_imported\x18\x01 \x01(\x05R\x12categoriesImported\x12+\n" +
 	"\x11accounts_imported\x18\x02 \x01(\x05R\x10accountsImported\x123\n" +
 	"\x15transactions_imported\x18\x03 \x01(\x05R\x14transactionsImported\x12%\n" +
-	"\x0erules_imported\x18\x04 \x01(\x05R\rrulesImported2\xad\x01\n" +
-	"\rBackupService\x12M\n" +
-	"\fExportBackup\x12\x1d.arian.v1.ExportBackupRequest\x1a\x1e.arian.v1.ExportBackupResponse\x12M\n" +
-	"\fImportBackup\x12\x1d.arian.v1.ImportBackupRequest\x1a\x1e.arian.v1.ImportBackupResponseB\x90\x01\n" +
-	"\fcom.arian.v1B\x13BackupServicesProtoP\x01Z*arian-parser/internal/gen/arian/v1;arianv1\xa2\x02\x03AXX\xaa\x02\bArian.V1\xca\x02\bArian\\V1\xe2\x02\x14Arian\\V1\\GPBMetadata\xea\x02\tArian::V1b\x06proto3"
+	"\x0erules_imported\x18\x04 \x01(\x05R\rrulesImported2\xa9\x01\n" +
+	"\rBackupService\x12K\n" +
+	"\fExportBackup\x12\x1c.null.v1.ExportBackupRequest\x1a\x1d.null.v1.ExportBackupResponse\x12K\n" +
+	"\fImportBackup\x12\x1c.null.v1.ImportBackupRequest\x1a\x1d.null.v1.ImportBackupResponseB\x94\x01\n" +
+	"\vcom.null.v1B\x13BackupServicesProtoP\x01Z1null-statement-parser/internal/gen/null/v1;nullv1\xa2\x02\x03NXX\xaa\x02\aNull.V1\xca\x02\bNull_\\V1\xe2\x02\x14Null_\\V1\\GPBMetadata\xea\x02\bNull::V1b\x06proto3"
 
 var (
-	file_arian_v1_backup_services_proto_rawDescOnce sync.Once
-	file_arian_v1_backup_services_proto_rawDescData []byte
+	file_null_v1_backup_services_proto_rawDescOnce sync.Once
+	file_null_v1_backup_services_proto_rawDescData []byte
 )
 
-func file_arian_v1_backup_services_proto_rawDescGZIP() []byte {
-	file_arian_v1_backup_services_proto_rawDescOnce.Do(func() {
-		file_arian_v1_backup_services_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_arian_v1_backup_services_proto_rawDesc), len(file_arian_v1_backup_services_proto_rawDesc)))
+func file_null_v1_backup_services_proto_rawDescGZIP() []byte {
+	file_null_v1_backup_services_proto_rawDescOnce.Do(func() {
+		file_null_v1_backup_services_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_null_v1_backup_services_proto_rawDesc), len(file_null_v1_backup_services_proto_rawDesc)))
 	})
-	return file_arian_v1_backup_services_proto_rawDescData
+	return file_null_v1_backup_services_proto_rawDescData
 }
 
-var file_arian_v1_backup_services_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
-var file_arian_v1_backup_services_proto_goTypes = []any{
-	(*ExportBackupRequest)(nil),  // 0: arian.v1.ExportBackupRequest
-	(*ExportBackupResponse)(nil), // 1: arian.v1.ExportBackupResponse
-	(*ImportBackupRequest)(nil),  // 2: arian.v1.ImportBackupRequest
-	(*ImportBackupResponse)(nil), // 3: arian.v1.ImportBackupResponse
-	(*Backup)(nil),               // 4: arian.v1.Backup
+var file_null_v1_backup_services_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_null_v1_backup_services_proto_goTypes = []any{
+	(*ExportBackupRequest)(nil),  // 0: null.v1.ExportBackupRequest
+	(*ExportBackupResponse)(nil), // 1: null.v1.ExportBackupResponse
+	(*ImportBackupRequest)(nil),  // 2: null.v1.ImportBackupRequest
+	(*ImportBackupResponse)(nil), // 3: null.v1.ImportBackupResponse
+	(*Backup)(nil),               // 4: null.v1.Backup
 }
-var file_arian_v1_backup_services_proto_depIdxs = []int32{
-	4, // 0: arian.v1.ExportBackupResponse.backup:type_name -> arian.v1.Backup
-	4, // 1: arian.v1.ImportBackupRequest.backup:type_name -> arian.v1.Backup
-	0, // 2: arian.v1.BackupService.ExportBackup:input_type -> arian.v1.ExportBackupRequest
-	2, // 3: arian.v1.BackupService.ImportBackup:input_type -> arian.v1.ImportBackupRequest
-	1, // 4: arian.v1.BackupService.ExportBackup:output_type -> arian.v1.ExportBackupResponse
-	3, // 5: arian.v1.BackupService.ImportBackup:output_type -> arian.v1.ImportBackupResponse
+var file_null_v1_backup_services_proto_depIdxs = []int32{
+	4, // 0: null.v1.ExportBackupResponse.backup:type_name -> null.v1.Backup
+	4, // 1: null.v1.ImportBackupRequest.backup:type_name -> null.v1.Backup
+	0, // 2: null.v1.BackupService.ExportBackup:input_type -> null.v1.ExportBackupRequest
+	2, // 3: null.v1.BackupService.ImportBackup:input_type -> null.v1.ImportBackupRequest
+	1, // 4: null.v1.BackupService.ExportBackup:output_type -> null.v1.ExportBackupResponse
+	3, // 5: null.v1.BackupService.ImportBackup:output_type -> null.v1.ImportBackupResponse
 	4, // [4:6] is the sub-list for method output_type
 	2, // [2:4] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name
@@ -267,27 +267,27 @@ var file_arian_v1_backup_services_proto_depIdxs = []int32{
 	0, // [0:2] is the sub-list for field type_name
 }
 
-func init() { file_arian_v1_backup_services_proto_init() }
-func file_arian_v1_backup_services_proto_init() {
-	if File_arian_v1_backup_services_proto != nil {
+func init() { file_null_v1_backup_services_proto_init() }
+func file_null_v1_backup_services_proto_init() {
+	if File_null_v1_backup_services_proto != nil {
 		return
 	}
-	file_arian_v1_backup_proto_init()
+	file_null_v1_backup_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_arian_v1_backup_services_proto_rawDesc), len(file_arian_v1_backup_services_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_null_v1_backup_services_proto_rawDesc), len(file_null_v1_backup_services_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_arian_v1_backup_services_proto_goTypes,
-		DependencyIndexes: file_arian_v1_backup_services_proto_depIdxs,
-		MessageInfos:      file_arian_v1_backup_services_proto_msgTypes,
+		GoTypes:           file_null_v1_backup_services_proto_goTypes,
+		DependencyIndexes: file_null_v1_backup_services_proto_depIdxs,
+		MessageInfos:      file_null_v1_backup_services_proto_msgTypes,
 	}.Build()
-	File_arian_v1_backup_services_proto = out.File
-	file_arian_v1_backup_services_proto_goTypes = nil
-	file_arian_v1_backup_services_proto_depIdxs = nil
+	File_null_v1_backup_services_proto = out.File
+	file_null_v1_backup_services_proto_goTypes = nil
+	file_null_v1_backup_services_proto_depIdxs = nil
 }

@@ -2,9 +2,9 @@
 // versions:
 // 	protoc-gen-go v1.36.10
 // 	protoc        (unknown)
-// source: arian/v1/backup.proto
+// source: null/v1/backup.proto
 
-package arianv1
+package nullv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
@@ -38,7 +38,7 @@ type Backup struct {
 
 func (x *Backup) Reset() {
 	*x = Backup{}
-	mi := &file_arian_v1_backup_proto_msgTypes[0]
+	mi := &file_null_v1_backup_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -50,7 +50,7 @@ func (x *Backup) String() string {
 func (*Backup) ProtoMessage() {}
 
 func (x *Backup) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_backup_proto_msgTypes[0]
+	mi := &file_null_v1_backup_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -63,7 +63,7 @@ func (x *Backup) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Backup.ProtoReflect.Descriptor instead.
 func (*Backup) Descriptor() ([]byte, []int) {
-	return file_arian_v1_backup_proto_rawDescGZIP(), []int{0}
+	return file_null_v1_backup_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Backup) GetVersion() string {
@@ -118,7 +118,7 @@ type CategoryData struct {
 
 func (x *CategoryData) Reset() {
 	*x = CategoryData{}
-	mi := &file_arian_v1_backup_proto_msgTypes[1]
+	mi := &file_null_v1_backup_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -130,7 +130,7 @@ func (x *CategoryData) String() string {
 func (*CategoryData) ProtoMessage() {}
 
 func (x *CategoryData) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_backup_proto_msgTypes[1]
+	mi := &file_null_v1_backup_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -143,7 +143,7 @@ func (x *CategoryData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CategoryData.ProtoReflect.Descriptor instead.
 func (*CategoryData) Descriptor() ([]byte, []int) {
-	return file_arian_v1_backup_proto_rawDescGZIP(), []int{1}
+	return file_null_v1_backup_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *CategoryData) GetSlug() string {
@@ -176,7 +176,7 @@ type AccountData struct {
 
 func (x *AccountData) Reset() {
 	*x = AccountData{}
-	mi := &file_arian_v1_backup_proto_msgTypes[2]
+	mi := &file_null_v1_backup_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -188,7 +188,7 @@ func (x *AccountData) String() string {
 func (*AccountData) ProtoMessage() {}
 
 func (x *AccountData) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_backup_proto_msgTypes[2]
+	mi := &file_null_v1_backup_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -201,7 +201,7 @@ func (x *AccountData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AccountData.ProtoReflect.Descriptor instead.
 func (*AccountData) Descriptor() ([]byte, []int) {
-	return file_arian_v1_backup_proto_rawDescGZIP(), []int{2}
+	return file_null_v1_backup_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *AccountData) GetName() string {
@@ -279,7 +279,7 @@ type TransactionData struct {
 
 func (x *TransactionData) Reset() {
 	*x = TransactionData{}
-	mi := &file_arian_v1_backup_proto_msgTypes[3]
+	mi := &file_null_v1_backup_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -291,7 +291,7 @@ func (x *TransactionData) String() string {
 func (*TransactionData) ProtoMessage() {}
 
 func (x *TransactionData) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_backup_proto_msgTypes[3]
+	mi := &file_null_v1_backup_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -304,7 +304,7 @@ func (x *TransactionData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TransactionData.ProtoReflect.Descriptor instead.
 func (*TransactionData) Descriptor() ([]byte, []int) {
-	return file_arian_v1_backup_proto_rawDescGZIP(), []int{3}
+	return file_null_v1_backup_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *TransactionData) GetAccountName() string {
@@ -399,7 +399,7 @@ type RuleData struct {
 
 func (x *RuleData) Reset() {
 	*x = RuleData{}
-	mi := &file_arian_v1_backup_proto_msgTypes[4]
+	mi := &file_null_v1_backup_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -411,7 +411,7 @@ func (x *RuleData) String() string {
 func (*RuleData) ProtoMessage() {}
 
 func (x *RuleData) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_backup_proto_msgTypes[4]
+	mi := &file_null_v1_backup_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -424,7 +424,7 @@ func (x *RuleData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RuleData.ProtoReflect.Descriptor instead.
 func (*RuleData) Descriptor() ([]byte, []int) {
-	return file_arian_v1_backup_proto_rawDescGZIP(), []int{4}
+	return file_null_v1_backup_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *RuleData) GetRuleName() string {
@@ -476,21 +476,21 @@ func (x *RuleData) GetRuleSource() string {
 	return ""
 }
 
-var File_arian_v1_backup_proto protoreflect.FileDescriptor
+var File_null_v1_backup_proto protoreflect.FileDescriptor
 
-const file_arian_v1_backup_proto_rawDesc = "" +
+const file_null_v1_backup_proto_rawDesc = "" +
 	"\n" +
-	"\x15arian/v1/backup.proto\x12\barian.v1\x1a\x14arian/v1/enums.proto\x1a\x1bbuf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17google/type/money.proto\"\xb3\x02\n" +
+	"\x14null/v1/backup.proto\x12\anull.v1\x1a\x13null/v1/enums.proto\x1a\x1bbuf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17google/type/money.proto\"\xaf\x02\n" +
 	"\x06Backup\x12\x18\n" +
 	"\aversion\x18\x01 \x01(\tR\aversion\x12;\n" +
 	"\vexported_at\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\n" +
-	"exportedAt\x126\n" +
+	"exportedAt\x125\n" +
 	"\n" +
-	"categories\x18\x03 \x03(\v2\x16.arian.v1.CategoryDataR\n" +
-	"categories\x121\n" +
-	"\baccounts\x18\x04 \x03(\v2\x15.arian.v1.AccountDataR\baccounts\x12=\n" +
-	"\ftransactions\x18\x05 \x03(\v2\x19.arian.v1.TransactionDataR\ftransactions\x12(\n" +
-	"\x05rules\x18\x06 \x03(\v2\x12.arian.v1.RuleDataR\x05rules\"J\n" +
+	"categories\x18\x03 \x03(\v2\x15.null.v1.CategoryDataR\n" +
+	"categories\x120\n" +
+	"\baccounts\x18\x04 \x03(\v2\x14.null.v1.AccountDataR\baccounts\x12<\n" +
+	"\ftransactions\x18\x05 \x03(\v2\x18.null.v1.TransactionDataR\ftransactions\x12'\n" +
+	"\x05rules\x18\x06 \x03(\v2\x11.null.v1.RuleDataR\x05rules\"J\n" +
 	"\fCategoryData\x12\x1b\n" +
 	"\x04slug\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x04slug\x12\x1d\n" +
 	"\x05color\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x05color\"\xf3\x02\n" +
@@ -542,43 +542,43 @@ const file_arian_v1_backup_proto_rawDesc = "" +
 	"\n" +
 	"_is_activeB\x11\n" +
 	"\x0f_priority_orderB\x0e\n" +
-	"\f_rule_sourceB\x88\x01\n" +
-	"\fcom.arian.v1B\vBackupProtoP\x01Z*arian-parser/internal/gen/arian/v1;arianv1\xa2\x02\x03AXX\xaa\x02\bArian.V1\xca\x02\bArian\\V1\xe2\x02\x14Arian\\V1\\GPBMetadata\xea\x02\tArian::V1b\x06proto3"
+	"\f_rule_sourceB\x8c\x01\n" +
+	"\vcom.null.v1B\vBackupProtoP\x01Z1null-statement-parser/internal/gen/null/v1;nullv1\xa2\x02\x03NXX\xaa\x02\aNull.V1\xca\x02\bNull_\\V1\xe2\x02\x14Null_\\V1\\GPBMetadata\xea\x02\bNull::V1b\x06proto3"
 
 var (
-	file_arian_v1_backup_proto_rawDescOnce sync.Once
-	file_arian_v1_backup_proto_rawDescData []byte
+	file_null_v1_backup_proto_rawDescOnce sync.Once
+	file_null_v1_backup_proto_rawDescData []byte
 )
 
-func file_arian_v1_backup_proto_rawDescGZIP() []byte {
-	file_arian_v1_backup_proto_rawDescOnce.Do(func() {
-		file_arian_v1_backup_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_arian_v1_backup_proto_rawDesc), len(file_arian_v1_backup_proto_rawDesc)))
+func file_null_v1_backup_proto_rawDescGZIP() []byte {
+	file_null_v1_backup_proto_rawDescOnce.Do(func() {
+		file_null_v1_backup_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_null_v1_backup_proto_rawDesc), len(file_null_v1_backup_proto_rawDesc)))
 	})
-	return file_arian_v1_backup_proto_rawDescData
+	return file_null_v1_backup_proto_rawDescData
 }
 
-var file_arian_v1_backup_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
-var file_arian_v1_backup_proto_goTypes = []any{
-	(*Backup)(nil),                // 0: arian.v1.Backup
-	(*CategoryData)(nil),          // 1: arian.v1.CategoryData
-	(*AccountData)(nil),           // 2: arian.v1.AccountData
-	(*TransactionData)(nil),       // 3: arian.v1.TransactionData
-	(*RuleData)(nil),              // 4: arian.v1.RuleData
+var file_null_v1_backup_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_null_v1_backup_proto_goTypes = []any{
+	(*Backup)(nil),                // 0: null.v1.Backup
+	(*CategoryData)(nil),          // 1: null.v1.CategoryData
+	(*AccountData)(nil),           // 2: null.v1.AccountData
+	(*TransactionData)(nil),       // 3: null.v1.TransactionData
+	(*RuleData)(nil),              // 4: null.v1.RuleData
 	(*timestamppb.Timestamp)(nil), // 5: google.protobuf.Timestamp
 	(*money.Money)(nil),           // 6: google.type.Money
 }
-var file_arian_v1_backup_proto_depIdxs = []int32{
-	5,  // 0: arian.v1.Backup.exported_at:type_name -> google.protobuf.Timestamp
-	1,  // 1: arian.v1.Backup.categories:type_name -> arian.v1.CategoryData
-	2,  // 2: arian.v1.Backup.accounts:type_name -> arian.v1.AccountData
-	3,  // 3: arian.v1.Backup.transactions:type_name -> arian.v1.TransactionData
-	4,  // 4: arian.v1.Backup.rules:type_name -> arian.v1.RuleData
-	5,  // 5: arian.v1.AccountData.anchor_date:type_name -> google.protobuf.Timestamp
-	6,  // 6: arian.v1.AccountData.anchor_balance:type_name -> google.type.Money
-	5,  // 7: arian.v1.TransactionData.tx_date:type_name -> google.protobuf.Timestamp
-	6,  // 8: arian.v1.TransactionData.tx_amount:type_name -> google.type.Money
-	6,  // 9: arian.v1.TransactionData.balance_after:type_name -> google.type.Money
-	6,  // 10: arian.v1.TransactionData.foreign_amount:type_name -> google.type.Money
+var file_null_v1_backup_proto_depIdxs = []int32{
+	5,  // 0: null.v1.Backup.exported_at:type_name -> google.protobuf.Timestamp
+	1,  // 1: null.v1.Backup.categories:type_name -> null.v1.CategoryData
+	2,  // 2: null.v1.Backup.accounts:type_name -> null.v1.AccountData
+	3,  // 3: null.v1.Backup.transactions:type_name -> null.v1.TransactionData
+	4,  // 4: null.v1.Backup.rules:type_name -> null.v1.RuleData
+	5,  // 5: null.v1.AccountData.anchor_date:type_name -> google.protobuf.Timestamp
+	6,  // 6: null.v1.AccountData.anchor_balance:type_name -> google.type.Money
+	5,  // 7: null.v1.TransactionData.tx_date:type_name -> google.protobuf.Timestamp
+	6,  // 8: null.v1.TransactionData.tx_amount:type_name -> google.type.Money
+	6,  // 9: null.v1.TransactionData.balance_after:type_name -> google.type.Money
+	6,  // 10: null.v1.TransactionData.foreign_amount:type_name -> google.type.Money
 	11, // [11:11] is the sub-list for method output_type
 	11, // [11:11] is the sub-list for method input_type
 	11, // [11:11] is the sub-list for extension type_name
@@ -586,30 +586,30 @@ var file_arian_v1_backup_proto_depIdxs = []int32{
 	0,  // [0:11] is the sub-list for field type_name
 }
 
-func init() { file_arian_v1_backup_proto_init() }
-func file_arian_v1_backup_proto_init() {
-	if File_arian_v1_backup_proto != nil {
+func init() { file_null_v1_backup_proto_init() }
+func file_null_v1_backup_proto_init() {
+	if File_null_v1_backup_proto != nil {
 		return
 	}
-	file_arian_v1_enums_proto_init()
-	file_arian_v1_backup_proto_msgTypes[2].OneofWrappers = []any{}
-	file_arian_v1_backup_proto_msgTypes[3].OneofWrappers = []any{}
-	file_arian_v1_backup_proto_msgTypes[4].OneofWrappers = []any{}
+	file_null_v1_enums_proto_init()
+	file_null_v1_backup_proto_msgTypes[2].OneofWrappers = []any{}
+	file_null_v1_backup_proto_msgTypes[3].OneofWrappers = []any{}
+	file_null_v1_backup_proto_msgTypes[4].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_arian_v1_backup_proto_rawDesc), len(file_arian_v1_backup_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_null_v1_backup_proto_rawDesc), len(file_null_v1_backup_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_arian_v1_backup_proto_goTypes,
-		DependencyIndexes: file_arian_v1_backup_proto_depIdxs,
-		MessageInfos:      file_arian_v1_backup_proto_msgTypes,
+		GoTypes:           file_null_v1_backup_proto_goTypes,
+		DependencyIndexes: file_null_v1_backup_proto_depIdxs,
+		MessageInfos:      file_null_v1_backup_proto_msgTypes,
 	}.Build()
-	File_arian_v1_backup_proto = out.File
-	file_arian_v1_backup_proto_goTypes = nil
-	file_arian_v1_backup_proto_depIdxs = nil
+	File_null_v1_backup_proto = out.File
+	file_null_v1_backup_proto_goTypes = nil
+	file_null_v1_backup_proto_depIdxs = nil
 }

@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             (unknown)
-// source: arian/v1/account_services.proto
+// source: null/v1/account_services.proto
 
-package arianv1
+package nullv1
 
 import (
 	context "context"
@@ -19,11 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	AccountService_ListAccounts_FullMethodName  = "/arian.v1.AccountService/ListAccounts"
-	AccountService_GetAccount_FullMethodName    = "/arian.v1.AccountService/GetAccount"
-	AccountService_CreateAccount_FullMethodName = "/arian.v1.AccountService/CreateAccount"
-	AccountService_UpdateAccount_FullMethodName = "/arian.v1.AccountService/UpdateAccount"
-	AccountService_DeleteAccount_FullMethodName = "/arian.v1.AccountService/DeleteAccount"
+	AccountService_ListAccounts_FullMethodName  = "/null.v1.AccountService/ListAccounts"
+	AccountService_GetAccount_FullMethodName    = "/null.v1.AccountService/GetAccount"
+	AccountService_CreateAccount_FullMethodName = "/null.v1.AccountService/CreateAccount"
+	AccountService_UpdateAccount_FullMethodName = "/null.v1.AccountService/UpdateAccount"
+	AccountService_DeleteAccount_FullMethodName = "/null.v1.AccountService/DeleteAccount"
 )
 
 // AccountServiceClient is the client API for AccountService service.
@@ -242,7 +242,7 @@ func _AccountService_DeleteAccount_Handler(srv interface{}, ctx context.Context,
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AccountService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "arian.v1.AccountService",
+	ServiceName: "null.v1.AccountService",
 	HandlerType: (*AccountServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -267,5 +267,5 @@ var AccountService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "arian/v1/account_services.proto",
+	Metadata: "null/v1/account_services.proto",
 }

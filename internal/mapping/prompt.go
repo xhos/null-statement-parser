@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strconv"
 
-	pb "arian-statement-parser/internal/gen/arian/v1"
+	pb "null-statement-parser/internal/gen/null/v1"
 
 	"github.com/charmbracelet/huh"
 )

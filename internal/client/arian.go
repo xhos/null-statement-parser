@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"os"
 
-	"arian-statement-parser/internal/domain"
-	pb "arian-statement-parser/internal/gen/arian/v1"
+	"null-statement-parser/internal/domain"
+	pb "null-statement-parser/internal/gen/null/v1"
 
 	"github.com/charmbracelet/log"
 	money "google.golang.org/genproto/googleapis/type/money"

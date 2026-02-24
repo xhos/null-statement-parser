@@ -2,9 +2,9 @@
 // versions:
 // 	protoc-gen-go v1.36.10
 // 	protoc        (unknown)
-// source: arian/v1/account_services.proto
+// source: null/v1/account_services.proto
 
-package arianv1
+package nullv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
@@ -34,7 +34,7 @@ type ListAccountsRequest struct {
 
 func (x *ListAccountsRequest) Reset() {
 	*x = ListAccountsRequest{}
-	mi := &file_arian_v1_account_services_proto_msgTypes[0]
+	mi := &file_null_v1_account_services_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -46,7 +46,7 @@ func (x *ListAccountsRequest) String() string {
 func (*ListAccountsRequest) ProtoMessage() {}
 
 func (x *ListAccountsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_account_services_proto_msgTypes[0]
+	mi := &file_null_v1_account_services_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -59,7 +59,7 @@ func (x *ListAccountsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListAccountsRequest.ProtoReflect.Descriptor instead.
 func (*ListAccountsRequest) Descriptor() ([]byte, []int) {
-	return file_arian_v1_account_services_proto_rawDescGZIP(), []int{0}
+	return file_null_v1_account_services_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListAccountsRequest) GetUserId() string {
@@ -78,7 +78,7 @@ type ListAccountsResponse struct {
 
 func (x *ListAccountsResponse) Reset() {
 	*x = ListAccountsResponse{}
-	mi := &file_arian_v1_account_services_proto_msgTypes[1]
+	mi := &file_null_v1_account_services_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -90,7 +90,7 @@ func (x *ListAccountsResponse) String() string {
 func (*ListAccountsResponse) ProtoMessage() {}
 
 func (x *ListAccountsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_account_services_proto_msgTypes[1]
+	mi := &file_null_v1_account_services_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -103,7 +103,7 @@ func (x *ListAccountsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListAccountsResponse.ProtoReflect.Descriptor instead.
 func (*ListAccountsResponse) Descriptor() ([]byte, []int) {
-	return file_arian_v1_account_services_proto_rawDescGZIP(), []int{1}
+	return file_null_v1_account_services_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListAccountsResponse) GetAccounts() []*Account {
@@ -123,7 +123,7 @@ type GetAccountRequest struct {
 
 func (x *GetAccountRequest) Reset() {
 	*x = GetAccountRequest{}
-	mi := &file_arian_v1_account_services_proto_msgTypes[2]
+	mi := &file_null_v1_account_services_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -135,7 +135,7 @@ func (x *GetAccountRequest) String() string {
 func (*GetAccountRequest) ProtoMessage() {}
 
 func (x *GetAccountRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_account_services_proto_msgTypes[2]
+	mi := &file_null_v1_account_services_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -148,7 +148,7 @@ func (x *GetAccountRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAccountRequest.ProtoReflect.Descriptor instead.
 func (*GetAccountRequest) Descriptor() ([]byte, []int) {
-	return file_arian_v1_account_services_proto_rawDescGZIP(), []int{2}
+	return file_null_v1_account_services_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *GetAccountRequest) GetUserId() string {
@@ -174,7 +174,7 @@ type GetAccountResponse struct {
 
 func (x *GetAccountResponse) Reset() {
 	*x = GetAccountResponse{}
-	mi := &file_arian_v1_account_services_proto_msgTypes[3]
+	mi := &file_null_v1_account_services_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -186,7 +186,7 @@ func (x *GetAccountResponse) String() string {
 func (*GetAccountResponse) ProtoMessage() {}
 
 func (x *GetAccountResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_account_services_proto_msgTypes[3]
+	mi := &file_null_v1_account_services_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -199,7 +199,7 @@ func (x *GetAccountResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAccountResponse.ProtoReflect.Descriptor instead.
 func (*GetAccountResponse) Descriptor() ([]byte, []int) {
-	return file_arian_v1_account_services_proto_rawDescGZIP(), []int{3}
+	return file_null_v1_account_services_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *GetAccountResponse) GetAccount() *Account {
@@ -214,7 +214,7 @@ type CreateAccountRequest struct {
 	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Bank          string                 `protobuf:"bytes,3,opt,name=bank,proto3" json:"bank,omitempty"`
-	Type          AccountType            `protobuf:"varint,4,opt,name=type,proto3,enum=arian.v1.AccountType" json:"type,omitempty"`
+	Type          AccountType            `protobuf:"varint,4,opt,name=type,proto3,enum=null.v1.AccountType" json:"type,omitempty"`
 	Alias         *string                `protobuf:"bytes,5,opt,name=alias,proto3,oneof" json:"alias,omitempty"`
 	AnchorBalance *money.Money           `protobuf:"bytes,6,opt,name=anchor_balance,json=anchorBalance,proto3" json:"anchor_balance,omitempty"`
 	MainCurrency  string                 `protobuf:"bytes,7,opt,name=main_currency,json=mainCurrency,proto3" json:"main_currency,omitempty"`
@@ -225,7 +225,7 @@ type CreateAccountRequest struct {
 
 func (x *CreateAccountRequest) Reset() {
 	*x = CreateAccountRequest{}
-	mi := &file_arian_v1_account_services_proto_msgTypes[4]
+	mi := &file_null_v1_account_services_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -237,7 +237,7 @@ func (x *CreateAccountRequest) String() string {
 func (*CreateAccountRequest) ProtoMessage() {}
 
 func (x *CreateAccountRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_account_services_proto_msgTypes[4]
+	mi := &file_null_v1_account_services_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -250,7 +250,7 @@ func (x *CreateAccountRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateAccountRequest.ProtoReflect.Descriptor instead.
 func (*CreateAccountRequest) Descriptor() ([]byte, []int) {
-	return file_arian_v1_account_services_proto_rawDescGZIP(), []int{4}
+	return file_null_v1_account_services_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *CreateAccountRequest) GetUserId() string {
@@ -318,7 +318,7 @@ type CreateAccountResponse struct {
 
 func (x *CreateAccountResponse) Reset() {
 	*x = CreateAccountResponse{}
-	mi := &file_arian_v1_account_services_proto_msgTypes[5]
+	mi := &file_null_v1_account_services_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -330,7 +330,7 @@ func (x *CreateAccountResponse) String() string {
 func (*CreateAccountResponse) ProtoMessage() {}
 
 func (x *CreateAccountResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_account_services_proto_msgTypes[5]
+	mi := &file_null_v1_account_services_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -343,7 +343,7 @@ func (x *CreateAccountResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateAccountResponse.ProtoReflect.Descriptor instead.
 func (*CreateAccountResponse) Descriptor() ([]byte, []int) {
-	return file_arian_v1_account_services_proto_rawDescGZIP(), []int{5}
+	return file_null_v1_account_services_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *CreateAccountResponse) GetAccount() *Account {
@@ -361,7 +361,7 @@ type UpdateAccountRequest struct {
 	// fields that can be updated
 	Name          *string                `protobuf:"bytes,4,opt,name=name,proto3,oneof" json:"name,omitempty"`
 	Bank          *string                `protobuf:"bytes,5,opt,name=bank,proto3,oneof" json:"bank,omitempty"`
-	AccountType   *AccountType           `protobuf:"varint,6,opt,name=account_type,json=accountType,proto3,enum=arian.v1.AccountType,oneof" json:"account_type,omitempty"`
+	AccountType   *AccountType           `protobuf:"varint,6,opt,name=account_type,json=accountType,proto3,enum=null.v1.AccountType,oneof" json:"account_type,omitempty"`
 	Alias         *string                `protobuf:"bytes,7,opt,name=alias,proto3,oneof" json:"alias,omitempty"`
 	AnchorDate    *timestamppb.Timestamp `protobuf:"bytes,8,opt,name=anchor_date,json=anchorDate,proto3,oneof" json:"anchor_date,omitempty"`
 	AnchorBalance *money.Money           `protobuf:"bytes,9,opt,name=anchor_balance,json=anchorBalance,proto3,oneof" json:"anchor_balance,omitempty"`
@@ -373,7 +373,7 @@ type UpdateAccountRequest struct {
 
 func (x *UpdateAccountRequest) Reset() {
 	*x = UpdateAccountRequest{}
-	mi := &file_arian_v1_account_services_proto_msgTypes[6]
+	mi := &file_null_v1_account_services_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -385,7 +385,7 @@ func (x *UpdateAccountRequest) String() string {
 func (*UpdateAccountRequest) ProtoMessage() {}
 
 func (x *UpdateAccountRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_account_services_proto_msgTypes[6]
+	mi := &file_null_v1_account_services_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -398,7 +398,7 @@ func (x *UpdateAccountRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateAccountRequest.ProtoReflect.Descriptor instead.
 func (*UpdateAccountRequest) Descriptor() ([]byte, []int) {
-	return file_arian_v1_account_services_proto_rawDescGZIP(), []int{6}
+	return file_null_v1_account_services_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *UpdateAccountRequest) GetUserId() string {
@@ -486,7 +486,7 @@ type UpdateAccountResponse struct {
 
 func (x *UpdateAccountResponse) Reset() {
 	*x = UpdateAccountResponse{}
-	mi := &file_arian_v1_account_services_proto_msgTypes[7]
+	mi := &file_null_v1_account_services_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -498,7 +498,7 @@ func (x *UpdateAccountResponse) String() string {
 func (*UpdateAccountResponse) ProtoMessage() {}
 
 func (x *UpdateAccountResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_account_services_proto_msgTypes[7]
+	mi := &file_null_v1_account_services_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -511,7 +511,7 @@ func (x *UpdateAccountResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateAccountResponse.ProtoReflect.Descriptor instead.
 func (*UpdateAccountResponse) Descriptor() ([]byte, []int) {
-	return file_arian_v1_account_services_proto_rawDescGZIP(), []int{7}
+	return file_null_v1_account_services_proto_rawDescGZIP(), []int{7}
 }
 
 type DeleteAccountRequest struct {
@@ -524,7 +524,7 @@ type DeleteAccountRequest struct {
 
 func (x *DeleteAccountRequest) Reset() {
 	*x = DeleteAccountRequest{}
-	mi := &file_arian_v1_account_services_proto_msgTypes[8]
+	mi := &file_null_v1_account_services_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -536,7 +536,7 @@ func (x *DeleteAccountRequest) String() string {
 func (*DeleteAccountRequest) ProtoMessage() {}
 
 func (x *DeleteAccountRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_account_services_proto_msgTypes[8]
+	mi := &file_null_v1_account_services_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -549,7 +549,7 @@ func (x *DeleteAccountRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteAccountRequest.ProtoReflect.Descriptor instead.
 func (*DeleteAccountRequest) Descriptor() ([]byte, []int) {
-	return file_arian_v1_account_services_proto_rawDescGZIP(), []int{8}
+	return file_null_v1_account_services_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *DeleteAccountRequest) GetUserId() string {
@@ -575,7 +575,7 @@ type DeleteAccountResponse struct {
 
 func (x *DeleteAccountResponse) Reset() {
 	*x = DeleteAccountResponse{}
-	mi := &file_arian_v1_account_services_proto_msgTypes[9]
+	mi := &file_null_v1_account_services_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -587,7 +587,7 @@ func (x *DeleteAccountResponse) String() string {
 func (*DeleteAccountResponse) ProtoMessage() {}
 
 func (x *DeleteAccountResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_account_services_proto_msgTypes[9]
+	mi := &file_null_v1_account_services_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -600,7 +600,7 @@ func (x *DeleteAccountResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteAccountResponse.ProtoReflect.Descriptor instead.
 func (*DeleteAccountResponse) Descriptor() ([]byte, []int) {
-	return file_arian_v1_account_services_proto_rawDescGZIP(), []int{9}
+	return file_null_v1_account_services_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *DeleteAccountResponse) GetAffectedRows() int64 {
@@ -610,40 +610,40 @@ func (x *DeleteAccountResponse) GetAffectedRows() int64 {
 	return 0
 }
 
-var File_arian_v1_account_services_proto protoreflect.FileDescriptor
+var File_null_v1_account_services_proto protoreflect.FileDescriptor
 
-const file_arian_v1_account_services_proto_rawDesc = "" +
+const file_null_v1_account_services_proto_rawDesc = "" +
 	"\n" +
-	"\x1farian/v1/account_services.proto\x12\barian.v1\x1a\x16arian/v1/account.proto\x1a\x14arian/v1/enums.proto\x1a\x1bbuf/validate/validate.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17google/type/money.proto\"8\n" +
+	"\x1enull/v1/account_services.proto\x12\anull.v1\x1a\x15null/v1/account.proto\x1a\x13null/v1/enums.proto\x1a\x1bbuf/validate/validate.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17google/type/money.proto\"8\n" +
 	"\x13ListAccountsRequest\x12!\n" +
-	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\"E\n" +
-	"\x14ListAccountsResponse\x12-\n" +
-	"\baccounts\x18\x01 \x03(\v2\x11.arian.v1.AccountR\baccounts\"O\n" +
+	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\"D\n" +
+	"\x14ListAccountsResponse\x12,\n" +
+	"\baccounts\x18\x01 \x03(\v2\x10.null.v1.AccountR\baccounts\"O\n" +
 	"\x11GetAccountRequest\x12!\n" +
 	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\x12\x17\n" +
-	"\x02id\x18\x02 \x01(\x03B\a\xbaH\x04\"\x02 \x00R\x02id\"A\n" +
-	"\x12GetAccountResponse\x12+\n" +
-	"\aaccount\x18\x01 \x01(\v2\x11.arian.v1.AccountR\aaccount\"\xa9\x02\n" +
+	"\x02id\x18\x02 \x01(\x03B\a\xbaH\x04\"\x02 \x00R\x02id\"@\n" +
+	"\x12GetAccountResponse\x12*\n" +
+	"\aaccount\x18\x01 \x01(\v2\x10.null.v1.AccountR\aaccount\"\xa8\x02\n" +
 	"\x14CreateAccountRequest\x12!\n" +
 	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
-	"\x04bank\x18\x03 \x01(\tR\x04bank\x12)\n" +
-	"\x04type\x18\x04 \x01(\x0e2\x15.arian.v1.AccountTypeR\x04type\x12\x19\n" +
+	"\x04bank\x18\x03 \x01(\tR\x04bank\x12(\n" +
+	"\x04type\x18\x04 \x01(\x0e2\x14.null.v1.AccountTypeR\x04type\x12\x19\n" +
 	"\x05alias\x18\x05 \x01(\tH\x00R\x05alias\x88\x01\x01\x129\n" +
 	"\x0eanchor_balance\x18\x06 \x01(\v2\x12.google.type.MoneyR\ranchorBalance\x12#\n" +
 	"\rmain_currency\x18\a \x01(\tR\fmainCurrency\x12\x16\n" +
 	"\x06colors\x18\b \x03(\tR\x06colorsB\b\n" +
-	"\x06_alias\"D\n" +
-	"\x15CreateAccountResponse\x12+\n" +
-	"\aaccount\x18\x01 \x01(\v2\x11.arian.v1.AccountR\aaccount\"\xc1\x04\n" +
+	"\x06_alias\"C\n" +
+	"\x15CreateAccountResponse\x12*\n" +
+	"\aaccount\x18\x01 \x01(\v2\x10.null.v1.AccountR\aaccount\"\xc0\x04\n" +
 	"\x14UpdateAccountRequest\x12!\n" +
 	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\x12\x17\n" +
 	"\x02id\x18\x02 \x01(\x03B\a\xbaH\x04\"\x02 \x00R\x02id\x12;\n" +
 	"\vupdate_mask\x18\x03 \x01(\v2\x1a.google.protobuf.FieldMaskR\n" +
 	"updateMask\x12\x17\n" +
 	"\x04name\x18\x04 \x01(\tH\x00R\x04name\x88\x01\x01\x12\x17\n" +
-	"\x04bank\x18\x05 \x01(\tH\x01R\x04bank\x88\x01\x01\x12=\n" +
-	"\faccount_type\x18\x06 \x01(\x0e2\x15.arian.v1.AccountTypeH\x02R\vaccountType\x88\x01\x01\x12\x19\n" +
+	"\x04bank\x18\x05 \x01(\tH\x01R\x04bank\x88\x01\x01\x12<\n" +
+	"\faccount_type\x18\x06 \x01(\x0e2\x14.null.v1.AccountTypeH\x02R\vaccountType\x88\x01\x01\x12\x19\n" +
 	"\x05alias\x18\a \x01(\tH\x03R\x05alias\x88\x01\x01\x12@\n" +
 	"\vanchor_date\x18\b \x01(\v2\x1a.google.protobuf.TimestampH\x04R\n" +
 	"anchorDate\x88\x01\x01\x12>\n" +
@@ -663,66 +663,66 @@ const file_arian_v1_account_services_proto_rawDesc = "" +
 	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\x12\x17\n" +
 	"\x02id\x18\x02 \x01(\x03B\a\xbaH\x04\"\x02 \x00R\x02id\"<\n" +
 	"\x15DeleteAccountResponse\x12#\n" +
-	"\raffected_rows\x18\x01 \x01(\x03R\faffectedRows2\x9e\x03\n" +
-	"\x0eAccountService\x12M\n" +
-	"\fListAccounts\x12\x1d.arian.v1.ListAccountsRequest\x1a\x1e.arian.v1.ListAccountsResponse\x12G\n" +
+	"\raffected_rows\x18\x01 \x01(\x03R\faffectedRows2\x94\x03\n" +
+	"\x0eAccountService\x12K\n" +
+	"\fListAccounts\x12\x1c.null.v1.ListAccountsRequest\x1a\x1d.null.v1.ListAccountsResponse\x12E\n" +
 	"\n" +
-	"GetAccount\x12\x1b.arian.v1.GetAccountRequest\x1a\x1c.arian.v1.GetAccountResponse\x12P\n" +
-	"\rCreateAccount\x12\x1e.arian.v1.CreateAccountRequest\x1a\x1f.arian.v1.CreateAccountResponse\x12P\n" +
-	"\rUpdateAccount\x12\x1e.arian.v1.UpdateAccountRequest\x1a\x1f.arian.v1.UpdateAccountResponse\x12P\n" +
-	"\rDeleteAccount\x12\x1e.arian.v1.DeleteAccountRequest\x1a\x1f.arian.v1.DeleteAccountResponseB\x91\x01\n" +
-	"\fcom.arian.v1B\x14AccountServicesProtoP\x01Z*arian-parser/internal/gen/arian/v1;arianv1\xa2\x02\x03AXX\xaa\x02\bArian.V1\xca\x02\bArian\\V1\xe2\x02\x14Arian\\V1\\GPBMetadata\xea\x02\tArian::V1b\x06proto3"
+	"GetAccount\x12\x1a.null.v1.GetAccountRequest\x1a\x1b.null.v1.GetAccountResponse\x12N\n" +
+	"\rCreateAccount\x12\x1d.null.v1.CreateAccountRequest\x1a\x1e.null.v1.CreateAccountResponse\x12N\n" +
+	"\rUpdateAccount\x12\x1d.null.v1.UpdateAccountRequest\x1a\x1e.null.v1.UpdateAccountResponse\x12N\n" +
+	"\rDeleteAccount\x12\x1d.null.v1.DeleteAccountRequest\x1a\x1e.null.v1.DeleteAccountResponseB\x95\x01\n" +
+	"\vcom.null.v1B\x14AccountServicesProtoP\x01Z1null-statement-parser/internal/gen/null/v1;nullv1\xa2\x02\x03NXX\xaa\x02\aNull.V1\xca\x02\bNull_\\V1\xe2\x02\x14Null_\\V1\\GPBMetadata\xea\x02\bNull::V1b\x06proto3"
 
 var (
-	file_arian_v1_account_services_proto_rawDescOnce sync.Once
-	file_arian_v1_account_services_proto_rawDescData []byte
+	file_null_v1_account_services_proto_rawDescOnce sync.Once
+	file_null_v1_account_services_proto_rawDescData []byte
 )
 
-func file_arian_v1_account_services_proto_rawDescGZIP() []byte {
-	file_arian_v1_account_services_proto_rawDescOnce.Do(func() {
-		file_arian_v1_account_services_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_arian_v1_account_services_proto_rawDesc), len(file_arian_v1_account_services_proto_rawDesc)))
+func file_null_v1_account_services_proto_rawDescGZIP() []byte {
+	file_null_v1_account_services_proto_rawDescOnce.Do(func() {
+		file_null_v1_account_services_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_null_v1_account_services_proto_rawDesc), len(file_null_v1_account_services_proto_rawDesc)))
 	})
-	return file_arian_v1_account_services_proto_rawDescData
+	return file_null_v1_account_services_proto_rawDescData
 }
 
-var file_arian_v1_account_services_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
-var file_arian_v1_account_services_proto_goTypes = []any{
-	(*ListAccountsRequest)(nil),   // 0: arian.v1.ListAccountsRequest
-	(*ListAccountsResponse)(nil),  // 1: arian.v1.ListAccountsResponse
-	(*GetAccountRequest)(nil),     // 2: arian.v1.GetAccountRequest
-	(*GetAccountResponse)(nil),    // 3: arian.v1.GetAccountResponse
-	(*CreateAccountRequest)(nil),  // 4: arian.v1.CreateAccountRequest
-	(*CreateAccountResponse)(nil), // 5: arian.v1.CreateAccountResponse
-	(*UpdateAccountRequest)(nil),  // 6: arian.v1.UpdateAccountRequest
-	(*UpdateAccountResponse)(nil), // 7: arian.v1.UpdateAccountResponse
-	(*DeleteAccountRequest)(nil),  // 8: arian.v1.DeleteAccountRequest
-	(*DeleteAccountResponse)(nil), // 9: arian.v1.DeleteAccountResponse
-	(*Account)(nil),               // 10: arian.v1.Account
-	(AccountType)(0),              // 11: arian.v1.AccountType
+var file_null_v1_account_services_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
+var file_null_v1_account_services_proto_goTypes = []any{
+	(*ListAccountsRequest)(nil),   // 0: null.v1.ListAccountsRequest
+	(*ListAccountsResponse)(nil),  // 1: null.v1.ListAccountsResponse
+	(*GetAccountRequest)(nil),     // 2: null.v1.GetAccountRequest
+	(*GetAccountResponse)(nil),    // 3: null.v1.GetAccountResponse
+	(*CreateAccountRequest)(nil),  // 4: null.v1.CreateAccountRequest
+	(*CreateAccountResponse)(nil), // 5: null.v1.CreateAccountResponse
+	(*UpdateAccountRequest)(nil),  // 6: null.v1.UpdateAccountRequest
+	(*UpdateAccountResponse)(nil), // 7: null.v1.UpdateAccountResponse
+	(*DeleteAccountRequest)(nil),  // 8: null.v1.DeleteAccountRequest
+	(*DeleteAccountResponse)(nil), // 9: null.v1.DeleteAccountResponse
+	(*Account)(nil),               // 10: null.v1.Account
+	(AccountType)(0),              // 11: null.v1.AccountType
 	(*money.Money)(nil),           // 12: google.type.Money
 	(*fieldmaskpb.FieldMask)(nil), // 13: google.protobuf.FieldMask
 	(*timestamppb.Timestamp)(nil), // 14: google.protobuf.Timestamp
 }
-var file_arian_v1_account_services_proto_depIdxs = []int32{
-	10, // 0: arian.v1.ListAccountsResponse.accounts:type_name -> arian.v1.Account
-	10, // 1: arian.v1.GetAccountResponse.account:type_name -> arian.v1.Account
-	11, // 2: arian.v1.CreateAccountRequest.type:type_name -> arian.v1.AccountType
-	12, // 3: arian.v1.CreateAccountRequest.anchor_balance:type_name -> google.type.Money
-	10, // 4: arian.v1.CreateAccountResponse.account:type_name -> arian.v1.Account
-	13, // 5: arian.v1.UpdateAccountRequest.update_mask:type_name -> google.protobuf.FieldMask
-	11, // 6: arian.v1.UpdateAccountRequest.account_type:type_name -> arian.v1.AccountType
-	14, // 7: arian.v1.UpdateAccountRequest.anchor_date:type_name -> google.protobuf.Timestamp
-	12, // 8: arian.v1.UpdateAccountRequest.anchor_balance:type_name -> google.type.Money
-	0,  // 9: arian.v1.AccountService.ListAccounts:input_type -> arian.v1.ListAccountsRequest
-	2,  // 10: arian.v1.AccountService.GetAccount:input_type -> arian.v1.GetAccountRequest
-	4,  // 11: arian.v1.AccountService.CreateAccount:input_type -> arian.v1.CreateAccountRequest
-	6,  // 12: arian.v1.AccountService.UpdateAccount:input_type -> arian.v1.UpdateAccountRequest
-	8,  // 13: arian.v1.AccountService.DeleteAccount:input_type -> arian.v1.DeleteAccountRequest
-	1,  // 14: arian.v1.AccountService.ListAccounts:output_type -> arian.v1.ListAccountsResponse
-	3,  // 15: arian.v1.AccountService.GetAccount:output_type -> arian.v1.GetAccountResponse
-	5,  // 16: arian.v1.AccountService.CreateAccount:output_type -> arian.v1.CreateAccountResponse
-	7,  // 17: arian.v1.AccountService.UpdateAccount:output_type -> arian.v1.UpdateAccountResponse
-	9,  // 18: arian.v1.AccountService.DeleteAccount:output_type -> arian.v1.DeleteAccountResponse
+var file_null_v1_account_services_proto_depIdxs = []int32{
+	10, // 0: null.v1.ListAccountsResponse.accounts:type_name -> null.v1.Account
+	10, // 1: null.v1.GetAccountResponse.account:type_name -> null.v1.Account
+	11, // 2: null.v1.CreateAccountRequest.type:type_name -> null.v1.AccountType
+	12, // 3: null.v1.CreateAccountRequest.anchor_balance:type_name -> google.type.Money
+	10, // 4: null.v1.CreateAccountResponse.account:type_name -> null.v1.Account
+	13, // 5: null.v1.UpdateAccountRequest.update_mask:type_name -> google.protobuf.FieldMask
+	11, // 6: null.v1.UpdateAccountRequest.account_type:type_name -> null.v1.AccountType
+	14, // 7: null.v1.UpdateAccountRequest.anchor_date:type_name -> google.protobuf.Timestamp
+	12, // 8: null.v1.UpdateAccountRequest.anchor_balance:type_name -> google.type.Money
+	0,  // 9: null.v1.AccountService.ListAccounts:input_type -> null.v1.ListAccountsRequest
+	2,  // 10: null.v1.AccountService.GetAccount:input_type -> null.v1.GetAccountRequest
+	4,  // 11: null.v1.AccountService.CreateAccount:input_type -> null.v1.CreateAccountRequest
+	6,  // 12: null.v1.AccountService.UpdateAccount:input_type -> null.v1.UpdateAccountRequest
+	8,  // 13: null.v1.AccountService.DeleteAccount:input_type -> null.v1.DeleteAccountRequest
+	1,  // 14: null.v1.AccountService.ListAccounts:output_type -> null.v1.ListAccountsResponse
+	3,  // 15: null.v1.AccountService.GetAccount:output_type -> null.v1.GetAccountResponse
+	5,  // 16: null.v1.AccountService.CreateAccount:output_type -> null.v1.CreateAccountResponse
+	7,  // 17: null.v1.AccountService.UpdateAccount:output_type -> null.v1.UpdateAccountResponse
+	9,  // 18: null.v1.AccountService.DeleteAccount:output_type -> null.v1.DeleteAccountResponse
 	14, // [14:19] is the sub-list for method output_type
 	9,  // [9:14] is the sub-list for method input_type
 	9,  // [9:9] is the sub-list for extension type_name
@@ -730,30 +730,30 @@ var file_arian_v1_account_services_proto_depIdxs = []int32{
 	0,  // [0:9] is the sub-list for field type_name
 }
 
-func init() { file_arian_v1_account_services_proto_init() }
-func file_arian_v1_account_services_proto_init() {
-	if File_arian_v1_account_services_proto != nil {
+func init() { file_null_v1_account_services_proto_init() }
+func file_null_v1_account_services_proto_init() {
+	if File_null_v1_account_services_proto != nil {
 		return
 	}
-	file_arian_v1_account_proto_init()
-	file_arian_v1_enums_proto_init()
-	file_arian_v1_account_services_proto_msgTypes[4].OneofWrappers = []any{}
-	file_arian_v1_account_services_proto_msgTypes[6].OneofWrappers = []any{}
+	file_null_v1_account_proto_init()
+	file_null_v1_enums_proto_init()
+	file_null_v1_account_services_proto_msgTypes[4].OneofWrappers = []any{}
+	file_null_v1_account_services_proto_msgTypes[6].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_arian_v1_account_services_proto_rawDesc), len(file_arian_v1_account_services_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_null_v1_account_services_proto_rawDesc), len(file_null_v1_account_services_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   10,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_arian_v1_account_services_proto_goTypes,
-		DependencyIndexes: file_arian_v1_account_services_proto_depIdxs,
-		MessageInfos:      file_arian_v1_account_services_proto_msgTypes,
+		GoTypes:           file_null_v1_account_services_proto_goTypes,
+		DependencyIndexes: file_null_v1_account_services_proto_depIdxs,
+		MessageInfos:      file_null_v1_account_services_proto_msgTypes,
 	}.Build()
-	File_arian_v1_account_services_proto = out.File
-	file_arian_v1_account_services_proto_goTypes = nil
-	file_arian_v1_account_services_proto_depIdxs = nil
+	File_null_v1_account_services_proto = out.File
+	file_null_v1_account_services_proto_goTypes = nil
+	file_null_v1_account_services_proto_depIdxs = nil
 }

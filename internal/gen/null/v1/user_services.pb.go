@@ -2,9 +2,9 @@
 // versions:
 // 	protoc-gen-go v1.36.10
 // 	protoc        (unknown)
-// source: arian/v1/user_services.proto
+// source: null/v1/user_services.proto
 
-package arianv1
+package nullv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
@@ -31,7 +31,7 @@ type GetUserRequest struct {
 
 func (x *GetUserRequest) Reset() {
 	*x = GetUserRequest{}
-	mi := &file_arian_v1_user_services_proto_msgTypes[0]
+	mi := &file_null_v1_user_services_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -43,7 +43,7 @@ func (x *GetUserRequest) String() string {
 func (*GetUserRequest) ProtoMessage() {}
 
 func (x *GetUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_user_services_proto_msgTypes[0]
+	mi := &file_null_v1_user_services_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -56,7 +56,7 @@ func (x *GetUserRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetUserRequest.ProtoReflect.Descriptor instead.
 func (*GetUserRequest) Descriptor() ([]byte, []int) {
-	return file_arian_v1_user_services_proto_rawDescGZIP(), []int{0}
+	return file_null_v1_user_services_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *GetUserRequest) GetId() string {
@@ -75,7 +75,7 @@ type GetUserResponse struct {
 
 func (x *GetUserResponse) Reset() {
 	*x = GetUserResponse{}
-	mi := &file_arian_v1_user_services_proto_msgTypes[1]
+	mi := &file_null_v1_user_services_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -87,7 +87,7 @@ func (x *GetUserResponse) String() string {
 func (*GetUserResponse) ProtoMessage() {}
 
 func (x *GetUserResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_user_services_proto_msgTypes[1]
+	mi := &file_null_v1_user_services_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -100,7 +100,7 @@ func (x *GetUserResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetUserResponse.ProtoReflect.Descriptor instead.
 func (*GetUserResponse) Descriptor() ([]byte, []int) {
-	return file_arian_v1_user_services_proto_rawDescGZIP(), []int{1}
+	return file_null_v1_user_services_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *GetUserResponse) GetUser() *User {
@@ -121,7 +121,7 @@ type CreateUserRequest struct {
 
 func (x *CreateUserRequest) Reset() {
 	*x = CreateUserRequest{}
-	mi := &file_arian_v1_user_services_proto_msgTypes[2]
+	mi := &file_null_v1_user_services_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -133,7 +133,7 @@ func (x *CreateUserRequest) String() string {
 func (*CreateUserRequest) ProtoMessage() {}
 
 func (x *CreateUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_user_services_proto_msgTypes[2]
+	mi := &file_null_v1_user_services_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -146,7 +146,7 @@ func (x *CreateUserRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateUserRequest.ProtoReflect.Descriptor instead.
 func (*CreateUserRequest) Descriptor() ([]byte, []int) {
-	return file_arian_v1_user_services_proto_rawDescGZIP(), []int{2}
+	return file_null_v1_user_services_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *CreateUserRequest) GetId() string {
@@ -179,7 +179,7 @@ type CreateUserResponse struct {
 
 func (x *CreateUserResponse) Reset() {
 	*x = CreateUserResponse{}
-	mi := &file_arian_v1_user_services_proto_msgTypes[3]
+	mi := &file_null_v1_user_services_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -191,7 +191,7 @@ func (x *CreateUserResponse) String() string {
 func (*CreateUserResponse) ProtoMessage() {}
 
 func (x *CreateUserResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_user_services_proto_msgTypes[3]
+	mi := &file_null_v1_user_services_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -204,7 +204,7 @@ func (x *CreateUserResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateUserResponse.ProtoReflect.Descriptor instead.
 func (*CreateUserResponse) Descriptor() ([]byte, []int) {
-	return file_arian_v1_user_services_proto_rawDescGZIP(), []int{3}
+	return file_null_v1_user_services_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreateUserResponse) GetUser() *User {
@@ -227,7 +227,7 @@ type UpdateUserRequest struct {
 
 func (x *UpdateUserRequest) Reset() {
 	*x = UpdateUserRequest{}
-	mi := &file_arian_v1_user_services_proto_msgTypes[4]
+	mi := &file_null_v1_user_services_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -239,7 +239,7 @@ func (x *UpdateUserRequest) String() string {
 func (*UpdateUserRequest) ProtoMessage() {}
 
 func (x *UpdateUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_user_services_proto_msgTypes[4]
+	mi := &file_null_v1_user_services_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -252,7 +252,7 @@ func (x *UpdateUserRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateUserRequest.ProtoReflect.Descriptor instead.
 func (*UpdateUserRequest) Descriptor() ([]byte, []int) {
-	return file_arian_v1_user_services_proto_rawDescGZIP(), []int{4}
+	return file_null_v1_user_services_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *UpdateUserRequest) GetId() string {
@@ -298,7 +298,7 @@ type UpdateUserResponse struct {
 
 func (x *UpdateUserResponse) Reset() {
 	*x = UpdateUserResponse{}
-	mi := &file_arian_v1_user_services_proto_msgTypes[5]
+	mi := &file_null_v1_user_services_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -310,7 +310,7 @@ func (x *UpdateUserResponse) String() string {
 func (*UpdateUserResponse) ProtoMessage() {}
 
 func (x *UpdateUserResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_user_services_proto_msgTypes[5]
+	mi := &file_null_v1_user_services_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -323,7 +323,7 @@ func (x *UpdateUserResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateUserResponse.ProtoReflect.Descriptor instead.
 func (*UpdateUserResponse) Descriptor() ([]byte, []int) {
-	return file_arian_v1_user_services_proto_rawDescGZIP(), []int{5}
+	return file_null_v1_user_services_proto_rawDescGZIP(), []int{5}
 }
 
 type DeleteUserRequest struct {
@@ -335,7 +335,7 @@ type DeleteUserRequest struct {
 
 func (x *DeleteUserRequest) Reset() {
 	*x = DeleteUserRequest{}
-	mi := &file_arian_v1_user_services_proto_msgTypes[6]
+	mi := &file_null_v1_user_services_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -347,7 +347,7 @@ func (x *DeleteUserRequest) String() string {
 func (*DeleteUserRequest) ProtoMessage() {}
 
 func (x *DeleteUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_user_services_proto_msgTypes[6]
+	mi := &file_null_v1_user_services_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -360,7 +360,7 @@ func (x *DeleteUserRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteUserRequest.ProtoReflect.Descriptor instead.
 func (*DeleteUserRequest) Descriptor() ([]byte, []int) {
-	return file_arian_v1_user_services_proto_rawDescGZIP(), []int{6}
+	return file_null_v1_user_services_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *DeleteUserRequest) GetId() string {
@@ -378,7 +378,7 @@ type DeleteUserResponse struct {
 
 func (x *DeleteUserResponse) Reset() {
 	*x = DeleteUserResponse{}
-	mi := &file_arian_v1_user_services_proto_msgTypes[7]
+	mi := &file_null_v1_user_services_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -390,7 +390,7 @@ func (x *DeleteUserResponse) String() string {
 func (*DeleteUserResponse) ProtoMessage() {}
 
 func (x *DeleteUserResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_user_services_proto_msgTypes[7]
+	mi := &file_null_v1_user_services_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -403,25 +403,25 @@ func (x *DeleteUserResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteUserResponse.ProtoReflect.Descriptor instead.
 func (*DeleteUserResponse) Descriptor() ([]byte, []int) {
-	return file_arian_v1_user_services_proto_rawDescGZIP(), []int{7}
+	return file_null_v1_user_services_proto_rawDescGZIP(), []int{7}
 }
 
-var File_arian_v1_user_services_proto protoreflect.FileDescriptor
+var File_null_v1_user_services_proto protoreflect.FileDescriptor
 
-const file_arian_v1_user_services_proto_rawDesc = "" +
+const file_null_v1_user_services_proto_rawDesc = "" +
 	"\n" +
-	"\x1carian/v1/user_services.proto\x12\barian.v1\x1a\x13arian/v1/user.proto\x1a\x1bbuf/validate/validate.proto\" \n" +
+	"\x1bnull/v1/user_services.proto\x12\anull.v1\x1a\x12null/v1/user.proto\x1a\x1bbuf/validate/validate.proto\" \n" +
 	"\x0eGetUserRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\"5\n" +
-	"\x0fGetUserResponse\x12\"\n" +
-	"\x04user\x18\x01 \x01(\v2\x0e.arian.v1.UserR\x04user\"r\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"4\n" +
+	"\x0fGetUserResponse\x12!\n" +
+	"\x04user\x18\x01 \x01(\v2\r.null.v1.UserR\x04user\"r\n" +
 	"\x11CreateUserRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
 	"\x05email\x18\x02 \x01(\tR\x05email\x12&\n" +
 	"\fdisplay_name\x18\x03 \x01(\tH\x00R\vdisplayName\x88\x01\x01B\x0f\n" +
-	"\r_display_name\"8\n" +
-	"\x12CreateUserResponse\x12\"\n" +
-	"\x04user\x18\x01 \x01(\v2\x0e.arian.v1.UserR\x04user\"\x95\x02\n" +
+	"\r_display_name\"7\n" +
+	"\x12CreateUserResponse\x12!\n" +
+	"\x04user\x18\x01 \x01(\v2\r.null.v1.UserR\x04user\"\x95\x02\n" +
 	"\x11UpdateUserRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
 	"\x05email\x18\x02 \x01(\tH\x00R\x05email\x88\x01\x01\x12&\n" +
@@ -436,52 +436,52 @@ const file_arian_v1_user_services_proto_rawDesc = "" +
 	"\x12UpdateUserResponse\"#\n" +
 	"\x11DeleteUserRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\"\x14\n" +
-	"\x12DeleteUserResponse2\xa8\x02\n" +
-	"\vUserService\x12>\n" +
-	"\aGetUser\x12\x18.arian.v1.GetUserRequest\x1a\x19.arian.v1.GetUserResponse\x12G\n" +
+	"\x12DeleteUserResponse2\xa0\x02\n" +
+	"\vUserService\x12<\n" +
+	"\aGetUser\x12\x17.null.v1.GetUserRequest\x1a\x18.null.v1.GetUserResponse\x12E\n" +
 	"\n" +
-	"CreateUser\x12\x1b.arian.v1.CreateUserRequest\x1a\x1c.arian.v1.CreateUserResponse\x12G\n" +
+	"CreateUser\x12\x1a.null.v1.CreateUserRequest\x1a\x1b.null.v1.CreateUserResponse\x12E\n" +
 	"\n" +
-	"UpdateUser\x12\x1b.arian.v1.UpdateUserRequest\x1a\x1c.arian.v1.UpdateUserResponse\x12G\n" +
+	"UpdateUser\x12\x1a.null.v1.UpdateUserRequest\x1a\x1b.null.v1.UpdateUserResponse\x12E\n" +
 	"\n" +
-	"DeleteUser\x12\x1b.arian.v1.DeleteUserRequest\x1a\x1c.arian.v1.DeleteUserResponseB\x8e\x01\n" +
-	"\fcom.arian.v1B\x11UserServicesProtoP\x01Z*arian-parser/internal/gen/arian/v1;arianv1\xa2\x02\x03AXX\xaa\x02\bArian.V1\xca\x02\bArian\\V1\xe2\x02\x14Arian\\V1\\GPBMetadata\xea\x02\tArian::V1b\x06proto3"
+	"DeleteUser\x12\x1a.null.v1.DeleteUserRequest\x1a\x1b.null.v1.DeleteUserResponseB\x92\x01\n" +
+	"\vcom.null.v1B\x11UserServicesProtoP\x01Z1null-statement-parser/internal/gen/null/v1;nullv1\xa2\x02\x03NXX\xaa\x02\aNull.V1\xca\x02\bNull_\\V1\xe2\x02\x14Null_\\V1\\GPBMetadata\xea\x02\bNull::V1b\x06proto3"
 
 var (
-	file_arian_v1_user_services_proto_rawDescOnce sync.Once
-	file_arian_v1_user_services_proto_rawDescData []byte
+	file_null_v1_user_services_proto_rawDescOnce sync.Once
+	file_null_v1_user_services_proto_rawDescData []byte
 )
 
-func file_arian_v1_user_services_proto_rawDescGZIP() []byte {
-	file_arian_v1_user_services_proto_rawDescOnce.Do(func() {
-		file_arian_v1_user_services_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_arian_v1_user_services_proto_rawDesc), len(file_arian_v1_user_services_proto_rawDesc)))
+func file_null_v1_user_services_proto_rawDescGZIP() []byte {
+	file_null_v1_user_services_proto_rawDescOnce.Do(func() {
+		file_null_v1_user_services_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_null_v1_user_services_proto_rawDesc), len(file_null_v1_user_services_proto_rawDesc)))
 	})
-	return file_arian_v1_user_services_proto_rawDescData
+	return file_null_v1_user_services_proto_rawDescData
 }
 
-var file_arian_v1_user_services_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
-var file_arian_v1_user_services_proto_goTypes = []any{
-	(*GetUserRequest)(nil),     // 0: arian.v1.GetUserRequest
-	(*GetUserResponse)(nil),    // 1: arian.v1.GetUserResponse
-	(*CreateUserRequest)(nil),  // 2: arian.v1.CreateUserRequest
-	(*CreateUserResponse)(nil), // 3: arian.v1.CreateUserResponse
-	(*UpdateUserRequest)(nil),  // 4: arian.v1.UpdateUserRequest
-	(*UpdateUserResponse)(nil), // 5: arian.v1.UpdateUserResponse
-	(*DeleteUserRequest)(nil),  // 6: arian.v1.DeleteUserRequest
-	(*DeleteUserResponse)(nil), // 7: arian.v1.DeleteUserResponse
-	(*User)(nil),               // 8: arian.v1.User
+var file_null_v1_user_services_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
+var file_null_v1_user_services_proto_goTypes = []any{
+	(*GetUserRequest)(nil),     // 0: null.v1.GetUserRequest
+	(*GetUserResponse)(nil),    // 1: null.v1.GetUserResponse
+	(*CreateUserRequest)(nil),  // 2: null.v1.CreateUserRequest
+	(*CreateUserResponse)(nil), // 3: null.v1.CreateUserResponse
+	(*UpdateUserRequest)(nil),  // 4: null.v1.UpdateUserRequest
+	(*UpdateUserResponse)(nil), // 5: null.v1.UpdateUserResponse
+	(*DeleteUserRequest)(nil),  // 6: null.v1.DeleteUserRequest
+	(*DeleteUserResponse)(nil), // 7: null.v1.DeleteUserResponse
+	(*User)(nil),               // 8: null.v1.User
 }
-var file_arian_v1_user_services_proto_depIdxs = []int32{
-	8, // 0: arian.v1.GetUserResponse.user:type_name -> arian.v1.User
-	8, // 1: arian.v1.CreateUserResponse.user:type_name -> arian.v1.User
-	0, // 2: arian.v1.UserService.GetUser:input_type -> arian.v1.GetUserRequest
-	2, // 3: arian.v1.UserService.CreateUser:input_type -> arian.v1.CreateUserRequest
-	4, // 4: arian.v1.UserService.UpdateUser:input_type -> arian.v1.UpdateUserRequest
-	6, // 5: arian.v1.UserService.DeleteUser:input_type -> arian.v1.DeleteUserRequest
-	1, // 6: arian.v1.UserService.GetUser:output_type -> arian.v1.GetUserResponse
-	3, // 7: arian.v1.UserService.CreateUser:output_type -> arian.v1.CreateUserResponse
-	5, // 8: arian.v1.UserService.UpdateUser:output_type -> arian.v1.UpdateUserResponse
-	7, // 9: arian.v1.UserService.DeleteUser:output_type -> arian.v1.DeleteUserResponse
+var file_null_v1_user_services_proto_depIdxs = []int32{
+	8, // 0: null.v1.GetUserResponse.user:type_name -> null.v1.User
+	8, // 1: null.v1.CreateUserResponse.user:type_name -> null.v1.User
+	0, // 2: null.v1.UserService.GetUser:input_type -> null.v1.GetUserRequest
+	2, // 3: null.v1.UserService.CreateUser:input_type -> null.v1.CreateUserRequest
+	4, // 4: null.v1.UserService.UpdateUser:input_type -> null.v1.UpdateUserRequest
+	6, // 5: null.v1.UserService.DeleteUser:input_type -> null.v1.DeleteUserRequest
+	1, // 6: null.v1.UserService.GetUser:output_type -> null.v1.GetUserResponse
+	3, // 7: null.v1.UserService.CreateUser:output_type -> null.v1.CreateUserResponse
+	5, // 8: null.v1.UserService.UpdateUser:output_type -> null.v1.UpdateUserResponse
+	7, // 9: null.v1.UserService.DeleteUser:output_type -> null.v1.DeleteUserResponse
 	6, // [6:10] is the sub-list for method output_type
 	2, // [2:6] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name
@@ -489,29 +489,29 @@ var file_arian_v1_user_services_proto_depIdxs = []int32{
 	0, // [0:2] is the sub-list for field type_name
 }
 
-func init() { file_arian_v1_user_services_proto_init() }
-func file_arian_v1_user_services_proto_init() {
-	if File_arian_v1_user_services_proto != nil {
+func init() { file_null_v1_user_services_proto_init() }
+func file_null_v1_user_services_proto_init() {
+	if File_null_v1_user_services_proto != nil {
 		return
 	}
-	file_arian_v1_user_proto_init()
-	file_arian_v1_user_services_proto_msgTypes[2].OneofWrappers = []any{}
-	file_arian_v1_user_services_proto_msgTypes[4].OneofWrappers = []any{}
+	file_null_v1_user_proto_init()
+	file_null_v1_user_services_proto_msgTypes[2].OneofWrappers = []any{}
+	file_null_v1_user_services_proto_msgTypes[4].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_arian_v1_user_services_proto_rawDesc), len(file_arian_v1_user_services_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_null_v1_user_services_proto_rawDesc), len(file_null_v1_user_services_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   8,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_arian_v1_user_services_proto_goTypes,
-		DependencyIndexes: file_arian_v1_user_services_proto_depIdxs,
-		MessageInfos:      file_arian_v1_user_services_proto_msgTypes,
+		GoTypes:           file_null_v1_user_services_proto_goTypes,
+		DependencyIndexes: file_null_v1_user_services_proto_depIdxs,
+		MessageInfos:      file_null_v1_user_services_proto_msgTypes,
 	}.Build()
-	File_arian_v1_user_services_proto = out.File
-	file_arian_v1_user_services_proto_goTypes = nil
-	file_arian_v1_user_services_proto_depIdxs = nil
+	File_null_v1_user_services_proto = out.File
+	file_null_v1_user_services_proto_goTypes = nil
+	file_null_v1_user_services_proto_depIdxs = nil
 }

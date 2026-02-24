@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	pb "arian-statement-parser/internal/gen/arian/v1"
+	pb "null-statement-parser/internal/gen/null/v1"
 )
 
 // Store manages account mappings

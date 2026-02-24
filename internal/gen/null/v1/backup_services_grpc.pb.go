@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             (unknown)
-// source: arian/v1/backup_services.proto
+// source: null/v1/backup_services.proto
 
-package arianv1
+package nullv1
 
 import (
 	context "context"
@@ -19,8 +19,8 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	BackupService_ExportBackup_FullMethodName = "/arian.v1.BackupService/ExportBackup"
-	BackupService_ImportBackup_FullMethodName = "/arian.v1.BackupService/ImportBackup"
+	BackupService_ExportBackup_FullMethodName = "/null.v1.BackupService/ExportBackup"
+	BackupService_ImportBackup_FullMethodName = "/null.v1.BackupService/ImportBackup"
 )
 
 // BackupServiceClient is the client API for BackupService service.
@@ -140,7 +140,7 @@ func _BackupService_ImportBackup_Handler(srv interface{}, ctx context.Context, d
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var BackupService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "arian.v1.BackupService",
+	ServiceName: "null.v1.BackupService",
 	HandlerType: (*BackupServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -153,5 +153,5 @@ var BackupService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "arian/v1/backup_services.proto",
+	Metadata: "null/v1/backup_services.proto",
 }

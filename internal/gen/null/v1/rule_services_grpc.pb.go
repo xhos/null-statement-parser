@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             (unknown)
-// source: arian/v1/rule_services.proto
+// source: null/v1/rule_services.proto
 
-package arianv1
+package nullv1
 
 import (
 	context "context"
@@ -19,12 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	RuleService_ListRules_FullMethodName    = "/arian.v1.RuleService/ListRules"
-	RuleService_GetRule_FullMethodName      = "/arian.v1.RuleService/GetRule"
-	RuleService_CreateRule_FullMethodName   = "/arian.v1.RuleService/CreateRule"
-	RuleService_UpdateRule_FullMethodName   = "/arian.v1.RuleService/UpdateRule"
-	RuleService_DeleteRule_FullMethodName   = "/arian.v1.RuleService/DeleteRule"
-	RuleService_ValidateRule_FullMethodName = "/arian.v1.RuleService/ValidateRule"
+	RuleService_ListRules_FullMethodName    = "/null.v1.RuleService/ListRules"
+	RuleService_GetRule_FullMethodName      = "/null.v1.RuleService/GetRule"
+	RuleService_CreateRule_FullMethodName   = "/null.v1.RuleService/CreateRule"
+	RuleService_UpdateRule_FullMethodName   = "/null.v1.RuleService/UpdateRule"
+	RuleService_DeleteRule_FullMethodName   = "/null.v1.RuleService/DeleteRule"
+	RuleService_ValidateRule_FullMethodName = "/null.v1.RuleService/ValidateRule"
 )
 
 // RuleServiceClient is the client API for RuleService service.
@@ -276,7 +276,7 @@ func _RuleService_ValidateRule_Handler(srv interface{}, ctx context.Context, dec
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var RuleService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "arian.v1.RuleService",
+	ServiceName: "null.v1.RuleService",
 	HandlerType: (*RuleServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -305,5 +305,5 @@ var RuleService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "arian/v1/rule_services.proto",
+	Metadata: "null/v1/rule_services.proto",
 }

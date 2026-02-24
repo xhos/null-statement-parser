@@ -4,8 +4,8 @@ managed:
   enabled: true
   override:
     - file_option: go_package_prefix
-      module: buf.build/xhos/arian-protos
-      value: arian-parser/internal/gen
+      module: buf.build/xhos/null-protos
+      value: null-statement-parser/internal/gen
 
 inputs:
   - directory: proto

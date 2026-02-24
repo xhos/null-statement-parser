@@ -2,9 +2,9 @@
 // versions:
 // 	protoc-gen-go v1.36.10
 // 	protoc        (unknown)
-// source: arian/v1/rule_services.proto
+// source: null/v1/rule_services.proto
 
-package arianv1
+package nullv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
@@ -33,7 +33,7 @@ type ListRulesRequest struct {
 
 func (x *ListRulesRequest) Reset() {
 	*x = ListRulesRequest{}
-	mi := &file_arian_v1_rule_services_proto_msgTypes[0]
+	mi := &file_null_v1_rule_services_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -45,7 +45,7 @@ func (x *ListRulesRequest) String() string {
 func (*ListRulesRequest) ProtoMessage() {}
 
 func (x *ListRulesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_rule_services_proto_msgTypes[0]
+	mi := &file_null_v1_rule_services_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -58,7 +58,7 @@ func (x *ListRulesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListRulesRequest.ProtoReflect.Descriptor instead.
 func (*ListRulesRequest) Descriptor() ([]byte, []int) {
-	return file_arian_v1_rule_services_proto_rawDescGZIP(), []int{0}
+	return file_null_v1_rule_services_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListRulesRequest) GetUserId() string {
@@ -77,7 +77,7 @@ type ListRulesResponse struct {
 
 func (x *ListRulesResponse) Reset() {
 	*x = ListRulesResponse{}
-	mi := &file_arian_v1_rule_services_proto_msgTypes[1]
+	mi := &file_null_v1_rule_services_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -89,7 +89,7 @@ func (x *ListRulesResponse) String() string {
 func (*ListRulesResponse) ProtoMessage() {}
 
 func (x *ListRulesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_rule_services_proto_msgTypes[1]
+	mi := &file_null_v1_rule_services_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -102,7 +102,7 @@ func (x *ListRulesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListRulesResponse.ProtoReflect.Descriptor instead.
 func (*ListRulesResponse) Descriptor() ([]byte, []int) {
-	return file_arian_v1_rule_services_proto_rawDescGZIP(), []int{1}
+	return file_null_v1_rule_services_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListRulesResponse) GetRules() []*Rule {
@@ -122,7 +122,7 @@ type GetRuleRequest struct {
 
 func (x *GetRuleRequest) Reset() {
 	*x = GetRuleRequest{}
-	mi := &file_arian_v1_rule_services_proto_msgTypes[2]
+	mi := &file_null_v1_rule_services_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -134,7 +134,7 @@ func (x *GetRuleRequest) String() string {
 func (*GetRuleRequest) ProtoMessage() {}
 
 func (x *GetRuleRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_rule_services_proto_msgTypes[2]
+	mi := &file_null_v1_rule_services_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -147,7 +147,7 @@ func (x *GetRuleRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetRuleRequest.ProtoReflect.Descriptor instead.
 func (*GetRuleRequest) Descriptor() ([]byte, []int) {
-	return file_arian_v1_rule_services_proto_rawDescGZIP(), []int{2}
+	return file_null_v1_rule_services_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *GetRuleRequest) GetRuleId() string {
@@ -173,7 +173,7 @@ type GetRuleResponse struct {
 
 func (x *GetRuleResponse) Reset() {
 	*x = GetRuleResponse{}
-	mi := &file_arian_v1_rule_services_proto_msgTypes[3]
+	mi := &file_null_v1_rule_services_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -185,7 +185,7 @@ func (x *GetRuleResponse) String() string {
 func (*GetRuleResponse) ProtoMessage() {}
 
 func (x *GetRuleResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_rule_services_proto_msgTypes[3]
+	mi := &file_null_v1_rule_services_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -198,7 +198,7 @@ func (x *GetRuleResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetRuleResponse.ProtoReflect.Descriptor instead.
 func (*GetRuleResponse) Descriptor() ([]byte, []int) {
-	return file_arian_v1_rule_services_proto_rawDescGZIP(), []int{3}
+	return file_null_v1_rule_services_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *GetRuleResponse) GetRule() *Rule {
@@ -222,7 +222,7 @@ type CreateRuleRequest struct {
 
 func (x *CreateRuleRequest) Reset() {
 	*x = CreateRuleRequest{}
-	mi := &file_arian_v1_rule_services_proto_msgTypes[4]
+	mi := &file_null_v1_rule_services_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -234,7 +234,7 @@ func (x *CreateRuleRequest) String() string {
 func (*CreateRuleRequest) ProtoMessage() {}
 
 func (x *CreateRuleRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_rule_services_proto_msgTypes[4]
+	mi := &file_null_v1_rule_services_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -247,7 +247,7 @@ func (x *CreateRuleRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateRuleRequest.ProtoReflect.Descriptor instead.
 func (*CreateRuleRequest) Descriptor() ([]byte, []int) {
-	return file_arian_v1_rule_services_proto_rawDescGZIP(), []int{4}
+	return file_null_v1_rule_services_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *CreateRuleRequest) GetUserId() string {
@@ -301,7 +301,7 @@ type CreateRuleResponse struct {
 
 func (x *CreateRuleResponse) Reset() {
 	*x = CreateRuleResponse{}
-	mi := &file_arian_v1_rule_services_proto_msgTypes[5]
+	mi := &file_null_v1_rule_services_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -313,7 +313,7 @@ func (x *CreateRuleResponse) String() string {
 func (*CreateRuleResponse) ProtoMessage() {}
 
 func (x *CreateRuleResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_rule_services_proto_msgTypes[5]
+	mi := &file_null_v1_rule_services_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -326,7 +326,7 @@ func (x *CreateRuleResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateRuleResponse.ProtoReflect.Descriptor instead.
 func (*CreateRuleResponse) Descriptor() ([]byte, []int) {
-	return file_arian_v1_rule_services_proto_rawDescGZIP(), []int{5}
+	return file_null_v1_rule_services_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *CreateRuleResponse) GetRule() *Rule {
@@ -354,7 +354,7 @@ type UpdateRuleRequest struct {
 
 func (x *UpdateRuleRequest) Reset() {
 	*x = UpdateRuleRequest{}
-	mi := &file_arian_v1_rule_services_proto_msgTypes[6]
+	mi := &file_null_v1_rule_services_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -366,7 +366,7 @@ func (x *UpdateRuleRequest) String() string {
 func (*UpdateRuleRequest) ProtoMessage() {}
 
 func (x *UpdateRuleRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_rule_services_proto_msgTypes[6]
+	mi := &file_null_v1_rule_services_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -379,7 +379,7 @@ func (x *UpdateRuleRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateRuleRequest.ProtoReflect.Descriptor instead.
 func (*UpdateRuleRequest) Descriptor() ([]byte, []int) {
-	return file_arian_v1_rule_services_proto_rawDescGZIP(), []int{6}
+	return file_null_v1_rule_services_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *UpdateRuleRequest) GetRuleId() string {
@@ -460,7 +460,7 @@ type UpdateRuleResponse struct {
 
 func (x *UpdateRuleResponse) Reset() {
 	*x = UpdateRuleResponse{}
-	mi := &file_arian_v1_rule_services_proto_msgTypes[7]
+	mi := &file_null_v1_rule_services_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -472,7 +472,7 @@ func (x *UpdateRuleResponse) String() string {
 func (*UpdateRuleResponse) ProtoMessage() {}
 
 func (x *UpdateRuleResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_rule_services_proto_msgTypes[7]
+	mi := &file_null_v1_rule_services_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -485,7 +485,7 @@ func (x *UpdateRuleResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateRuleResponse.ProtoReflect.Descriptor instead.
 func (*UpdateRuleResponse) Descriptor() ([]byte, []int) {
-	return file_arian_v1_rule_services_proto_rawDescGZIP(), []int{7}
+	return file_null_v1_rule_services_proto_rawDescGZIP(), []int{7}
 }
 
 type DeleteRuleRequest struct {
@@ -498,7 +498,7 @@ type DeleteRuleRequest struct {
 
 func (x *DeleteRuleRequest) Reset() {
 	*x = DeleteRuleRequest{}
-	mi := &file_arian_v1_rule_services_proto_msgTypes[8]
+	mi := &file_null_v1_rule_services_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -510,7 +510,7 @@ func (x *DeleteRuleRequest) String() string {
 func (*DeleteRuleRequest) ProtoMessage() {}
 
 func (x *DeleteRuleRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_rule_services_proto_msgTypes[8]
+	mi := &file_null_v1_rule_services_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -523,7 +523,7 @@ func (x *DeleteRuleRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteRuleRequest.ProtoReflect.Descriptor instead.
 func (*DeleteRuleRequest) Descriptor() ([]byte, []int) {
-	return file_arian_v1_rule_services_proto_rawDescGZIP(), []int{8}
+	return file_null_v1_rule_services_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *DeleteRuleRequest) GetRuleId() string {
@@ -549,7 +549,7 @@ type DeleteRuleResponse struct {
 
 func (x *DeleteRuleResponse) Reset() {
 	*x = DeleteRuleResponse{}
-	mi := &file_arian_v1_rule_services_proto_msgTypes[9]
+	mi := &file_null_v1_rule_services_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -561,7 +561,7 @@ func (x *DeleteRuleResponse) String() string {
 func (*DeleteRuleResponse) ProtoMessage() {}
 
 func (x *DeleteRuleResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_rule_services_proto_msgTypes[9]
+	mi := &file_null_v1_rule_services_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -574,7 +574,7 @@ func (x *DeleteRuleResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteRuleResponse.ProtoReflect.Descriptor instead.
 func (*DeleteRuleResponse) Descriptor() ([]byte, []int) {
-	return file_arian_v1_rule_services_proto_rawDescGZIP(), []int{9}
+	return file_null_v1_rule_services_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *DeleteRuleResponse) GetAffectedRows() int64 {
@@ -593,7 +593,7 @@ type ValidateRuleRequest struct {
 
 func (x *ValidateRuleRequest) Reset() {
 	*x = ValidateRuleRequest{}
-	mi := &file_arian_v1_rule_services_proto_msgTypes[10]
+	mi := &file_null_v1_rule_services_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -605,7 +605,7 @@ func (x *ValidateRuleRequest) String() string {
 func (*ValidateRuleRequest) ProtoMessage() {}
 
 func (x *ValidateRuleRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_rule_services_proto_msgTypes[10]
+	mi := &file_null_v1_rule_services_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -618,7 +618,7 @@ func (x *ValidateRuleRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ValidateRuleRequest.ProtoReflect.Descriptor instead.
 func (*ValidateRuleRequest) Descriptor() ([]byte, []int) {
-	return file_arian_v1_rule_services_proto_rawDescGZIP(), []int{10}
+	return file_null_v1_rule_services_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *ValidateRuleRequest) GetConditions() *structpb.Struct {
@@ -639,7 +639,7 @@ type ValidationError struct {
 
 func (x *ValidationError) Reset() {
 	*x = ValidationError{}
-	mi := &file_arian_v1_rule_services_proto_msgTypes[11]
+	mi := &file_null_v1_rule_services_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -651,7 +651,7 @@ func (x *ValidationError) String() string {
 func (*ValidationError) ProtoMessage() {}
 
 func (x *ValidationError) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_rule_services_proto_msgTypes[11]
+	mi := &file_null_v1_rule_services_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -664,7 +664,7 @@ func (x *ValidationError) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ValidationError.ProtoReflect.Descriptor instead.
 func (*ValidationError) Descriptor() ([]byte, []int) {
-	return file_arian_v1_rule_services_proto_rawDescGZIP(), []int{11}
+	return file_null_v1_rule_services_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *ValidationError) GetField() string {
@@ -699,7 +699,7 @@ type ValidateRuleResponse struct {
 
 func (x *ValidateRuleResponse) Reset() {
 	*x = ValidateRuleResponse{}
-	mi := &file_arian_v1_rule_services_proto_msgTypes[12]
+	mi := &file_null_v1_rule_services_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -711,7 +711,7 @@ func (x *ValidateRuleResponse) String() string {
 func (*ValidateRuleResponse) ProtoMessage() {}
 
 func (x *ValidateRuleResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_arian_v1_rule_services_proto_msgTypes[12]
+	mi := &file_null_v1_rule_services_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -724,7 +724,7 @@ func (x *ValidateRuleResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ValidateRuleResponse.ProtoReflect.Descriptor instead.
 func (*ValidateRuleResponse) Descriptor() ([]byte, []int) {
-	return file_arian_v1_rule_services_proto_rawDescGZIP(), []int{12}
+	return file_null_v1_rule_services_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *ValidateRuleResponse) GetValid() bool {
@@ -748,20 +748,20 @@ func (x *ValidateRuleResponse) GetNormalizedConditions() *structpb.Struct {
 	return nil
 }
 
-var File_arian_v1_rule_services_proto protoreflect.FileDescriptor
+var File_null_v1_rule_services_proto protoreflect.FileDescriptor
 
-const file_arian_v1_rule_services_proto_rawDesc = "" +
+const file_null_v1_rule_services_proto_rawDesc = "" +
 	"\n" +
-	"\x1carian/v1/rule_services.proto\x12\barian.v1\x1a\x13arian/v1/rule.proto\x1a\x1bbuf/validate/validate.proto\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/protobuf/struct.proto\"5\n" +
+	"\x1bnull/v1/rule_services.proto\x12\anull.v1\x1a\x12null/v1/rule.proto\x1a\x1bbuf/validate/validate.proto\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/protobuf/struct.proto\"5\n" +
 	"\x10ListRulesRequest\x12!\n" +
-	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\"9\n" +
-	"\x11ListRulesResponse\x12$\n" +
-	"\x05rules\x18\x01 \x03(\v2\x0e.arian.v1.RuleR\x05rules\"V\n" +
+	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\"8\n" +
+	"\x11ListRulesResponse\x12#\n" +
+	"\x05rules\x18\x01 \x03(\v2\r.null.v1.RuleR\x05rules\"V\n" +
 	"\x0eGetRuleRequest\x12!\n" +
 	"\arule_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06ruleId\x12!\n" +
-	"\auser_id\x18\x02 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\"5\n" +
-	"\x0fGetRuleResponse\x12\"\n" +
-	"\x04rule\x18\x01 \x01(\v2\x0e.arian.v1.RuleR\x04rule\"\xc3\x02\n" +
+	"\auser_id\x18\x02 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\"4\n" +
+	"\x0fGetRuleResponse\x12!\n" +
+	"\x04rule\x18\x01 \x01(\v2\r.null.v1.RuleR\x04rule\"\xc3\x02\n" +
 	"\x11CreateRuleRequest\x12!\n" +
 	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\x12'\n" +
 	"\trule_name\x18\x02 \x01(\tB\n" +
@@ -775,9 +775,9 @@ const file_arian_v1_rule_services_proto_rawDesc = "" +
 	"\bmerchant\x18\x06 \x01(\tH\x02R\bmerchant\x88\x01\x01B\x0e\n" +
 	"\f_category_idB\x14\n" +
 	"\x12_apply_to_existingB\v\n" +
-	"\t_merchant\"8\n" +
-	"\x12CreateRuleResponse\x12\"\n" +
-	"\x04rule\x18\x01 \x01(\v2\x0e.arian.v1.RuleR\x04rule\"\xad\x04\n" +
+	"\t_merchant\"7\n" +
+	"\x12CreateRuleResponse\x12!\n" +
+	"\x04rule\x18\x01 \x01(\v2\r.null.v1.RuleR\x04rule\"\xad\x04\n" +
 	"\x11UpdateRuleRequest\x12!\n" +
 	"\arule_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06ruleId\x12!\n" +
 	"\auser_id\x18\x02 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\x12;\n" +
@@ -816,76 +816,76 @@ const file_arian_v1_rule_services_proto_rawDesc = "" +
 	"\x0fValidationError\x12\x14\n" +
 	"\x05field\x18\x01 \x01(\tR\x05field\x12\x18\n" +
 	"\amessage\x18\x02 \x01(\tR\amessage\x12\x12\n" +
-	"\x04code\x18\x03 \x01(\tR\x04code\"\xad\x01\n" +
+	"\x04code\x18\x03 \x01(\tR\x04code\"\xac\x01\n" +
 	"\x14ValidateRuleResponse\x12\x14\n" +
-	"\x05valid\x18\x01 \x01(\bR\x05valid\x121\n" +
-	"\x06errors\x18\x02 \x03(\v2\x19.arian.v1.ValidationErrorR\x06errors\x12L\n" +
-	"\x15normalized_conditions\x18\x03 \x01(\v2\x17.google.protobuf.StructR\x14normalizedConditions2\xbd\x03\n" +
-	"\vRuleService\x12D\n" +
-	"\tListRules\x12\x1a.arian.v1.ListRulesRequest\x1a\x1b.arian.v1.ListRulesResponse\x12>\n" +
-	"\aGetRule\x12\x18.arian.v1.GetRuleRequest\x1a\x19.arian.v1.GetRuleResponse\x12G\n" +
+	"\x05valid\x18\x01 \x01(\bR\x05valid\x120\n" +
+	"\x06errors\x18\x02 \x03(\v2\x18.null.v1.ValidationErrorR\x06errors\x12L\n" +
+	"\x15normalized_conditions\x18\x03 \x01(\v2\x17.google.protobuf.StructR\x14normalizedConditions2\xb1\x03\n" +
+	"\vRuleService\x12B\n" +
+	"\tListRules\x12\x19.null.v1.ListRulesRequest\x1a\x1a.null.v1.ListRulesResponse\x12<\n" +
+	"\aGetRule\x12\x17.null.v1.GetRuleRequest\x1a\x18.null.v1.GetRuleResponse\x12E\n" +
 	"\n" +
-	"CreateRule\x12\x1b.arian.v1.CreateRuleRequest\x1a\x1c.arian.v1.CreateRuleResponse\x12G\n" +
+	"CreateRule\x12\x1a.null.v1.CreateRuleRequest\x1a\x1b.null.v1.CreateRuleResponse\x12E\n" +
 	"\n" +
-	"UpdateRule\x12\x1b.arian.v1.UpdateRuleRequest\x1a\x1c.arian.v1.UpdateRuleResponse\x12G\n" +
+	"UpdateRule\x12\x1a.null.v1.UpdateRuleRequest\x1a\x1b.null.v1.UpdateRuleResponse\x12E\n" +
 	"\n" +
-	"DeleteRule\x12\x1b.arian.v1.DeleteRuleRequest\x1a\x1c.arian.v1.DeleteRuleResponse\x12M\n" +
-	"\fValidateRule\x12\x1d.arian.v1.ValidateRuleRequest\x1a\x1e.arian.v1.ValidateRuleResponseB\x8e\x01\n" +
-	"\fcom.arian.v1B\x11RuleServicesProtoP\x01Z*arian-parser/internal/gen/arian/v1;arianv1\xa2\x02\x03AXX\xaa\x02\bArian.V1\xca\x02\bArian\\V1\xe2\x02\x14Arian\\V1\\GPBMetadata\xea\x02\tArian::V1b\x06proto3"
+	"DeleteRule\x12\x1a.null.v1.DeleteRuleRequest\x1a\x1b.null.v1.DeleteRuleResponse\x12K\n" +
+	"\fValidateRule\x12\x1c.null.v1.ValidateRuleRequest\x1a\x1d.null.v1.ValidateRuleResponseB\x92\x01\n" +
+	"\vcom.null.v1B\x11RuleServicesProtoP\x01Z1null-statement-parser/internal/gen/null/v1;nullv1\xa2\x02\x03NXX\xaa\x02\aNull.V1\xca\x02\bNull_\\V1\xe2\x02\x14Null_\\V1\\GPBMetadata\xea\x02\bNull::V1b\x06proto3"
 
 var (
-	file_arian_v1_rule_services_proto_rawDescOnce sync.Once
-	file_arian_v1_rule_services_proto_rawDescData []byte
+	file_null_v1_rule_services_proto_rawDescOnce sync.Once
+	file_null_v1_rule_services_proto_rawDescData []byte
 )
 
-func file_arian_v1_rule_services_proto_rawDescGZIP() []byte {
-	file_arian_v1_rule_services_proto_rawDescOnce.Do(func() {
-		file_arian_v1_rule_services_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_arian_v1_rule_services_proto_rawDesc), len(file_arian_v1_rule_services_proto_rawDesc)))
+func file_null_v1_rule_services_proto_rawDescGZIP() []byte {
+	file_null_v1_rule_services_proto_rawDescOnce.Do(func() {
+		file_null_v1_rule_services_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_null_v1_rule_services_proto_rawDesc), len(file_null_v1_rule_services_proto_rawDesc)))
 	})
-	return file_arian_v1_rule_services_proto_rawDescData
+	return file_null_v1_rule_services_proto_rawDescData
 }
 
-var file_arian_v1_rule_services_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
-var file_arian_v1_rule_services_proto_goTypes = []any{
-	(*ListRulesRequest)(nil),      // 0: arian.v1.ListRulesRequest
-	(*ListRulesResponse)(nil),     // 1: arian.v1.ListRulesResponse
-	(*GetRuleRequest)(nil),        // 2: arian.v1.GetRuleRequest
-	(*GetRuleResponse)(nil),       // 3: arian.v1.GetRuleResponse
-	(*CreateRuleRequest)(nil),     // 4: arian.v1.CreateRuleRequest
-	(*CreateRuleResponse)(nil),    // 5: arian.v1.CreateRuleResponse
-	(*UpdateRuleRequest)(nil),     // 6: arian.v1.UpdateRuleRequest
-	(*UpdateRuleResponse)(nil),    // 7: arian.v1.UpdateRuleResponse
-	(*DeleteRuleRequest)(nil),     // 8: arian.v1.DeleteRuleRequest
-	(*DeleteRuleResponse)(nil),    // 9: arian.v1.DeleteRuleResponse
-	(*ValidateRuleRequest)(nil),   // 10: arian.v1.ValidateRuleRequest
-	(*ValidationError)(nil),       // 11: arian.v1.ValidationError
-	(*ValidateRuleResponse)(nil),  // 12: arian.v1.ValidateRuleResponse
-	(*Rule)(nil),                  // 13: arian.v1.Rule
+var file_null_v1_rule_services_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
+var file_null_v1_rule_services_proto_goTypes = []any{
+	(*ListRulesRequest)(nil),      // 0: null.v1.ListRulesRequest
+	(*ListRulesResponse)(nil),     // 1: null.v1.ListRulesResponse
+	(*GetRuleRequest)(nil),        // 2: null.v1.GetRuleRequest
+	(*GetRuleResponse)(nil),       // 3: null.v1.GetRuleResponse
+	(*CreateRuleRequest)(nil),     // 4: null.v1.CreateRuleRequest
+	(*CreateRuleResponse)(nil),    // 5: null.v1.CreateRuleResponse
+	(*UpdateRuleRequest)(nil),     // 6: null.v1.UpdateRuleRequest
+	(*UpdateRuleResponse)(nil),    // 7: null.v1.UpdateRuleResponse
+	(*DeleteRuleRequest)(nil),     // 8: null.v1.DeleteRuleRequest
+	(*DeleteRuleResponse)(nil),    // 9: null.v1.DeleteRuleResponse
+	(*ValidateRuleRequest)(nil),   // 10: null.v1.ValidateRuleRequest
+	(*ValidationError)(nil),       // 11: null.v1.ValidationError
+	(*ValidateRuleResponse)(nil),  // 12: null.v1.ValidateRuleResponse
+	(*Rule)(nil),                  // 13: null.v1.Rule
 	(*structpb.Struct)(nil),       // 14: google.protobuf.Struct
 	(*fieldmaskpb.FieldMask)(nil), // 15: google.protobuf.FieldMask
 }
-var file_arian_v1_rule_services_proto_depIdxs = []int32{
-	13, // 0: arian.v1.ListRulesResponse.rules:type_name -> arian.v1.Rule
-	13, // 1: arian.v1.GetRuleResponse.rule:type_name -> arian.v1.Rule
-	14, // 2: arian.v1.CreateRuleRequest.conditions:type_name -> google.protobuf.Struct
-	13, // 3: arian.v1.CreateRuleResponse.rule:type_name -> arian.v1.Rule
-	15, // 4: arian.v1.UpdateRuleRequest.update_mask:type_name -> google.protobuf.FieldMask
-	14, // 5: arian.v1.UpdateRuleRequest.conditions:type_name -> google.protobuf.Struct
-	14, // 6: arian.v1.ValidateRuleRequest.conditions:type_name -> google.protobuf.Struct
-	11, // 7: arian.v1.ValidateRuleResponse.errors:type_name -> arian.v1.ValidationError
-	14, // 8: arian.v1.ValidateRuleResponse.normalized_conditions:type_name -> google.protobuf.Struct
-	0,  // 9: arian.v1.RuleService.ListRules:input_type -> arian.v1.ListRulesRequest
-	2,  // 10: arian.v1.RuleService.GetRule:input_type -> arian.v1.GetRuleRequest
-	4,  // 11: arian.v1.RuleService.CreateRule:input_type -> arian.v1.CreateRuleRequest
-	6,  // 12: arian.v1.RuleService.UpdateRule:input_type -> arian.v1.UpdateRuleRequest
-	8,  // 13: arian.v1.RuleService.DeleteRule:input_type -> arian.v1.DeleteRuleRequest
-	10, // 14: arian.v1.RuleService.ValidateRule:input_type -> arian.v1.ValidateRuleRequest
-	1,  // 15: arian.v1.RuleService.ListRules:output_type -> arian.v1.ListRulesResponse
-	3,  // 16: arian.v1.RuleService.GetRule:output_type -> arian.v1.GetRuleResponse
-	5,  // 17: arian.v1.RuleService.CreateRule:output_type -> arian.v1.CreateRuleResponse
-	7,  // 18: arian.v1.RuleService.UpdateRule:output_type -> arian.v1.UpdateRuleResponse
-	9,  // 19: arian.v1.RuleService.DeleteRule:output_type -> arian.v1.DeleteRuleResponse
-	12, // 20: arian.v1.RuleService.ValidateRule:output_type -> arian.v1.ValidateRuleResponse
+var file_null_v1_rule_services_proto_depIdxs = []int32{
+	13, // 0: null.v1.ListRulesResponse.rules:type_name -> null.v1.Rule
+	13, // 1: null.v1.GetRuleResponse.rule:type_name -> null.v1.Rule
+	14, // 2: null.v1.CreateRuleRequest.conditions:type_name -> google.protobuf.Struct
+	13, // 3: null.v1.CreateRuleResponse.rule:type_name -> null.v1.Rule
+	15, // 4: null.v1.UpdateRuleRequest.update_mask:type_name -> google.protobuf.FieldMask
+	14, // 5: null.v1.UpdateRuleRequest.conditions:type_name -> google.protobuf.Struct
+	14, // 6: null.v1.ValidateRuleRequest.conditions:type_name -> google.protobuf.Struct
+	11, // 7: null.v1.ValidateRuleResponse.errors:type_name -> null.v1.ValidationError
+	14, // 8: null.v1.ValidateRuleResponse.normalized_conditions:type_name -> google.protobuf.Struct
+	0,  // 9: null.v1.RuleService.ListRules:input_type -> null.v1.ListRulesRequest
+	2,  // 10: null.v1.RuleService.GetRule:input_type -> null.v1.GetRuleRequest
+	4,  // 11: null.v1.RuleService.CreateRule:input_type -> null.v1.CreateRuleRequest
+	6,  // 12: null.v1.RuleService.UpdateRule:input_type -> null.v1.UpdateRuleRequest
+	8,  // 13: null.v1.RuleService.DeleteRule:input_type -> null.v1.DeleteRuleRequest
+	10, // 14: null.v1.RuleService.ValidateRule:input_type -> null.v1.ValidateRuleRequest
+	1,  // 15: null.v1.RuleService.ListRules:output_type -> null.v1.ListRulesResponse
+	3,  // 16: null.v1.RuleService.GetRule:output_type -> null.v1.GetRuleResponse
+	5,  // 17: null.v1.RuleService.CreateRule:output_type -> null.v1.CreateRuleResponse
+	7,  // 18: null.v1.RuleService.UpdateRule:output_type -> null.v1.UpdateRuleResponse
+	9,  // 19: null.v1.RuleService.DeleteRule:output_type -> null.v1.DeleteRuleResponse
+	12, // 20: null.v1.RuleService.ValidateRule:output_type -> null.v1.ValidateRuleResponse
 	15, // [15:21] is the sub-list for method output_type
 	9,  // [9:15] is the sub-list for method input_type
 	9,  // [9:9] is the sub-list for extension type_name
@@ -893,29 +893,29 @@ var file_arian_v1_rule_services_proto_depIdxs = []int32{
 	0,  // [0:9] is the sub-list for field type_name
 }
 
-func init() { file_arian_v1_rule_services_proto_init() }
-func file_arian_v1_rule_services_proto_init() {
-	if File_arian_v1_rule_services_proto != nil {
+func init() { file_null_v1_rule_services_proto_init() }
+func file_null_v1_rule_services_proto_init() {
+	if File_null_v1_rule_services_proto != nil {
 		return
 	}
-	file_arian_v1_rule_proto_init()
-	file_arian_v1_rule_services_proto_msgTypes[4].OneofWrappers = []any{}
-	file_arian_v1_rule_services_proto_msgTypes[6].OneofWrappers = []any{}
+	file_null_v1_rule_proto_init()
+	file_null_v1_rule_services_proto_msgTypes[4].OneofWrappers = []any{}
+	file_null_v1_rule_services_proto_msgTypes[6].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_arian_v1_rule_services_proto_rawDesc), len(file_arian_v1_rule_services_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_null_v1_rule_services_proto_rawDesc), len(file_null_v1_rule_services_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   13,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_arian_v1_rule_services_proto_goTypes,
-		DependencyIndexes: file_arian_v1_rule_services_proto_depIdxs,
-		MessageInfos:      file_arian_v1_rule_services_proto_msgTypes,
+		GoTypes:           file_null_v1_rule_services_proto_goTypes,
+		DependencyIndexes: file_null_v1_rule_services_proto_depIdxs,
+		MessageInfos:      file_null_v1_rule_services_proto_msgTypes,
 	}.Build()
-	File_arian_v1_rule_services_proto = out.File
-	file_arian_v1_rule_services_proto_goTypes = nil
-	file_arian_v1_rule_services_proto_depIdxs = nil
+	File_null_v1_rule_services_proto = out.File
+	file_null_v1_rule_services_proto_goTypes = nil
+	file_null_v1_rule_services_proto_depIdxs = nil
 }

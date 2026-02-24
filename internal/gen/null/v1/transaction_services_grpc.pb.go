@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             (unknown)
-// source: arian/v1/transaction_services.proto
+// source: null/v1/transaction_services.proto
 
-package arianv1
+package nullv1
 
 import (
 	context "context"
@@ -19,12 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	TransactionService_ListTransactions_FullMethodName       = "/arian.v1.TransactionService/ListTransactions"
-	TransactionService_GetTransaction_FullMethodName         = "/arian.v1.TransactionService/GetTransaction"
-	TransactionService_CreateTransaction_FullMethodName      = "/arian.v1.TransactionService/CreateTransaction"
-	TransactionService_UpdateTransaction_FullMethodName      = "/arian.v1.TransactionService/UpdateTransaction"
-	TransactionService_DeleteTransaction_FullMethodName      = "/arian.v1.TransactionService/DeleteTransaction"
-	TransactionService_CategorizeTransactions_FullMethodName = "/arian.v1.TransactionService/CategorizeTransactions"
+	TransactionService_ListTransactions_FullMethodName       = "/null.v1.TransactionService/ListTransactions"
+	TransactionService_GetTransaction_FullMethodName         = "/null.v1.TransactionService/GetTransaction"
+	TransactionService_CreateTransaction_FullMethodName      = "/null.v1.TransactionService/CreateTransaction"
+	TransactionService_UpdateTransaction_FullMethodName      = "/null.v1.TransactionService/UpdateTransaction"
+	TransactionService_DeleteTransaction_FullMethodName      = "/null.v1.TransactionService/DeleteTransaction"
+	TransactionService_CategorizeTransactions_FullMethodName = "/null.v1.TransactionService/CategorizeTransactions"
 )
 
 // TransactionServiceClient is the client API for TransactionService service.
@@ -276,7 +276,7 @@ func _TransactionService_CategorizeTransactions_Handler(srv interface{}, ctx con
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var TransactionService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "arian.v1.TransactionService",
+	ServiceName: "null.v1.TransactionService",
 	HandlerType: (*TransactionServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -305,5 +305,5 @@ var TransactionService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "arian/v1/transaction_services.proto",
+	Metadata: "null/v1/transaction_services.proto",
 }
