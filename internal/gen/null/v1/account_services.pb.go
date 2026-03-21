@@ -612,8 +612,9 @@ func (x *DeleteAccountResponse) GetAffectedRows() int64 {
 
 type AddAccountAliasRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	AccountId     int64                  `protobuf:"varint,1,opt,name=account_id,json=accountId,proto3" json:"account_id,omitempty"`
-	Alias         string                 `protobuf:"bytes,2,opt,name=alias,proto3" json:"alias,omitempty"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	AccountId     int64                  `protobuf:"varint,2,opt,name=account_id,json=accountId,proto3" json:"account_id,omitempty"`
+	Alias         string                 `protobuf:"bytes,3,opt,name=alias,proto3" json:"alias,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -646,6 +647,13 @@ func (x *AddAccountAliasRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use AddAccountAliasRequest.ProtoReflect.Descriptor instead.
 func (*AddAccountAliasRequest) Descriptor() ([]byte, []int) {
 	return file_null_v1_account_services_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *AddAccountAliasRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
 }
 
 func (x *AddAccountAliasRequest) GetAccountId() int64 {
@@ -700,8 +708,9 @@ func (*AddAccountAliasResponse) Descriptor() ([]byte, []int) {
 
 type RemoveAccountAliasRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	AccountId     int64                  `protobuf:"varint,1,opt,name=account_id,json=accountId,proto3" json:"account_id,omitempty"`
-	Alias         string                 `protobuf:"bytes,2,opt,name=alias,proto3" json:"alias,omitempty"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	AccountId     int64                  `protobuf:"varint,2,opt,name=account_id,json=accountId,proto3" json:"account_id,omitempty"`
+	Alias         string                 `protobuf:"bytes,3,opt,name=alias,proto3" json:"alias,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -734,6 +743,13 @@ func (x *RemoveAccountAliasRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use RemoveAccountAliasRequest.ProtoReflect.Descriptor instead.
 func (*RemoveAccountAliasRequest) Descriptor() ([]byte, []int) {
 	return file_null_v1_account_services_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *RemoveAccountAliasRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
 }
 
 func (x *RemoveAccountAliasRequest) GetAccountId() int64 {
@@ -788,8 +804,9 @@ func (*RemoveAccountAliasResponse) Descriptor() ([]byte, []int) {
 
 type SetAccountAliasesRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	AccountId     int64                  `protobuf:"varint,1,opt,name=account_id,json=accountId,proto3" json:"account_id,omitempty"`
-	Aliases       []string               `protobuf:"bytes,2,rep,name=aliases,proto3" json:"aliases,omitempty"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	AccountId     int64                  `protobuf:"varint,2,opt,name=account_id,json=accountId,proto3" json:"account_id,omitempty"`
+	Aliases       []string               `protobuf:"bytes,3,rep,name=aliases,proto3" json:"aliases,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -822,6 +839,13 @@ func (x *SetAccountAliasesRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use SetAccountAliasesRequest.ProtoReflect.Descriptor instead.
 func (*SetAccountAliasesRequest) Descriptor() ([]byte, []int) {
 	return file_null_v1_account_services_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *SetAccountAliasesRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
 }
 
 func (x *SetAccountAliasesRequest) GetAccountId() int64 {
@@ -876,7 +900,8 @@ func (*SetAccountAliasesResponse) Descriptor() ([]byte, []int) {
 
 type FindAccountByAliasRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Alias         string                 `protobuf:"bytes,1,opt,name=alias,proto3" json:"alias,omitempty"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Alias         string                 `protobuf:"bytes,2,opt,name=alias,proto3" json:"alias,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -909,6 +934,13 @@ func (x *FindAccountByAliasRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use FindAccountByAliasRequest.ProtoReflect.Descriptor instead.
 func (*FindAccountByAliasRequest) Descriptor() ([]byte, []int) {
 	return file_null_v1_account_services_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *FindAccountByAliasRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
 }
 
 func (x *FindAccountByAliasRequest) GetAlias() string {
@@ -960,6 +992,118 @@ func (x *FindAccountByAliasResponse) GetAccount() *Account {
 		return x.Account
 	}
 	return nil
+}
+
+type MergeAccountsRequest struct {
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	UserId             string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	PrimaryAccountId   int64                  `protobuf:"varint,2,opt,name=primary_account_id,json=primaryAccountId,proto3" json:"primary_account_id,omitempty"`
+	SecondaryAccountId int64                  `protobuf:"varint,3,opt,name=secondary_account_id,json=secondaryAccountId,proto3" json:"secondary_account_id,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *MergeAccountsRequest) Reset() {
+	*x = MergeAccountsRequest{}
+	mi := &file_null_v1_account_services_proto_msgTypes[18]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *MergeAccountsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MergeAccountsRequest) ProtoMessage() {}
+
+func (x *MergeAccountsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_null_v1_account_services_proto_msgTypes[18]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MergeAccountsRequest.ProtoReflect.Descriptor instead.
+func (*MergeAccountsRequest) Descriptor() ([]byte, []int) {
+	return file_null_v1_account_services_proto_rawDescGZIP(), []int{18}
+}
+
+func (x *MergeAccountsRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *MergeAccountsRequest) GetPrimaryAccountId() int64 {
+	if x != nil {
+		return x.PrimaryAccountId
+	}
+	return 0
+}
+
+func (x *MergeAccountsRequest) GetSecondaryAccountId() int64 {
+	if x != nil {
+		return x.SecondaryAccountId
+	}
+	return 0
+}
+
+type MergeAccountsResponse struct {
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	Account           *Account               `protobuf:"bytes,1,opt,name=account,proto3" json:"account,omitempty"`
+	TransactionsMoved int64                  `protobuf:"varint,2,opt,name=transactions_moved,json=transactionsMoved,proto3" json:"transactions_moved,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *MergeAccountsResponse) Reset() {
+	*x = MergeAccountsResponse{}
+	mi := &file_null_v1_account_services_proto_msgTypes[19]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *MergeAccountsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MergeAccountsResponse) ProtoMessage() {}
+
+func (x *MergeAccountsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_null_v1_account_services_proto_msgTypes[19]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MergeAccountsResponse.ProtoReflect.Descriptor instead.
+func (*MergeAccountsResponse) Descriptor() ([]byte, []int) {
+	return file_null_v1_account_services_proto_rawDescGZIP(), []int{19}
+}
+
+func (x *MergeAccountsResponse) GetAccount() *Account {
+	if x != nil {
+		return x.Account
+	}
+	return nil
+}
+
+func (x *MergeAccountsResponse) GetTransactionsMoved() int64 {
+	if x != nil {
+		return x.TransactionsMoved
+	}
+	return 0
 }
 
 var File_null_v1_account_services_proto protoreflect.FileDescriptor
@@ -1015,26 +1159,37 @@ const file_null_v1_account_services_proto_rawDesc = "" +
 	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\x12\x17\n" +
 	"\x02id\x18\x02 \x01(\x03B\a\xbaH\x04\"\x02 \x00R\x02id\"<\n" +
 	"\x15DeleteAccountResponse\x12#\n" +
-	"\raffected_rows\x18\x01 \x01(\x03R\faffectedRows\"_\n" +
-	"\x16AddAccountAliasRequest\x12&\n" +
+	"\raffected_rows\x18\x01 \x01(\x03R\faffectedRows\"\x82\x01\n" +
+	"\x16AddAccountAliasRequest\x12!\n" +
+	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\x12&\n" +
 	"\n" +
-	"account_id\x18\x01 \x01(\x03B\a\xbaH\x04\"\x02 \x00R\taccountId\x12\x1d\n" +
-	"\x05alias\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x05alias\"\x19\n" +
-	"\x17AddAccountAliasResponse\"b\n" +
-	"\x19RemoveAccountAliasRequest\x12&\n" +
+	"account_id\x18\x02 \x01(\x03B\a\xbaH\x04\"\x02 \x00R\taccountId\x12\x1d\n" +
+	"\x05alias\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x05alias\"\x19\n" +
+	"\x17AddAccountAliasResponse\"\x85\x01\n" +
+	"\x19RemoveAccountAliasRequest\x12!\n" +
+	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\x12&\n" +
 	"\n" +
-	"account_id\x18\x01 \x01(\x03B\a\xbaH\x04\"\x02 \x00R\taccountId\x12\x1d\n" +
-	"\x05alias\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x05alias\"\x1c\n" +
-	"\x1aRemoveAccountAliasResponse\"\\\n" +
-	"\x18SetAccountAliasesRequest\x12&\n" +
+	"account_id\x18\x02 \x01(\x03B\a\xbaH\x04\"\x02 \x00R\taccountId\x12\x1d\n" +
+	"\x05alias\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x05alias\"\x1c\n" +
+	"\x1aRemoveAccountAliasResponse\"\x7f\n" +
+	"\x18SetAccountAliasesRequest\x12!\n" +
+	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\x12&\n" +
 	"\n" +
-	"account_id\x18\x01 \x01(\x03B\a\xbaH\x04\"\x02 \x00R\taccountId\x12\x18\n" +
-	"\aaliases\x18\x02 \x03(\tR\aaliases\"\x1b\n" +
-	"\x19SetAccountAliasesResponse\":\n" +
-	"\x19FindAccountByAliasRequest\x12\x1d\n" +
-	"\x05alias\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x05alias\"H\n" +
+	"account_id\x18\x02 \x01(\x03B\a\xbaH\x04\"\x02 \x00R\taccountId\x12\x18\n" +
+	"\aaliases\x18\x03 \x03(\tR\aaliases\"\x1b\n" +
+	"\x19SetAccountAliasesResponse\"]\n" +
+	"\x19FindAccountByAliasRequest\x12!\n" +
+	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\x12\x1d\n" +
+	"\x05alias\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x05alias\"H\n" +
 	"\x1aFindAccountByAliasResponse\x12*\n" +
-	"\aaccount\x18\x01 \x01(\v2\x10.null.v1.AccountR\aaccount2\x84\x06\n" +
+	"\aaccount\x18\x01 \x01(\v2\x10.null.v1.AccountR\aaccount\"\xab\x01\n" +
+	"\x14MergeAccountsRequest\x12!\n" +
+	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\x125\n" +
+	"\x12primary_account_id\x18\x02 \x01(\x03B\a\xbaH\x04\"\x02 \x00R\x10primaryAccountId\x129\n" +
+	"\x14secondary_account_id\x18\x03 \x01(\x03B\a\xbaH\x04\"\x02 \x00R\x12secondaryAccountId\"r\n" +
+	"\x15MergeAccountsResponse\x12*\n" +
+	"\aaccount\x18\x01 \x01(\v2\x10.null.v1.AccountR\aaccount\x12-\n" +
+	"\x12transactions_moved\x18\x02 \x01(\x03R\x11transactionsMoved2\xd4\x06\n" +
 	"\x0eAccountService\x12K\n" +
 	"\fListAccounts\x12\x1c.null.v1.ListAccountsRequest\x1a\x1d.null.v1.ListAccountsResponse\x12E\n" +
 	"\n" +
@@ -1045,7 +1200,8 @@ const file_null_v1_account_services_proto_rawDesc = "" +
 	"\x0fAddAccountAlias\x12\x1f.null.v1.AddAccountAliasRequest\x1a .null.v1.AddAccountAliasResponse\x12]\n" +
 	"\x12RemoveAccountAlias\x12\".null.v1.RemoveAccountAliasRequest\x1a#.null.v1.RemoveAccountAliasResponse\x12Z\n" +
 	"\x11SetAccountAliases\x12!.null.v1.SetAccountAliasesRequest\x1a\".null.v1.SetAccountAliasesResponse\x12]\n" +
-	"\x12FindAccountByAlias\x12\".null.v1.FindAccountByAliasRequest\x1a#.null.v1.FindAccountByAliasResponseB\x95\x01\n" +
+	"\x12FindAccountByAlias\x12\".null.v1.FindAccountByAliasRequest\x1a#.null.v1.FindAccountByAliasResponse\x12N\n" +
+	"\rMergeAccounts\x12\x1d.null.v1.MergeAccountsRequest\x1a\x1e.null.v1.MergeAccountsResponseB\x95\x01\n" +
 	"\vcom.null.v1B\x14AccountServicesProtoP\x01Z1null-statement-parser/internal/gen/null/v1;nullv1\xa2\x02\x03NXX\xaa\x02\aNull.V1\xca\x02\bNull_\\V1\xe2\x02\x14Null_\\V1\\GPBMetadata\xea\x02\bNull::V1b\x06proto3"
 
 var (
@@ -1060,7 +1216,7 @@ func file_null_v1_account_services_proto_rawDescGZIP() []byte {
 	return file_null_v1_account_services_proto_rawDescData
 }
 
-var file_null_v1_account_services_proto_msgTypes = make([]protoimpl.MessageInfo, 18)
+var file_null_v1_account_services_proto_msgTypes = make([]protoimpl.MessageInfo, 20)
 var file_null_v1_account_services_proto_goTypes = []any{
 	(*ListAccountsRequest)(nil),        // 0: null.v1.ListAccountsRequest
 	(*ListAccountsResponse)(nil),       // 1: null.v1.ListAccountsResponse
@@ -1080,46 +1236,51 @@ var file_null_v1_account_services_proto_goTypes = []any{
 	(*SetAccountAliasesResponse)(nil),  // 15: null.v1.SetAccountAliasesResponse
 	(*FindAccountByAliasRequest)(nil),  // 16: null.v1.FindAccountByAliasRequest
 	(*FindAccountByAliasResponse)(nil), // 17: null.v1.FindAccountByAliasResponse
-	(*Account)(nil),                    // 18: null.v1.Account
-	(AccountType)(0),                   // 19: null.v1.AccountType
-	(*money.Money)(nil),                // 20: google.type.Money
-	(*fieldmaskpb.FieldMask)(nil),      // 21: google.protobuf.FieldMask
-	(*timestamppb.Timestamp)(nil),      // 22: google.protobuf.Timestamp
+	(*MergeAccountsRequest)(nil),       // 18: null.v1.MergeAccountsRequest
+	(*MergeAccountsResponse)(nil),      // 19: null.v1.MergeAccountsResponse
+	(*Account)(nil),                    // 20: null.v1.Account
+	(AccountType)(0),                   // 21: null.v1.AccountType
+	(*money.Money)(nil),                // 22: google.type.Money
+	(*fieldmaskpb.FieldMask)(nil),      // 23: google.protobuf.FieldMask
+	(*timestamppb.Timestamp)(nil),      // 24: google.protobuf.Timestamp
 }
 var file_null_v1_account_services_proto_depIdxs = []int32{
-	18, // 0: null.v1.ListAccountsResponse.accounts:type_name -> null.v1.Account
-	18, // 1: null.v1.GetAccountResponse.account:type_name -> null.v1.Account
-	19, // 2: null.v1.CreateAccountRequest.type:type_name -> null.v1.AccountType
-	20, // 3: null.v1.CreateAccountRequest.anchor_balance:type_name -> google.type.Money
-	18, // 4: null.v1.CreateAccountResponse.account:type_name -> null.v1.Account
-	21, // 5: null.v1.UpdateAccountRequest.update_mask:type_name -> google.protobuf.FieldMask
-	19, // 6: null.v1.UpdateAccountRequest.account_type:type_name -> null.v1.AccountType
-	22, // 7: null.v1.UpdateAccountRequest.anchor_date:type_name -> google.protobuf.Timestamp
-	20, // 8: null.v1.UpdateAccountRequest.anchor_balance:type_name -> google.type.Money
-	18, // 9: null.v1.FindAccountByAliasResponse.account:type_name -> null.v1.Account
-	0,  // 10: null.v1.AccountService.ListAccounts:input_type -> null.v1.ListAccountsRequest
-	2,  // 11: null.v1.AccountService.GetAccount:input_type -> null.v1.GetAccountRequest
-	4,  // 12: null.v1.AccountService.CreateAccount:input_type -> null.v1.CreateAccountRequest
-	6,  // 13: null.v1.AccountService.UpdateAccount:input_type -> null.v1.UpdateAccountRequest
-	8,  // 14: null.v1.AccountService.DeleteAccount:input_type -> null.v1.DeleteAccountRequest
-	10, // 15: null.v1.AccountService.AddAccountAlias:input_type -> null.v1.AddAccountAliasRequest
-	12, // 16: null.v1.AccountService.RemoveAccountAlias:input_type -> null.v1.RemoveAccountAliasRequest
-	14, // 17: null.v1.AccountService.SetAccountAliases:input_type -> null.v1.SetAccountAliasesRequest
-	16, // 18: null.v1.AccountService.FindAccountByAlias:input_type -> null.v1.FindAccountByAliasRequest
-	1,  // 19: null.v1.AccountService.ListAccounts:output_type -> null.v1.ListAccountsResponse
-	3,  // 20: null.v1.AccountService.GetAccount:output_type -> null.v1.GetAccountResponse
-	5,  // 21: null.v1.AccountService.CreateAccount:output_type -> null.v1.CreateAccountResponse
-	7,  // 22: null.v1.AccountService.UpdateAccount:output_type -> null.v1.UpdateAccountResponse
-	9,  // 23: null.v1.AccountService.DeleteAccount:output_type -> null.v1.DeleteAccountResponse
-	11, // 24: null.v1.AccountService.AddAccountAlias:output_type -> null.v1.AddAccountAliasResponse
-	13, // 25: null.v1.AccountService.RemoveAccountAlias:output_type -> null.v1.RemoveAccountAliasResponse
-	15, // 26: null.v1.AccountService.SetAccountAliases:output_type -> null.v1.SetAccountAliasesResponse
-	17, // 27: null.v1.AccountService.FindAccountByAlias:output_type -> null.v1.FindAccountByAliasResponse
-	19, // [19:28] is the sub-list for method output_type
-	10, // [10:19] is the sub-list for method input_type
-	10, // [10:10] is the sub-list for extension type_name
-	10, // [10:10] is the sub-list for extension extendee
-	0,  // [0:10] is the sub-list for field type_name
+	20, // 0: null.v1.ListAccountsResponse.accounts:type_name -> null.v1.Account
+	20, // 1: null.v1.GetAccountResponse.account:type_name -> null.v1.Account
+	21, // 2: null.v1.CreateAccountRequest.type:type_name -> null.v1.AccountType
+	22, // 3: null.v1.CreateAccountRequest.anchor_balance:type_name -> google.type.Money
+	20, // 4: null.v1.CreateAccountResponse.account:type_name -> null.v1.Account
+	23, // 5: null.v1.UpdateAccountRequest.update_mask:type_name -> google.protobuf.FieldMask
+	21, // 6: null.v1.UpdateAccountRequest.account_type:type_name -> null.v1.AccountType
+	24, // 7: null.v1.UpdateAccountRequest.anchor_date:type_name -> google.protobuf.Timestamp
+	22, // 8: null.v1.UpdateAccountRequest.anchor_balance:type_name -> google.type.Money
+	20, // 9: null.v1.FindAccountByAliasResponse.account:type_name -> null.v1.Account
+	20, // 10: null.v1.MergeAccountsResponse.account:type_name -> null.v1.Account
+	0,  // 11: null.v1.AccountService.ListAccounts:input_type -> null.v1.ListAccountsRequest
+	2,  // 12: null.v1.AccountService.GetAccount:input_type -> null.v1.GetAccountRequest
+	4,  // 13: null.v1.AccountService.CreateAccount:input_type -> null.v1.CreateAccountRequest
+	6,  // 14: null.v1.AccountService.UpdateAccount:input_type -> null.v1.UpdateAccountRequest
+	8,  // 15: null.v1.AccountService.DeleteAccount:input_type -> null.v1.DeleteAccountRequest
+	10, // 16: null.v1.AccountService.AddAccountAlias:input_type -> null.v1.AddAccountAliasRequest
+	12, // 17: null.v1.AccountService.RemoveAccountAlias:input_type -> null.v1.RemoveAccountAliasRequest
+	14, // 18: null.v1.AccountService.SetAccountAliases:input_type -> null.v1.SetAccountAliasesRequest
+	16, // 19: null.v1.AccountService.FindAccountByAlias:input_type -> null.v1.FindAccountByAliasRequest
+	18, // 20: null.v1.AccountService.MergeAccounts:input_type -> null.v1.MergeAccountsRequest
+	1,  // 21: null.v1.AccountService.ListAccounts:output_type -> null.v1.ListAccountsResponse
+	3,  // 22: null.v1.AccountService.GetAccount:output_type -> null.v1.GetAccountResponse
+	5,  // 23: null.v1.AccountService.CreateAccount:output_type -> null.v1.CreateAccountResponse
+	7,  // 24: null.v1.AccountService.UpdateAccount:output_type -> null.v1.UpdateAccountResponse
+	9,  // 25: null.v1.AccountService.DeleteAccount:output_type -> null.v1.DeleteAccountResponse
+	11, // 26: null.v1.AccountService.AddAccountAlias:output_type -> null.v1.AddAccountAliasResponse
+	13, // 27: null.v1.AccountService.RemoveAccountAlias:output_type -> null.v1.RemoveAccountAliasResponse
+	15, // 28: null.v1.AccountService.SetAccountAliases:output_type -> null.v1.SetAccountAliasesResponse
+	17, // 29: null.v1.AccountService.FindAccountByAlias:output_type -> null.v1.FindAccountByAliasResponse
+	19, // 30: null.v1.AccountService.MergeAccounts:output_type -> null.v1.MergeAccountsResponse
+	21, // [21:31] is the sub-list for method output_type
+	11, // [11:21] is the sub-list for method input_type
+	11, // [11:11] is the sub-list for extension type_name
+	11, // [11:11] is the sub-list for extension extendee
+	0,  // [0:11] is the sub-list for field type_name
 }
 
 func init() { file_null_v1_account_services_proto_init() }
@@ -1137,7 +1298,7 @@ func file_null_v1_account_services_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_null_v1_account_services_proto_rawDesc), len(file_null_v1_account_services_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   18,
+			NumMessages:   20,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

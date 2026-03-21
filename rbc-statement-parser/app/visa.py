@@ -22,7 +22,7 @@ def is_visa(file_path: str) -> bool:
 def extract_start_date(pdf: str) -> Optional[datetime]:
   regex = rf"statement from ({PAT_DATE_LONG}) to ({PAT_DATE_LONG})"
 
-  if match := re.search(regex, pdf, re.IGNORECASE):
+  if match := re.search(regex, pdf.replace("\xa0", " "), re.IGNORECASE):
     end_year = match[8]
     start_month = match[2]
     start_day = match[3]
@@ -81,6 +81,9 @@ def parse_visa(
 ) -> List[Transaction]:
   pdf = read_pdf(pdf_path)
   start_date = extract_start_date(pdf)
+
+  if start_date is None:
+    raise ValueError(f"could not extract statement date from {pdf_path}")
 
   lines = re.sub(
     rf"\n(?!{PAT_DATE_SHORT}\n{PAT_DATE_SHORT})",

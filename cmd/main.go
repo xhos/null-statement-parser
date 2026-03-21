@@ -34,13 +34,12 @@ func convertToAccountType(accountType string) pb.AccountType {
 
 func main() {
 	pdfPath := flag.String("pdf", "", "")
-	csvPath := flag.String("csv", "", "Optional RBC CSV export file to merge with statements")
+	csvPath := flag.String("csv", "", "")
 	configPath := flag.String("config", "", "")
 	flag.Parse()
 
 	godotenv.Load()
 
-	// Allow either PDF or CSV (or both)
 	if *pdfPath == "" {
 		if envPath := os.Getenv("PDF_PATH"); envPath != "" {
 			*pdfPath = envPath
@@ -56,9 +55,9 @@ func main() {
 		os.Exit(1)
 	}
 
-	serverURL := os.Getenv("ARIAND_URL")
+	serverURL := os.Getenv("NULL_CORE_URL")
 	if serverURL == "" {
-		fmt.Fprintf(os.Stderr, "need ARIAND_URL\n")
+		fmt.Fprintf(os.Stderr, "need NULL_CORE_URL\n")
 		os.Exit(1)
 	}
 
@@ -71,7 +70,6 @@ func main() {
 	var parseResult *parser.ParseResult
 	var transactions []*domain.Transaction
 
-	// Parse PDF statements if provided
 	if *pdfPath != "" {
 		pythonParser := parser.NewPythonParser()
 
@@ -88,14 +86,12 @@ func main() {
 			parseResult.Summary.TotalTransactions)
 
 		for _, fileResult := range parseResult.FileResults {
-			fileName := filepath.Base(fileResult.File)
 			if fileResult.Processed {
-				fmt.Printf("  %s: %d\n", fileName, fileResult.TransactionCount)
+				fmt.Printf("  %s: %d\n", filepath.Base(fileResult.File), fileResult.TransactionCount)
 			}
 		}
 	}
 
-	// Parse and merge CSV file if provided
 	if *csvPath != "" {
 		csvParser := parser.NewCSVParser()
 		fmt.Printf("\nparsing CSV %s\n", *csvPath)
@@ -106,12 +102,9 @@ func main() {
 
 		fmt.Printf("CSV transactions: %d\n", len(csvTransactions))
 
-		// Merge with smart deduplication
 		originalCount := len(transactions)
 		transactions = parser.MergeCSVWithStatements(transactions, csvTransactions)
-		newCount := len(transactions) - originalCount
-
-		fmt.Printf("merged: %d new from CSV (after deduplication)\n", newCount)
+		fmt.Printf("merged: %d new from CSV\n", len(transactions)-originalCount)
 	}
 
 	if len(transactions) == 0 {
@@ -130,46 +123,44 @@ func main() {
 		return
 	}
 
-	arianClient, err := client.NewClient(serverURL, "", apiKey)
+	nullClient, err := client.NewClient(serverURL, "", apiKey)
 	if err != nil {
 		log.Fatalf("client failed: %v", err)
 	}
-	defer arianClient.Close()
+	defer nullClient.Close()
 
-	_, err = arianClient.GetUser(userID)
+	_, err = nullClient.GetUser(userID)
 	if err != nil {
 		log.Fatalf("user not found: %v", err)
 	}
 
-	accounts, err := arianClient.GetAccounts(userID)
+	accounts, err := nullClient.GetAccounts(userID)
 	if err != nil {
 		log.Fatalf("get accounts failed: %v", err)
 	}
 
-	accountMatchStats := make(map[string]int)
-	// resolvedAccounts caches alias -> account lookups within this run
 	resolvedAccounts := make(map[string]*pb.Account)
+	accountMatchStats := make(map[string]int)
 
-	// First pass: resolve all account mappings via API aliases
-	askedMappings := make(map[string]bool)
+	seen := make(map[string]bool)
 	for _, tx := range transactions {
-		var accountName string
+		accountName := "Unknown"
 		if tx.StatementAccountNumber != nil && *tx.StatementAccountNumber != "" {
 			accountName = *tx.StatementAccountNumber
-		} else {
-			accountName = "Unknown"
 		}
 
-		mappingKey := accountName + "|" + tx.StatementAccountType
-		if askedMappings[mappingKey] {
+		key := accountName + "|" + tx.StatementAccountType
+		if seen[key] {
 			continue
 		}
-		askedMappings[mappingKey] = true
+		seen[key] = true
 
-		// Check API for alias
-		matchedAccount, err := arianClient.FindAccountByAlias(accountName)
+		matchedAccount, err := nullClient.FindAccountByAlias(userID, accountName)
 		if err != nil {
-			// Not found — prompt user
+			log.Fatalf("alias lookup failed: %v", err)
+		}
+
+		if matchedAccount == nil {
 			selectedAccountID, isNewAccount, err := mapping.PromptForAccountMapping(accountName, accounts)
 			if err != nil {
 				log.Fatalf("mapping prompt failed: %v", err)
@@ -177,12 +168,27 @@ func main() {
 
 			if isNewAccount {
 				accountType := convertToAccountType(tx.StatementAccountType)
-				newAccount, err := arianClient.CreateAccount(userID, accountName, "RBC", accountType, "CAD")
+				newAccount, err := nullClient.CreateAccount(userID, accountName, "RBC", accountType, "CAD")
 				if err != nil {
-					log.Fatalf("create account failed: %v", err)
+					freshAccounts, ferr := nullClient.GetAccounts(userID)
+					if ferr != nil {
+						log.Fatalf("create account failed: %v (also failed to refresh accounts: %v)", err, ferr)
+					}
+					accounts = freshAccounts
+					for _, a := range freshAccounts {
+						if strings.EqualFold(a.Name, accountName) {
+							newAccount = a
+							break
+						}
+					}
+					if newAccount == nil {
+						log.Fatalf("create account failed: %v", err)
+					}
+					log.Printf("account '%s' already existed (id=%d), using it", accountName, newAccount.Id)
+				} else {
+					accounts = append(accounts, newAccount)
 				}
 				matchedAccount = newAccount
-				accounts = append(accounts, newAccount)
 			} else {
 				selectedAccountIDInt, _ := strconv.ParseInt(selectedAccountID, 10, 64)
 				for _, account := range accounts {
@@ -200,7 +206,7 @@ func main() {
 				}
 			}
 
-			if err := arianClient.AddAccountAlias(matchedAccount.Id, accountName); err != nil {
+			if err := nullClient.AddAccountAlias(userID, matchedAccount.Id, accountName); err != nil {
 				log.Printf("WARN: failed to add alias: %v", err)
 			}
 		}
@@ -208,24 +214,20 @@ func main() {
 		resolvedAccounts[accountName] = matchedAccount
 	}
 
-	// Second pass: assign account IDs to all transactions
 	for _, tx := range transactions {
-		var accountName string
+		accountName := "Unknown"
 		if tx.StatementAccountNumber != nil && *tx.StatementAccountNumber != "" {
 			accountName = *tx.StatementAccountNumber
-		} else {
-			accountName = "Unknown"
 		}
 
 		matchedAccount := resolvedAccounts[accountName]
 		if matchedAccount == nil {
-			log.Fatalf("no account resolved for '%s' (this shouldn't happen)", accountName)
+			log.Fatalf("no account resolved for '%s'", accountName)
 		}
 		tx.AccountID = int(matchedAccount.Id)
 		accountMatchStats[accountName]++
 	}
 
-	// Bulk upload transactions in batches
 	const batchSize = 1000
 	totalCreated := int32(0)
 	totalErrors := 0
@@ -236,15 +238,12 @@ func main() {
 			end = len(transactions)
 		}
 
-		batch := transactions[i:end]
-		created, errors := arianClient.CreateTransactionsBulk(userID, batch)
+		created, errors := nullClient.CreateTransactionsBulk(userID, transactions[i:end])
 		totalCreated += created
 		totalErrors += len(errors)
 
-		if len(errors) > 0 {
-			for _, err := range errors {
-				log.Printf("ERROR: %v", err)
-			}
+		for _, err := range errors {
+			log.Printf("ERROR: %v", err)
 		}
 
 		fmt.Printf("%d/%d\n", end, len(transactions))

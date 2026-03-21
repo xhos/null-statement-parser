@@ -6,7 +6,7 @@ Wraps [andrewscwei's rbc-statement-parser](https://github.com/andrewscwei/rbc-st
 
 ```bash
 cp .env.example .env
-# fill in ARIAND_URL, API_KEY, USER_ID
+# fill in NULL_CORE_URL, API_KEY, USER_ID
 
 go mod tidy
 cd rbc-statement-parser && uv sync

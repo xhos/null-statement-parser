@@ -147,14 +147,6 @@ func (p *CSVParser) parseCSVRow(record []string, colIndices map[string]int, sour
 		direction = domain.In
 	}
 
-	// Normalize account type for matching
-	normalizedAccountType := accountType
-	if accountType == "chequing" || accountType == "savings" {
-		normalizedAccountType = accountType
-	} else if accountType == "visa" {
-		normalizedAccountType = "visa"
-	}
-
 	return &domain.Transaction{
 		TxDate:                 txDate,
 		TxAmount:               amount,
@@ -162,13 +154,11 @@ func (p *CSVParser) parseCSVRow(record []string, colIndices map[string]int, sour
 		TxDirection:            direction,
 		TxDesc:                 description,
 		StatementAccountNumber: &accountNumber,
-		StatementAccountType:   normalizedAccountType,
-		StatementAccountName:   "", // CSV doesn't have account name
+		StatementAccountType:   accountType,
 		SourceFilePath:         sourcePath,
 	}, nil
 }
 
-// GetLast4Digits extracts the last 4 digits from an account number
 func GetLast4Digits(accountNumber string) string {
 	if len(accountNumber) >= 4 {
 		return accountNumber[len(accountNumber)-4:]
@@ -176,17 +166,14 @@ func GetLast4Digits(accountNumber string) string {
 	return accountNumber
 }
 
-// MatchesAccount checks if a transaction's account number matches the given last 4 digits
 func MatchesAccount(tx *domain.Transaction, last4 string) bool {
 	if tx.StatementAccountNumber == nil {
 		return false
 	}
 	accountNum := *tx.StatementAccountNumber
-	// Check if it ends with last4 or equals last4
 	return strings.HasSuffix(accountNum, last4) || accountNum == last4
 }
 
-// FindLatestTransactionDate finds the latest transaction date for a specific account
 func FindLatestTransactionDate(transactions []*domain.Transaction, accountLast4 string) *time.Time {
 	var latest *time.Time
 
@@ -201,10 +188,6 @@ func FindLatestTransactionDate(transactions []*domain.Transaction, accountLast4 
 	return latest
 }
 
-// MergeCSVWithStatements merges CSV transactions with statement transactions, avoiding duplicates
-// For each account in the CSV:
-// 1. Find the latest transaction date in the statements
-// 2. Only include CSV transactions that are AFTER that date
 func MergeCSVWithStatements(statementTxs []*domain.Transaction, csvTxs []*domain.Transaction) []*domain.Transaction {
 	// Group CSV transactions by account (last 4 digits)
 	csvByAccount := make(map[string][]*domain.Transaction)
@@ -222,6 +205,16 @@ func MergeCSVWithStatements(statementTxs []*domain.Transaction, csvTxs []*domain
 		cutoffDates[last4] = FindLatestTransactionDate(statementTxs, last4)
 	}
 
+	// Build a map from last4 -> statement account number for normalization
+	statementAccountByLast4 := make(map[string]string)
+	for _, tx := range statementTxs {
+		if tx.StatementAccountNumber == nil {
+			continue
+		}
+		last4 := GetLast4Digits(*tx.StatementAccountNumber)
+		statementAccountByLast4[last4] = *tx.StatementAccountNumber
+	}
+
 	// Filter CSV transactions to only include those after cutoff
 	var newTransactions []*domain.Transaction
 	for last4, txs := range csvByAccount {
@@ -230,6 +223,10 @@ func MergeCSVWithStatements(statementTxs []*domain.Transaction, csvTxs []*domain
 		for _, tx := range txs {
 			// Include if no cutoff date (no statement for this account) or after cutoff
 			if cutoff == nil || tx.TxDate.After(*cutoff) {
+				// Normalize account number to match the statement format
+				if statementAccNum, ok := statementAccountByLast4[last4]; ok {
+					tx.StatementAccountNumber = &statementAccNum
+				}
 				newTransactions = append(newTransactions, tx)
 			}
 		}

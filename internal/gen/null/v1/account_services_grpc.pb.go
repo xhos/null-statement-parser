@@ -28,6 +28,7 @@ const (
 	AccountService_RemoveAccountAlias_FullMethodName = "/null.v1.AccountService/RemoveAccountAlias"
 	AccountService_SetAccountAliases_FullMethodName  = "/null.v1.AccountService/SetAccountAliases"
 	AccountService_FindAccountByAlias_FullMethodName = "/null.v1.AccountService/FindAccountByAlias"
+	AccountService_MergeAccounts_FullMethodName      = "/null.v1.AccountService/MergeAccounts"
 )
 
 // AccountServiceClient is the client API for AccountService service.
@@ -43,6 +44,7 @@ type AccountServiceClient interface {
 	RemoveAccountAlias(ctx context.Context, in *RemoveAccountAliasRequest, opts ...grpc.CallOption) (*RemoveAccountAliasResponse, error)
 	SetAccountAliases(ctx context.Context, in *SetAccountAliasesRequest, opts ...grpc.CallOption) (*SetAccountAliasesResponse, error)
 	FindAccountByAlias(ctx context.Context, in *FindAccountByAliasRequest, opts ...grpc.CallOption) (*FindAccountByAliasResponse, error)
+	MergeAccounts(ctx context.Context, in *MergeAccountsRequest, opts ...grpc.CallOption) (*MergeAccountsResponse, error)
 }
 
 type accountServiceClient struct {
@@ -143,6 +145,16 @@ func (c *accountServiceClient) FindAccountByAlias(ctx context.Context, in *FindA
 	return out, nil
 }
 
+func (c *accountServiceClient) MergeAccounts(ctx context.Context, in *MergeAccountsRequest, opts ...grpc.CallOption) (*MergeAccountsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(MergeAccountsResponse)
+	err := c.cc.Invoke(ctx, AccountService_MergeAccounts_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // AccountServiceServer is the server API for AccountService service.
 // All implementations should embed UnimplementedAccountServiceServer
 // for forward compatibility.
@@ -156,6 +168,7 @@ type AccountServiceServer interface {
 	RemoveAccountAlias(context.Context, *RemoveAccountAliasRequest) (*RemoveAccountAliasResponse, error)
 	SetAccountAliases(context.Context, *SetAccountAliasesRequest) (*SetAccountAliasesResponse, error)
 	FindAccountByAlias(context.Context, *FindAccountByAliasRequest) (*FindAccountByAliasResponse, error)
+	MergeAccounts(context.Context, *MergeAccountsRequest) (*MergeAccountsResponse, error)
 }
 
 // UnimplementedAccountServiceServer should be embedded to have
@@ -191,6 +204,9 @@ func (UnimplementedAccountServiceServer) SetAccountAliases(context.Context, *Set
 }
 func (UnimplementedAccountServiceServer) FindAccountByAlias(context.Context, *FindAccountByAliasRequest) (*FindAccountByAliasResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method FindAccountByAlias not implemented")
+}
+func (UnimplementedAccountServiceServer) MergeAccounts(context.Context, *MergeAccountsRequest) (*MergeAccountsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method MergeAccounts not implemented")
 }
 func (UnimplementedAccountServiceServer) testEmbeddedByValue() {}
 
@@ -374,6 +390,24 @@ func _AccountService_FindAccountByAlias_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AccountService_MergeAccounts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MergeAccountsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServiceServer).MergeAccounts(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AccountService_MergeAccounts_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServiceServer).MergeAccounts(ctx, req.(*MergeAccountsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // AccountService_ServiceDesc is the grpc.ServiceDesc for AccountService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -416,6 +450,10 @@ var AccountService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "FindAccountByAlias",
 			Handler:    _AccountService_FindAccountByAlias_Handler,
+		},
+		{
+			MethodName: "MergeAccounts",
+			Handler:    _AccountService_MergeAccounts_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

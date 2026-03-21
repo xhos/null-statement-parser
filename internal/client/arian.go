@@ -29,16 +29,15 @@ type Client struct {
 	log           *log.Logger
 }
 
-func NewClient(arianURL, _, authToken string) (*Client, error) {
-	// Use TLS credentials for port 443, insecure for others
+func NewClient(serverURL, _, authToken string) (*Client, error) {
 	var creds credentials.TransportCredentials
-	if arianURL[len(arianURL)-4:] == ":443" {
+	if serverURL[len(serverURL)-4:] == ":443" {
 		creds = credentials.NewTLS(&tls.Config{})
 	} else {
 		creds = insecure.NewCredentials()
 	}
 
-	conn, err := grpc.NewClient(arianURL, grpc.WithTransportCredentials(creds))
+	conn, err := grpc.NewClient(serverURL, grpc.WithTransportCredentials(creds))
 	if err != nil {
 		return nil, fmt.Errorf("failed to connect to gRPC server: %w", err)
 	}
@@ -57,43 +56,29 @@ func (c *Client) Close() error {
 	return c.conn.Close()
 }
 
-// GetUser retrieves a user by UUID
 func (c *Client) GetUser(userUUID string) (*pb.User, error) {
 	ctx := c.withAuth(context.Background())
-
-	req := &pb.GetUserRequest{
-		Id: userUUID,
-	}
-
-	resp, err := c.userClient.GetUser(ctx, req)
+	resp, err := c.userClient.GetUser(ctx, &pb.GetUserRequest{Id: userUUID})
 	if err != nil {
 		return nil, fmt.Errorf("failed to get user: %w", err)
 	}
-
 	c.log.Info("successfully fetched user", "user_id", userUUID)
 	return resp.User, nil
 }
 
 func (c *Client) GetAccounts(userID string) ([]*pb.Account, error) {
 	ctx := c.withAuth(context.Background())
-
-	req := &pb.ListAccountsRequest{
-		UserId: userID,
-	}
-
-	resp, err := c.accountClient.ListAccounts(ctx, req)
+	resp, err := c.accountClient.ListAccounts(ctx, &pb.ListAccountsRequest{UserId: userID})
 	if err != nil {
 		return nil, fmt.Errorf("failed to list accounts: %w", err)
 	}
-
 	c.log.Info("successfully fetched accounts", "count", len(resp.Accounts))
 	return resp.Accounts, nil
 }
 
 func (c *Client) CreateAccount(userID, accountName, bank string, accountType pb.AccountType, mainCurrency string) (*pb.Account, error) {
 	ctx := c.withAuth(context.Background())
-
-	req := &pb.CreateAccountRequest{
+	resp, err := c.accountClient.CreateAccount(ctx, &pb.CreateAccountRequest{
 		UserId:       userID,
 		Name:         accountName,
 		Bank:         bank,
@@ -104,43 +89,38 @@ func (c *Client) CreateAccount(userID, accountName, bank string, accountType pb.
 			Units:        0,
 			Nanos:        0,
 		},
-	}
-
-	resp, err := c.accountClient.CreateAccount(ctx, req)
+	})
 	if err != nil {
 		return nil, fmt.Errorf("failed to create account: %w", err)
 	}
-
 	c.log.Info("successfully created account", "account_name", accountName, "account_type", accountType, "account_id", resp.Account.Id)
 	return resp.Account, nil
 }
 
-func (c *Client) ListTransactions(userID string, limit int32) ([]*pb.Transaction, error) {
+func (c *Client) FindAccountByAlias(userID, alias string) (*pb.Account, error) {
 	ctx := c.withAuth(context.Background())
-
-	req := &pb.ListTransactionsRequest{
-		UserId: userID,
-		Limit:  &limit,
-	}
-
-	resp, err := c.txClient.ListTransactions(ctx, req)
+	resp, err := c.accountClient.FindAccountByAlias(ctx, &pb.FindAccountByAliasRequest{UserId: userID, Alias: alias})
 	if err != nil {
-		return nil, fmt.Errorf("failed to list transactions: %w", err)
+		switch status.Code(err) {
+		case codes.NotFound, codes.Unknown, codes.Internal:
+			return nil, nil
+		}
+		return nil, err
 	}
-
-	c.log.Info("successfully fetched transactions", "count", len(resp.Transactions))
-	return resp.Transactions, nil
+	return resp.Account, nil
 }
 
-func (c *Client) CreateTransaction(userID string, tx *domain.Transaction) error {
-	// Use bulk creation with a single transaction
-	created, errors := c.CreateTransactionsBulk(userID, []*domain.Transaction{tx})
-	if len(errors) > 0 {
-		return errors[0]
+func (c *Client) AddAccountAlias(userID string, accountID int64, alias string) error {
+	ctx := c.withAuth(context.Background())
+	_, err := c.accountClient.AddAccountAlias(ctx, &pb.AddAccountAliasRequest{
+		UserId:    userID,
+		AccountId: accountID,
+		Alias:     alias,
+	})
+	if err != nil {
+		return fmt.Errorf("failed to add account alias: %w", err)
 	}
-	if created == 0 {
-		return fmt.Errorf("transaction was not created")
-	}
+	c.log.Info("added alias to account", "account_id", accountID, "alias", alias)
 	return nil
 }
 
@@ -151,7 +131,6 @@ func (c *Client) CreateTransactionsBulk(userID string, transactions []*domain.Tr
 
 	ctx := c.withAuth(context.Background())
 
-	// Convert domain transactions to gRPC TransactionInput
 	inputs := make([]*pb.TransactionInput, 0, len(transactions))
 	for _, tx := range transactions {
 		input := &pb.TransactionInput{
@@ -164,8 +143,6 @@ func (c *Client) CreateTransactionsBulk(userID string, transactions []*domain.Tr
 			},
 			Direction: c.convertDirection(tx.TxDirection),
 		}
-
-		// Optional fields
 		if tx.TxDesc != "" {
 			input.Description = &tx.TxDesc
 		}
@@ -175,21 +152,17 @@ func (c *Client) CreateTransactionsBulk(userID string, transactions []*domain.Tr
 		if tx.UserNotes != "" {
 			input.UserNotes = &tx.UserNotes
 		}
-
 		inputs = append(inputs, input)
 	}
 
-	req := &pb.CreateTransactionRequest{
+	resp, err := c.txClient.CreateTransaction(ctx, &pb.CreateTransactionRequest{
 		UserId:       userID,
 		Transactions: inputs,
-	}
-
-	resp, err := c.txClient.CreateTransaction(ctx, req)
+	})
 	if err != nil {
-		// check for duplicate transaction (conflict)
-		if grpcStatus := status.Code(err); grpcStatus == codes.AlreadyExists {
+		if status.Code(err) == codes.AlreadyExists {
 			c.log.Info("skipping duplicate transactions")
-			return 0, nil // not a fatal error, just duplicates
+			return 0, nil
 		}
 		return 0, []error{fmt.Errorf("failed to create transactions: %w", err)}
 	}
@@ -198,35 +171,11 @@ func (c *Client) CreateTransactionsBulk(userID string, transactions []*domain.Tr
 	return resp.CreatedCount, nil
 }
 
-func (c *Client) FindAccountByAlias(alias string) (*pb.Account, error) {
-	ctx := c.withAuth(context.Background())
-	resp, err := c.accountClient.FindAccountByAlias(ctx, &pb.FindAccountByAliasRequest{Alias: alias})
-	if err != nil {
-		return nil, err
-	}
-	return resp.Account, nil
-}
-
-func (c *Client) AddAccountAlias(accountID int64, alias string) error {
-	ctx := c.withAuth(context.Background())
-	_, err := c.accountClient.AddAccountAlias(ctx, &pb.AddAccountAliasRequest{
-		AccountId: accountID,
-		Alias:     alias,
-	})
-	if err != nil {
-		return fmt.Errorf("failed to add account alias: %w", err)
-	}
-	c.log.Info("added alias to account", "account_id", accountID, "alias", alias)
-	return nil
-}
-
-// withAuth adds authentication metadata to the context
 func (c *Client) withAuth(ctx context.Context) context.Context {
 	md := metadata.Pairs("x-internal-key", c.authToken)
 	return metadata.NewOutgoingContext(ctx, md)
 }
 
-// convertDirection converts domain Direction to gRPC TransactionDirection
 func (c *Client) convertDirection(dir domain.Direction) pb.TransactionDirection {
 	switch dir {
 	case domain.In:
