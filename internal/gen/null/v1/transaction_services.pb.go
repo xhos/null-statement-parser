@@ -961,7 +961,7 @@ var File_null_v1_transaction_services_proto protoreflect.FileDescriptor
 
 const file_null_v1_transaction_services_proto_rawDesc = "" +
 	"\n" +
-	"\"null/v1/transaction_services.proto\x12\anull.v1\x1a\x14null/v1/common.proto\x1a\x13null/v1/enums.proto\x1a\x19null/v1/transaction.proto\x1a\x1bbuf/validate/validate.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17google/type/money.proto\"\x88\t\n" +
+	"\"null/v1/transaction_services.proto\x12\anull.v1\x1a\x14null/v1/common.proto\x1a\x13null/v1/enums.proto\x1a\x17google/type/money.proto\x1a\x19null/v1/transaction.proto\x1a\x1bbuf/validate/validate.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x88\t\n" +
 	"\x17ListTransactionsRequest\x12!\n" +
 	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\x12+\n" +
 	"\n" +

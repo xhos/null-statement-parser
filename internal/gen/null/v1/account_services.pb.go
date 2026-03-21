@@ -215,7 +215,7 @@ type CreateAccountRequest struct {
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Bank          string                 `protobuf:"bytes,3,opt,name=bank,proto3" json:"bank,omitempty"`
 	Type          AccountType            `protobuf:"varint,4,opt,name=type,proto3,enum=null.v1.AccountType" json:"type,omitempty"`
-	Alias         *string                `protobuf:"bytes,5,opt,name=alias,proto3,oneof" json:"alias,omitempty"`
+	FriendlyName  *string                `protobuf:"bytes,5,opt,name=friendly_name,json=friendlyName,proto3,oneof" json:"friendly_name,omitempty"`
 	AnchorBalance *money.Money           `protobuf:"bytes,6,opt,name=anchor_balance,json=anchorBalance,proto3" json:"anchor_balance,omitempty"`
 	MainCurrency  string                 `protobuf:"bytes,7,opt,name=main_currency,json=mainCurrency,proto3" json:"main_currency,omitempty"`
 	Colors        []string               `protobuf:"bytes,8,rep,name=colors,proto3" json:"colors,omitempty"`
@@ -281,9 +281,9 @@ func (x *CreateAccountRequest) GetType() AccountType {
 	return AccountType_ACCOUNT_UNSPECIFIED
 }
 
-func (x *CreateAccountRequest) GetAlias() string {
-	if x != nil && x.Alias != nil {
-		return *x.Alias
+func (x *CreateAccountRequest) GetFriendlyName() string {
+	if x != nil && x.FriendlyName != nil {
+		return *x.FriendlyName
 	}
 	return ""
 }
@@ -362,7 +362,7 @@ type UpdateAccountRequest struct {
 	Name          *string                `protobuf:"bytes,4,opt,name=name,proto3,oneof" json:"name,omitempty"`
 	Bank          *string                `protobuf:"bytes,5,opt,name=bank,proto3,oneof" json:"bank,omitempty"`
 	AccountType   *AccountType           `protobuf:"varint,6,opt,name=account_type,json=accountType,proto3,enum=null.v1.AccountType,oneof" json:"account_type,omitempty"`
-	Alias         *string                `protobuf:"bytes,7,opt,name=alias,proto3,oneof" json:"alias,omitempty"`
+	FriendlyName  *string                `protobuf:"bytes,7,opt,name=friendly_name,json=friendlyName,proto3,oneof" json:"friendly_name,omitempty"`
 	AnchorDate    *timestamppb.Timestamp `protobuf:"bytes,8,opt,name=anchor_date,json=anchorDate,proto3,oneof" json:"anchor_date,omitempty"`
 	AnchorBalance *money.Money           `protobuf:"bytes,9,opt,name=anchor_balance,json=anchorBalance,proto3,oneof" json:"anchor_balance,omitempty"`
 	MainCurrency  *string                `protobuf:"bytes,10,opt,name=main_currency,json=mainCurrency,proto3,oneof" json:"main_currency,omitempty"`
@@ -443,9 +443,9 @@ func (x *UpdateAccountRequest) GetAccountType() AccountType {
 	return AccountType_ACCOUNT_UNSPECIFIED
 }
 
-func (x *UpdateAccountRequest) GetAlias() string {
-	if x != nil && x.Alias != nil {
-		return *x.Alias
+func (x *UpdateAccountRequest) GetFriendlyName() string {
+	if x != nil && x.FriendlyName != nil {
+		return *x.FriendlyName
 	}
 	return ""
 }
@@ -610,11 +610,363 @@ func (x *DeleteAccountResponse) GetAffectedRows() int64 {
 	return 0
 }
 
+type AddAccountAliasRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	AccountId     int64                  `protobuf:"varint,1,opt,name=account_id,json=accountId,proto3" json:"account_id,omitempty"`
+	Alias         string                 `protobuf:"bytes,2,opt,name=alias,proto3" json:"alias,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AddAccountAliasRequest) Reset() {
+	*x = AddAccountAliasRequest{}
+	mi := &file_null_v1_account_services_proto_msgTypes[10]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AddAccountAliasRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AddAccountAliasRequest) ProtoMessage() {}
+
+func (x *AddAccountAliasRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_null_v1_account_services_proto_msgTypes[10]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AddAccountAliasRequest.ProtoReflect.Descriptor instead.
+func (*AddAccountAliasRequest) Descriptor() ([]byte, []int) {
+	return file_null_v1_account_services_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *AddAccountAliasRequest) GetAccountId() int64 {
+	if x != nil {
+		return x.AccountId
+	}
+	return 0
+}
+
+func (x *AddAccountAliasRequest) GetAlias() string {
+	if x != nil {
+		return x.Alias
+	}
+	return ""
+}
+
+type AddAccountAliasResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AddAccountAliasResponse) Reset() {
+	*x = AddAccountAliasResponse{}
+	mi := &file_null_v1_account_services_proto_msgTypes[11]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AddAccountAliasResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AddAccountAliasResponse) ProtoMessage() {}
+
+func (x *AddAccountAliasResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_null_v1_account_services_proto_msgTypes[11]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AddAccountAliasResponse.ProtoReflect.Descriptor instead.
+func (*AddAccountAliasResponse) Descriptor() ([]byte, []int) {
+	return file_null_v1_account_services_proto_rawDescGZIP(), []int{11}
+}
+
+type RemoveAccountAliasRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	AccountId     int64                  `protobuf:"varint,1,opt,name=account_id,json=accountId,proto3" json:"account_id,omitempty"`
+	Alias         string                 `protobuf:"bytes,2,opt,name=alias,proto3" json:"alias,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RemoveAccountAliasRequest) Reset() {
+	*x = RemoveAccountAliasRequest{}
+	mi := &file_null_v1_account_services_proto_msgTypes[12]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RemoveAccountAliasRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RemoveAccountAliasRequest) ProtoMessage() {}
+
+func (x *RemoveAccountAliasRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_null_v1_account_services_proto_msgTypes[12]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RemoveAccountAliasRequest.ProtoReflect.Descriptor instead.
+func (*RemoveAccountAliasRequest) Descriptor() ([]byte, []int) {
+	return file_null_v1_account_services_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *RemoveAccountAliasRequest) GetAccountId() int64 {
+	if x != nil {
+		return x.AccountId
+	}
+	return 0
+}
+
+func (x *RemoveAccountAliasRequest) GetAlias() string {
+	if x != nil {
+		return x.Alias
+	}
+	return ""
+}
+
+type RemoveAccountAliasResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RemoveAccountAliasResponse) Reset() {
+	*x = RemoveAccountAliasResponse{}
+	mi := &file_null_v1_account_services_proto_msgTypes[13]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RemoveAccountAliasResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RemoveAccountAliasResponse) ProtoMessage() {}
+
+func (x *RemoveAccountAliasResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_null_v1_account_services_proto_msgTypes[13]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RemoveAccountAliasResponse.ProtoReflect.Descriptor instead.
+func (*RemoveAccountAliasResponse) Descriptor() ([]byte, []int) {
+	return file_null_v1_account_services_proto_rawDescGZIP(), []int{13}
+}
+
+type SetAccountAliasesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	AccountId     int64                  `protobuf:"varint,1,opt,name=account_id,json=accountId,proto3" json:"account_id,omitempty"`
+	Aliases       []string               `protobuf:"bytes,2,rep,name=aliases,proto3" json:"aliases,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SetAccountAliasesRequest) Reset() {
+	*x = SetAccountAliasesRequest{}
+	mi := &file_null_v1_account_services_proto_msgTypes[14]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SetAccountAliasesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetAccountAliasesRequest) ProtoMessage() {}
+
+func (x *SetAccountAliasesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_null_v1_account_services_proto_msgTypes[14]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetAccountAliasesRequest.ProtoReflect.Descriptor instead.
+func (*SetAccountAliasesRequest) Descriptor() ([]byte, []int) {
+	return file_null_v1_account_services_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *SetAccountAliasesRequest) GetAccountId() int64 {
+	if x != nil {
+		return x.AccountId
+	}
+	return 0
+}
+
+func (x *SetAccountAliasesRequest) GetAliases() []string {
+	if x != nil {
+		return x.Aliases
+	}
+	return nil
+}
+
+type SetAccountAliasesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SetAccountAliasesResponse) Reset() {
+	*x = SetAccountAliasesResponse{}
+	mi := &file_null_v1_account_services_proto_msgTypes[15]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SetAccountAliasesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetAccountAliasesResponse) ProtoMessage() {}
+
+func (x *SetAccountAliasesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_null_v1_account_services_proto_msgTypes[15]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetAccountAliasesResponse.ProtoReflect.Descriptor instead.
+func (*SetAccountAliasesResponse) Descriptor() ([]byte, []int) {
+	return file_null_v1_account_services_proto_rawDescGZIP(), []int{15}
+}
+
+type FindAccountByAliasRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Alias         string                 `protobuf:"bytes,1,opt,name=alias,proto3" json:"alias,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *FindAccountByAliasRequest) Reset() {
+	*x = FindAccountByAliasRequest{}
+	mi := &file_null_v1_account_services_proto_msgTypes[16]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FindAccountByAliasRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FindAccountByAliasRequest) ProtoMessage() {}
+
+func (x *FindAccountByAliasRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_null_v1_account_services_proto_msgTypes[16]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FindAccountByAliasRequest.ProtoReflect.Descriptor instead.
+func (*FindAccountByAliasRequest) Descriptor() ([]byte, []int) {
+	return file_null_v1_account_services_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *FindAccountByAliasRequest) GetAlias() string {
+	if x != nil {
+		return x.Alias
+	}
+	return ""
+}
+
+type FindAccountByAliasResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Account       *Account               `protobuf:"bytes,1,opt,name=account,proto3" json:"account,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *FindAccountByAliasResponse) Reset() {
+	*x = FindAccountByAliasResponse{}
+	mi := &file_null_v1_account_services_proto_msgTypes[17]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FindAccountByAliasResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FindAccountByAliasResponse) ProtoMessage() {}
+
+func (x *FindAccountByAliasResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_null_v1_account_services_proto_msgTypes[17]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FindAccountByAliasResponse.ProtoReflect.Descriptor instead.
+func (*FindAccountByAliasResponse) Descriptor() ([]byte, []int) {
+	return file_null_v1_account_services_proto_rawDescGZIP(), []int{17}
+}
+
+func (x *FindAccountByAliasResponse) GetAccount() *Account {
+	if x != nil {
+		return x.Account
+	}
+	return nil
+}
+
 var File_null_v1_account_services_proto protoreflect.FileDescriptor
 
 const file_null_v1_account_services_proto_rawDesc = "" +
 	"\n" +
-	"\x1enull/v1/account_services.proto\x12\anull.v1\x1a\x15null/v1/account.proto\x1a\x13null/v1/enums.proto\x1a\x1bbuf/validate/validate.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17google/type/money.proto\"8\n" +
+	"\x1enull/v1/account_services.proto\x12\anull.v1\x1a\x15null/v1/account.proto\x1a\x17google/type/money.proto\x1a\x13null/v1/enums.proto\x1a\x1bbuf/validate/validate.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"8\n" +
 	"\x13ListAccountsRequest\x12!\n" +
 	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\"D\n" +
 	"\x14ListAccountsResponse\x12,\n" +
@@ -623,19 +975,19 @@ const file_null_v1_account_services_proto_rawDesc = "" +
 	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\x12\x17\n" +
 	"\x02id\x18\x02 \x01(\x03B\a\xbaH\x04\"\x02 \x00R\x02id\"@\n" +
 	"\x12GetAccountResponse\x12*\n" +
-	"\aaccount\x18\x01 \x01(\v2\x10.null.v1.AccountR\aaccount\"\xa8\x02\n" +
+	"\aaccount\x18\x01 \x01(\v2\x10.null.v1.AccountR\aaccount\"\xbf\x02\n" +
 	"\x14CreateAccountRequest\x12!\n" +
 	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
 	"\x04bank\x18\x03 \x01(\tR\x04bank\x12(\n" +
-	"\x04type\x18\x04 \x01(\x0e2\x14.null.v1.AccountTypeR\x04type\x12\x19\n" +
-	"\x05alias\x18\x05 \x01(\tH\x00R\x05alias\x88\x01\x01\x129\n" +
+	"\x04type\x18\x04 \x01(\x0e2\x14.null.v1.AccountTypeR\x04type\x12(\n" +
+	"\rfriendly_name\x18\x05 \x01(\tH\x00R\ffriendlyName\x88\x01\x01\x129\n" +
 	"\x0eanchor_balance\x18\x06 \x01(\v2\x12.google.type.MoneyR\ranchorBalance\x12#\n" +
 	"\rmain_currency\x18\a \x01(\tR\fmainCurrency\x12\x16\n" +
-	"\x06colors\x18\b \x03(\tR\x06colorsB\b\n" +
-	"\x06_alias\"C\n" +
+	"\x06colors\x18\b \x03(\tR\x06colorsB\x10\n" +
+	"\x0e_friendly_name\"C\n" +
 	"\x15CreateAccountResponse\x12*\n" +
-	"\aaccount\x18\x01 \x01(\v2\x10.null.v1.AccountR\aaccount\"\xc0\x04\n" +
+	"\aaccount\x18\x01 \x01(\v2\x10.null.v1.AccountR\aaccount\"\xd7\x04\n" +
 	"\x14UpdateAccountRequest\x12!\n" +
 	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\x12\x17\n" +
 	"\x02id\x18\x02 \x01(\x03B\a\xbaH\x04\"\x02 \x00R\x02id\x12;\n" +
@@ -643,8 +995,8 @@ const file_null_v1_account_services_proto_rawDesc = "" +
 	"updateMask\x12\x17\n" +
 	"\x04name\x18\x04 \x01(\tH\x00R\x04name\x88\x01\x01\x12\x17\n" +
 	"\x04bank\x18\x05 \x01(\tH\x01R\x04bank\x88\x01\x01\x12<\n" +
-	"\faccount_type\x18\x06 \x01(\x0e2\x14.null.v1.AccountTypeH\x02R\vaccountType\x88\x01\x01\x12\x19\n" +
-	"\x05alias\x18\a \x01(\tH\x03R\x05alias\x88\x01\x01\x12@\n" +
+	"\faccount_type\x18\x06 \x01(\x0e2\x14.null.v1.AccountTypeH\x02R\vaccountType\x88\x01\x01\x12(\n" +
+	"\rfriendly_name\x18\a \x01(\tH\x03R\ffriendlyName\x88\x01\x01\x12@\n" +
 	"\vanchor_date\x18\b \x01(\v2\x1a.google.protobuf.TimestampH\x04R\n" +
 	"anchorDate\x88\x01\x01\x12>\n" +
 	"\x0eanchor_balance\x18\t \x01(\v2\x12.google.type.MoneyH\x05R\ranchorBalance\x88\x01\x01\x12(\n" +
@@ -653,8 +1005,8 @@ const file_null_v1_account_services_proto_rawDesc = "" +
 	"\x06colors\x18\v \x03(\tR\x06colorsB\a\n" +
 	"\x05_nameB\a\n" +
 	"\x05_bankB\x0f\n" +
-	"\r_account_typeB\b\n" +
-	"\x06_aliasB\x0e\n" +
+	"\r_account_typeB\x10\n" +
+	"\x0e_friendly_nameB\x0e\n" +
 	"\f_anchor_dateB\x11\n" +
 	"\x0f_anchor_balanceB\x10\n" +
 	"\x0e_main_currency\"\x17\n" +
@@ -663,14 +1015,37 @@ const file_null_v1_account_services_proto_rawDesc = "" +
 	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\x12\x17\n" +
 	"\x02id\x18\x02 \x01(\x03B\a\xbaH\x04\"\x02 \x00R\x02id\"<\n" +
 	"\x15DeleteAccountResponse\x12#\n" +
-	"\raffected_rows\x18\x01 \x01(\x03R\faffectedRows2\x94\x03\n" +
+	"\raffected_rows\x18\x01 \x01(\x03R\faffectedRows\"_\n" +
+	"\x16AddAccountAliasRequest\x12&\n" +
+	"\n" +
+	"account_id\x18\x01 \x01(\x03B\a\xbaH\x04\"\x02 \x00R\taccountId\x12\x1d\n" +
+	"\x05alias\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x05alias\"\x19\n" +
+	"\x17AddAccountAliasResponse\"b\n" +
+	"\x19RemoveAccountAliasRequest\x12&\n" +
+	"\n" +
+	"account_id\x18\x01 \x01(\x03B\a\xbaH\x04\"\x02 \x00R\taccountId\x12\x1d\n" +
+	"\x05alias\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x05alias\"\x1c\n" +
+	"\x1aRemoveAccountAliasResponse\"\\\n" +
+	"\x18SetAccountAliasesRequest\x12&\n" +
+	"\n" +
+	"account_id\x18\x01 \x01(\x03B\a\xbaH\x04\"\x02 \x00R\taccountId\x12\x18\n" +
+	"\aaliases\x18\x02 \x03(\tR\aaliases\"\x1b\n" +
+	"\x19SetAccountAliasesResponse\":\n" +
+	"\x19FindAccountByAliasRequest\x12\x1d\n" +
+	"\x05alias\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x05alias\"H\n" +
+	"\x1aFindAccountByAliasResponse\x12*\n" +
+	"\aaccount\x18\x01 \x01(\v2\x10.null.v1.AccountR\aaccount2\x84\x06\n" +
 	"\x0eAccountService\x12K\n" +
 	"\fListAccounts\x12\x1c.null.v1.ListAccountsRequest\x1a\x1d.null.v1.ListAccountsResponse\x12E\n" +
 	"\n" +
 	"GetAccount\x12\x1a.null.v1.GetAccountRequest\x1a\x1b.null.v1.GetAccountResponse\x12N\n" +
 	"\rCreateAccount\x12\x1d.null.v1.CreateAccountRequest\x1a\x1e.null.v1.CreateAccountResponse\x12N\n" +
 	"\rUpdateAccount\x12\x1d.null.v1.UpdateAccountRequest\x1a\x1e.null.v1.UpdateAccountResponse\x12N\n" +
-	"\rDeleteAccount\x12\x1d.null.v1.DeleteAccountRequest\x1a\x1e.null.v1.DeleteAccountResponseB\x95\x01\n" +
+	"\rDeleteAccount\x12\x1d.null.v1.DeleteAccountRequest\x1a\x1e.null.v1.DeleteAccountResponse\x12T\n" +
+	"\x0fAddAccountAlias\x12\x1f.null.v1.AddAccountAliasRequest\x1a .null.v1.AddAccountAliasResponse\x12]\n" +
+	"\x12RemoveAccountAlias\x12\".null.v1.RemoveAccountAliasRequest\x1a#.null.v1.RemoveAccountAliasResponse\x12Z\n" +
+	"\x11SetAccountAliases\x12!.null.v1.SetAccountAliasesRequest\x1a\".null.v1.SetAccountAliasesResponse\x12]\n" +
+	"\x12FindAccountByAlias\x12\".null.v1.FindAccountByAliasRequest\x1a#.null.v1.FindAccountByAliasResponseB\x95\x01\n" +
 	"\vcom.null.v1B\x14AccountServicesProtoP\x01Z1null-statement-parser/internal/gen/null/v1;nullv1\xa2\x02\x03NXX\xaa\x02\aNull.V1\xca\x02\bNull_\\V1\xe2\x02\x14Null_\\V1\\GPBMetadata\xea\x02\bNull::V1b\x06proto3"
 
 var (
@@ -685,49 +1060,66 @@ func file_null_v1_account_services_proto_rawDescGZIP() []byte {
 	return file_null_v1_account_services_proto_rawDescData
 }
 
-var file_null_v1_account_services_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
+var file_null_v1_account_services_proto_msgTypes = make([]protoimpl.MessageInfo, 18)
 var file_null_v1_account_services_proto_goTypes = []any{
-	(*ListAccountsRequest)(nil),   // 0: null.v1.ListAccountsRequest
-	(*ListAccountsResponse)(nil),  // 1: null.v1.ListAccountsResponse
-	(*GetAccountRequest)(nil),     // 2: null.v1.GetAccountRequest
-	(*GetAccountResponse)(nil),    // 3: null.v1.GetAccountResponse
-	(*CreateAccountRequest)(nil),  // 4: null.v1.CreateAccountRequest
-	(*CreateAccountResponse)(nil), // 5: null.v1.CreateAccountResponse
-	(*UpdateAccountRequest)(nil),  // 6: null.v1.UpdateAccountRequest
-	(*UpdateAccountResponse)(nil), // 7: null.v1.UpdateAccountResponse
-	(*DeleteAccountRequest)(nil),  // 8: null.v1.DeleteAccountRequest
-	(*DeleteAccountResponse)(nil), // 9: null.v1.DeleteAccountResponse
-	(*Account)(nil),               // 10: null.v1.Account
-	(AccountType)(0),              // 11: null.v1.AccountType
-	(*money.Money)(nil),           // 12: google.type.Money
-	(*fieldmaskpb.FieldMask)(nil), // 13: google.protobuf.FieldMask
-	(*timestamppb.Timestamp)(nil), // 14: google.protobuf.Timestamp
+	(*ListAccountsRequest)(nil),        // 0: null.v1.ListAccountsRequest
+	(*ListAccountsResponse)(nil),       // 1: null.v1.ListAccountsResponse
+	(*GetAccountRequest)(nil),          // 2: null.v1.GetAccountRequest
+	(*GetAccountResponse)(nil),         // 3: null.v1.GetAccountResponse
+	(*CreateAccountRequest)(nil),       // 4: null.v1.CreateAccountRequest
+	(*CreateAccountResponse)(nil),      // 5: null.v1.CreateAccountResponse
+	(*UpdateAccountRequest)(nil),       // 6: null.v1.UpdateAccountRequest
+	(*UpdateAccountResponse)(nil),      // 7: null.v1.UpdateAccountResponse
+	(*DeleteAccountRequest)(nil),       // 8: null.v1.DeleteAccountRequest
+	(*DeleteAccountResponse)(nil),      // 9: null.v1.DeleteAccountResponse
+	(*AddAccountAliasRequest)(nil),     // 10: null.v1.AddAccountAliasRequest
+	(*AddAccountAliasResponse)(nil),    // 11: null.v1.AddAccountAliasResponse
+	(*RemoveAccountAliasRequest)(nil),  // 12: null.v1.RemoveAccountAliasRequest
+	(*RemoveAccountAliasResponse)(nil), // 13: null.v1.RemoveAccountAliasResponse
+	(*SetAccountAliasesRequest)(nil),   // 14: null.v1.SetAccountAliasesRequest
+	(*SetAccountAliasesResponse)(nil),  // 15: null.v1.SetAccountAliasesResponse
+	(*FindAccountByAliasRequest)(nil),  // 16: null.v1.FindAccountByAliasRequest
+	(*FindAccountByAliasResponse)(nil), // 17: null.v1.FindAccountByAliasResponse
+	(*Account)(nil),                    // 18: null.v1.Account
+	(AccountType)(0),                   // 19: null.v1.AccountType
+	(*money.Money)(nil),                // 20: google.type.Money
+	(*fieldmaskpb.FieldMask)(nil),      // 21: google.protobuf.FieldMask
+	(*timestamppb.Timestamp)(nil),      // 22: google.protobuf.Timestamp
 }
 var file_null_v1_account_services_proto_depIdxs = []int32{
-	10, // 0: null.v1.ListAccountsResponse.accounts:type_name -> null.v1.Account
-	10, // 1: null.v1.GetAccountResponse.account:type_name -> null.v1.Account
-	11, // 2: null.v1.CreateAccountRequest.type:type_name -> null.v1.AccountType
-	12, // 3: null.v1.CreateAccountRequest.anchor_balance:type_name -> google.type.Money
-	10, // 4: null.v1.CreateAccountResponse.account:type_name -> null.v1.Account
-	13, // 5: null.v1.UpdateAccountRequest.update_mask:type_name -> google.protobuf.FieldMask
-	11, // 6: null.v1.UpdateAccountRequest.account_type:type_name -> null.v1.AccountType
-	14, // 7: null.v1.UpdateAccountRequest.anchor_date:type_name -> google.protobuf.Timestamp
-	12, // 8: null.v1.UpdateAccountRequest.anchor_balance:type_name -> google.type.Money
-	0,  // 9: null.v1.AccountService.ListAccounts:input_type -> null.v1.ListAccountsRequest
-	2,  // 10: null.v1.AccountService.GetAccount:input_type -> null.v1.GetAccountRequest
-	4,  // 11: null.v1.AccountService.CreateAccount:input_type -> null.v1.CreateAccountRequest
-	6,  // 12: null.v1.AccountService.UpdateAccount:input_type -> null.v1.UpdateAccountRequest
-	8,  // 13: null.v1.AccountService.DeleteAccount:input_type -> null.v1.DeleteAccountRequest
-	1,  // 14: null.v1.AccountService.ListAccounts:output_type -> null.v1.ListAccountsResponse
-	3,  // 15: null.v1.AccountService.GetAccount:output_type -> null.v1.GetAccountResponse
-	5,  // 16: null.v1.AccountService.CreateAccount:output_type -> null.v1.CreateAccountResponse
-	7,  // 17: null.v1.AccountService.UpdateAccount:output_type -> null.v1.UpdateAccountResponse
-	9,  // 18: null.v1.AccountService.DeleteAccount:output_type -> null.v1.DeleteAccountResponse
-	14, // [14:19] is the sub-list for method output_type
-	9,  // [9:14] is the sub-list for method input_type
-	9,  // [9:9] is the sub-list for extension type_name
-	9,  // [9:9] is the sub-list for extension extendee
-	0,  // [0:9] is the sub-list for field type_name
+	18, // 0: null.v1.ListAccountsResponse.accounts:type_name -> null.v1.Account
+	18, // 1: null.v1.GetAccountResponse.account:type_name -> null.v1.Account
+	19, // 2: null.v1.CreateAccountRequest.type:type_name -> null.v1.AccountType
+	20, // 3: null.v1.CreateAccountRequest.anchor_balance:type_name -> google.type.Money
+	18, // 4: null.v1.CreateAccountResponse.account:type_name -> null.v1.Account
+	21, // 5: null.v1.UpdateAccountRequest.update_mask:type_name -> google.protobuf.FieldMask
+	19, // 6: null.v1.UpdateAccountRequest.account_type:type_name -> null.v1.AccountType
+	22, // 7: null.v1.UpdateAccountRequest.anchor_date:type_name -> google.protobuf.Timestamp
+	20, // 8: null.v1.UpdateAccountRequest.anchor_balance:type_name -> google.type.Money
+	18, // 9: null.v1.FindAccountByAliasResponse.account:type_name -> null.v1.Account
+	0,  // 10: null.v1.AccountService.ListAccounts:input_type -> null.v1.ListAccountsRequest
+	2,  // 11: null.v1.AccountService.GetAccount:input_type -> null.v1.GetAccountRequest
+	4,  // 12: null.v1.AccountService.CreateAccount:input_type -> null.v1.CreateAccountRequest
+	6,  // 13: null.v1.AccountService.UpdateAccount:input_type -> null.v1.UpdateAccountRequest
+	8,  // 14: null.v1.AccountService.DeleteAccount:input_type -> null.v1.DeleteAccountRequest
+	10, // 15: null.v1.AccountService.AddAccountAlias:input_type -> null.v1.AddAccountAliasRequest
+	12, // 16: null.v1.AccountService.RemoveAccountAlias:input_type -> null.v1.RemoveAccountAliasRequest
+	14, // 17: null.v1.AccountService.SetAccountAliases:input_type -> null.v1.SetAccountAliasesRequest
+	16, // 18: null.v1.AccountService.FindAccountByAlias:input_type -> null.v1.FindAccountByAliasRequest
+	1,  // 19: null.v1.AccountService.ListAccounts:output_type -> null.v1.ListAccountsResponse
+	3,  // 20: null.v1.AccountService.GetAccount:output_type -> null.v1.GetAccountResponse
+	5,  // 21: null.v1.AccountService.CreateAccount:output_type -> null.v1.CreateAccountResponse
+	7,  // 22: null.v1.AccountService.UpdateAccount:output_type -> null.v1.UpdateAccountResponse
+	9,  // 23: null.v1.AccountService.DeleteAccount:output_type -> null.v1.DeleteAccountResponse
+	11, // 24: null.v1.AccountService.AddAccountAlias:output_type -> null.v1.AddAccountAliasResponse
+	13, // 25: null.v1.AccountService.RemoveAccountAlias:output_type -> null.v1.RemoveAccountAliasResponse
+	15, // 26: null.v1.AccountService.SetAccountAliases:output_type -> null.v1.SetAccountAliasesResponse
+	17, // 27: null.v1.AccountService.FindAccountByAlias:output_type -> null.v1.FindAccountByAliasResponse
+	19, // [19:28] is the sub-list for method output_type
+	10, // [10:19] is the sub-list for method input_type
+	10, // [10:10] is the sub-list for extension type_name
+	10, // [10:10] is the sub-list for extension extendee
+	0,  // [0:10] is the sub-list for field type_name
 }
 
 func init() { file_null_v1_account_services_proto_init() }
@@ -745,7 +1137,7 @@ func file_null_v1_account_services_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_null_v1_account_services_proto_rawDesc), len(file_null_v1_account_services_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   10,
+			NumMessages:   18,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

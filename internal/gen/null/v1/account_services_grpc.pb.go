@@ -19,11 +19,15 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	AccountService_ListAccounts_FullMethodName  = "/null.v1.AccountService/ListAccounts"
-	AccountService_GetAccount_FullMethodName    = "/null.v1.AccountService/GetAccount"
-	AccountService_CreateAccount_FullMethodName = "/null.v1.AccountService/CreateAccount"
-	AccountService_UpdateAccount_FullMethodName = "/null.v1.AccountService/UpdateAccount"
-	AccountService_DeleteAccount_FullMethodName = "/null.v1.AccountService/DeleteAccount"
+	AccountService_ListAccounts_FullMethodName       = "/null.v1.AccountService/ListAccounts"
+	AccountService_GetAccount_FullMethodName         = "/null.v1.AccountService/GetAccount"
+	AccountService_CreateAccount_FullMethodName      = "/null.v1.AccountService/CreateAccount"
+	AccountService_UpdateAccount_FullMethodName      = "/null.v1.AccountService/UpdateAccount"
+	AccountService_DeleteAccount_FullMethodName      = "/null.v1.AccountService/DeleteAccount"
+	AccountService_AddAccountAlias_FullMethodName    = "/null.v1.AccountService/AddAccountAlias"
+	AccountService_RemoveAccountAlias_FullMethodName = "/null.v1.AccountService/RemoveAccountAlias"
+	AccountService_SetAccountAliases_FullMethodName  = "/null.v1.AccountService/SetAccountAliases"
+	AccountService_FindAccountByAlias_FullMethodName = "/null.v1.AccountService/FindAccountByAlias"
 )
 
 // AccountServiceClient is the client API for AccountService service.
@@ -35,6 +39,10 @@ type AccountServiceClient interface {
 	CreateAccount(ctx context.Context, in *CreateAccountRequest, opts ...grpc.CallOption) (*CreateAccountResponse, error)
 	UpdateAccount(ctx context.Context, in *UpdateAccountRequest, opts ...grpc.CallOption) (*UpdateAccountResponse, error)
 	DeleteAccount(ctx context.Context, in *DeleteAccountRequest, opts ...grpc.CallOption) (*DeleteAccountResponse, error)
+	AddAccountAlias(ctx context.Context, in *AddAccountAliasRequest, opts ...grpc.CallOption) (*AddAccountAliasResponse, error)
+	RemoveAccountAlias(ctx context.Context, in *RemoveAccountAliasRequest, opts ...grpc.CallOption) (*RemoveAccountAliasResponse, error)
+	SetAccountAliases(ctx context.Context, in *SetAccountAliasesRequest, opts ...grpc.CallOption) (*SetAccountAliasesResponse, error)
+	FindAccountByAlias(ctx context.Context, in *FindAccountByAliasRequest, opts ...grpc.CallOption) (*FindAccountByAliasResponse, error)
 }
 
 type accountServiceClient struct {
@@ -95,6 +103,46 @@ func (c *accountServiceClient) DeleteAccount(ctx context.Context, in *DeleteAcco
 	return out, nil
 }
 
+func (c *accountServiceClient) AddAccountAlias(ctx context.Context, in *AddAccountAliasRequest, opts ...grpc.CallOption) (*AddAccountAliasResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AddAccountAliasResponse)
+	err := c.cc.Invoke(ctx, AccountService_AddAccountAlias_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountServiceClient) RemoveAccountAlias(ctx context.Context, in *RemoveAccountAliasRequest, opts ...grpc.CallOption) (*RemoveAccountAliasResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RemoveAccountAliasResponse)
+	err := c.cc.Invoke(ctx, AccountService_RemoveAccountAlias_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountServiceClient) SetAccountAliases(ctx context.Context, in *SetAccountAliasesRequest, opts ...grpc.CallOption) (*SetAccountAliasesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SetAccountAliasesResponse)
+	err := c.cc.Invoke(ctx, AccountService_SetAccountAliases_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountServiceClient) FindAccountByAlias(ctx context.Context, in *FindAccountByAliasRequest, opts ...grpc.CallOption) (*FindAccountByAliasResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(FindAccountByAliasResponse)
+	err := c.cc.Invoke(ctx, AccountService_FindAccountByAlias_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // AccountServiceServer is the server API for AccountService service.
 // All implementations should embed UnimplementedAccountServiceServer
 // for forward compatibility.
@@ -104,6 +152,10 @@ type AccountServiceServer interface {
 	CreateAccount(context.Context, *CreateAccountRequest) (*CreateAccountResponse, error)
 	UpdateAccount(context.Context, *UpdateAccountRequest) (*UpdateAccountResponse, error)
 	DeleteAccount(context.Context, *DeleteAccountRequest) (*DeleteAccountResponse, error)
+	AddAccountAlias(context.Context, *AddAccountAliasRequest) (*AddAccountAliasResponse, error)
+	RemoveAccountAlias(context.Context, *RemoveAccountAliasRequest) (*RemoveAccountAliasResponse, error)
+	SetAccountAliases(context.Context, *SetAccountAliasesRequest) (*SetAccountAliasesResponse, error)
+	FindAccountByAlias(context.Context, *FindAccountByAliasRequest) (*FindAccountByAliasResponse, error)
 }
 
 // UnimplementedAccountServiceServer should be embedded to have
@@ -127,6 +179,18 @@ func (UnimplementedAccountServiceServer) UpdateAccount(context.Context, *UpdateA
 }
 func (UnimplementedAccountServiceServer) DeleteAccount(context.Context, *DeleteAccountRequest) (*DeleteAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteAccount not implemented")
+}
+func (UnimplementedAccountServiceServer) AddAccountAlias(context.Context, *AddAccountAliasRequest) (*AddAccountAliasResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AddAccountAlias not implemented")
+}
+func (UnimplementedAccountServiceServer) RemoveAccountAlias(context.Context, *RemoveAccountAliasRequest) (*RemoveAccountAliasResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RemoveAccountAlias not implemented")
+}
+func (UnimplementedAccountServiceServer) SetAccountAliases(context.Context, *SetAccountAliasesRequest) (*SetAccountAliasesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SetAccountAliases not implemented")
+}
+func (UnimplementedAccountServiceServer) FindAccountByAlias(context.Context, *FindAccountByAliasRequest) (*FindAccountByAliasResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method FindAccountByAlias not implemented")
 }
 func (UnimplementedAccountServiceServer) testEmbeddedByValue() {}
 
@@ -238,6 +302,78 @@ func _AccountService_DeleteAccount_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AccountService_AddAccountAlias_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AddAccountAliasRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServiceServer).AddAccountAlias(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AccountService_AddAccountAlias_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServiceServer).AddAccountAlias(ctx, req.(*AddAccountAliasRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AccountService_RemoveAccountAlias_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RemoveAccountAliasRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServiceServer).RemoveAccountAlias(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AccountService_RemoveAccountAlias_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServiceServer).RemoveAccountAlias(ctx, req.(*RemoveAccountAliasRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AccountService_SetAccountAliases_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetAccountAliasesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServiceServer).SetAccountAliases(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AccountService_SetAccountAliases_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServiceServer).SetAccountAliases(ctx, req.(*SetAccountAliasesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AccountService_FindAccountByAlias_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(FindAccountByAliasRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServiceServer).FindAccountByAlias(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AccountService_FindAccountByAlias_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServiceServer).FindAccountByAlias(ctx, req.(*FindAccountByAliasRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // AccountService_ServiceDesc is the grpc.ServiceDesc for AccountService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -264,6 +400,22 @@ var AccountService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteAccount",
 			Handler:    _AccountService_DeleteAccount_Handler,
+		},
+		{
+			MethodName: "AddAccountAlias",
+			Handler:    _AccountService_AddAccountAlias_Handler,
+		},
+		{
+			MethodName: "RemoveAccountAlias",
+			Handler:    _AccountService_RemoveAccountAlias_Handler,
+		},
+		{
+			MethodName: "SetAccountAliases",
+			Handler:    _AccountService_SetAccountAliases_Handler,
+		},
+		{
+			MethodName: "FindAccountByAlias",
+			Handler:    _AccountService_FindAccountByAlias_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

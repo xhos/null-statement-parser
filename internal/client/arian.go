@@ -198,6 +198,28 @@ func (c *Client) CreateTransactionsBulk(userID string, transactions []*domain.Tr
 	return resp.CreatedCount, nil
 }
 
+func (c *Client) FindAccountByAlias(alias string) (*pb.Account, error) {
+	ctx := c.withAuth(context.Background())
+	resp, err := c.accountClient.FindAccountByAlias(ctx, &pb.FindAccountByAliasRequest{Alias: alias})
+	if err != nil {
+		return nil, err
+	}
+	return resp.Account, nil
+}
+
+func (c *Client) AddAccountAlias(accountID int64, alias string) error {
+	ctx := c.withAuth(context.Background())
+	_, err := c.accountClient.AddAccountAlias(ctx, &pb.AddAccountAliasRequest{
+		AccountId: accountID,
+		Alias:     alias,
+	})
+	if err != nil {
+		return fmt.Errorf("failed to add account alias: %w", err)
+	}
+	c.log.Info("added alias to account", "account_id", accountID, "alias", alias)
+	return nil
+}
+
 // withAuth adds authentication metadata to the context
 func (c *Client) withAuth(ctx context.Context) context.Context {
 	md := metadata.Pairs("x-internal-key", c.authToken)

@@ -659,7 +659,7 @@ var File_null_v1_dashboard_proto protoreflect.FileDescriptor
 
 const file_null_v1_dashboard_proto_rawDesc = "" +
 	"\n" +
-	"\x17null/v1/dashboard.proto\x12\anull.v1\x1a\x16null/v1/category.proto\x1a\x16google/type/date.proto\x1a\x17google/type/money.proto\"\x8f\x01\n" +
+	"\x17null/v1/dashboard.proto\x12\anull.v1\x1a\x16null/v1/category.proto\x1a\x17google/type/money.proto\x1a\x16google/type/date.proto\"\x8f\x01\n" +
 	"\n" +
 	"TrendPoint\x12%\n" +
 	"\x04date\x18\x01 \x01(\v2\x11.google.type.DateR\x04date\x12*\n" +

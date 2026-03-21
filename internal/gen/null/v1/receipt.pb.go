@@ -447,7 +447,7 @@ var File_null_v1_receipt_proto protoreflect.FileDescriptor
 
 const file_null_v1_receipt_proto_rawDesc = "" +
 	"\n" +
-	"\x15null/v1/receipt.proto\x12\anull.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x16google/type/date.proto\x1a\x17google/type/money.proto\"\xe7\x01\n" +
+	"\x15null/v1/receipt.proto\x12\anull.v1\x1a\x17google/type/money.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x16google/type/date.proto\"\xe7\x01\n" +
 	"\vReceiptItem\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x03R\x02id\x12\x1d\n" +
 	"\n" +

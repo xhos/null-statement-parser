@@ -334,7 +334,7 @@ var File_null_v1_transaction_proto protoreflect.FileDescriptor
 
 const file_null_v1_transaction_proto_rawDesc = "" +
 	"\n" +
-	"\x19null/v1/transaction.proto\x12\anull.v1\x1a\x16null/v1/category.proto\x1a\x13null/v1/enums.proto\x1a\x1bbuf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17google/type/money.proto\"\xd1\b\n" +
+	"\x19null/v1/transaction.proto\x12\anull.v1\x1a\x16null/v1/category.proto\x1a\x17google/type/money.proto\x1a\x13null/v1/enums.proto\x1a\x1bbuf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xd1\b\n" +
 	"\vTransaction\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x03R\x02id\x123\n" +
 	"\atx_date\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\x06txDate\x12/\n" +

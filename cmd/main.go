@@ -32,16 +32,6 @@ func convertToAccountType(accountType string) pb.AccountType {
 	}
 }
 
-func findMatchingAccount(accounts []*pb.Account, accountName string, accountType string) *pb.Account {
-	expectedType := convertToAccountType(accountType)
-	for _, account := range accounts {
-		if account.Type == expectedType && strings.EqualFold(account.Name, accountName) {
-			return account
-		}
-	}
-	return nil
-}
-
 func main() {
 	pdfPath := flag.String("pdf", "", "")
 	csvPath := flag.String("csv", "", "Optional RBC CSV export file to merge with statements")
@@ -156,16 +146,12 @@ func main() {
 		log.Fatalf("get accounts failed: %v", err)
 	}
 
-	// Initialize mapping store
-	mappingStore, err := mapping.NewStore()
-	if err != nil {
-		log.Fatalf("failed to initialize mapping store: %v", err)
-	}
-
 	accountMatchStats := make(map[string]int)
-	askedMappings := make(map[string]bool) // Track which accounts we've already asked about
+	// resolvedAccounts caches alias -> account lookups within this run
+	resolvedAccounts := make(map[string]*pb.Account)
 
-	// First pass: resolve all account mappings
+	// First pass: resolve all account mappings via API aliases
+	askedMappings := make(map[string]bool)
 	for _, tx := range transactions {
 		var accountName string
 		if tx.StatementAccountNumber != nil && *tx.StatementAccountNumber != "" {
@@ -176,37 +162,20 @@ func main() {
 
 		mappingKey := accountName + "|" + tx.StatementAccountType
 		if askedMappings[mappingKey] {
-			continue // Already resolved this account
+			continue
 		}
 		askedMappings[mappingKey] = true
 
-		var matchedAccount *pb.Account
-
-		// First, check if we have a saved mapping for this statement account
-		arianAccountName := mappingStore.FindMapping(accountName)
-
-		if arianAccountName != "" {
-			// Use the saved mapping - resolve by account name
-			matchedAccount = mappingStore.ResolveAccount(arianAccountName, accounts)
-			if matchedAccount == nil {
-				log.Printf("WARN: saved mapping for '%s' points to non-existent account '%s', will re-prompt", accountName, arianAccountName)
-			}
-		}
-
-		// If no saved mapping or account not found, try to match by name and type
-		if matchedAccount == nil {
-			matchedAccount = findMatchingAccount(accounts, accountName, tx.StatementAccountType)
-		}
-
-		// If still no match, prompt the user
-		if matchedAccount == nil {
+		// Check API for alias
+		matchedAccount, err := arianClient.FindAccountByAlias(accountName)
+		if err != nil {
+			// Not found — prompt user
 			selectedAccountID, isNewAccount, err := mapping.PromptForAccountMapping(accountName, accounts)
 			if err != nil {
 				log.Fatalf("mapping prompt failed: %v", err)
 			}
 
 			if isNewAccount {
-				// Create new account
 				accountType := convertToAccountType(tx.StatementAccountType)
 				newAccount, err := arianClient.CreateAccount(userID, accountName, "RBC", accountType, "CAD")
 				if err != nil {
@@ -214,14 +183,7 @@ func main() {
 				}
 				matchedAccount = newAccount
 				accounts = append(accounts, newAccount)
-
-				// Save mapping
-				err = mappingStore.AddMapping(accountName, newAccount.Name)
-				if err != nil {
-					log.Printf("WARN: failed to save mapping: %v", err)
-				}
 			} else {
-				// Use selected existing account
 				selectedAccountIDInt, _ := strconv.ParseInt(selectedAccountID, 10, 64)
 				for _, account := range accounts {
 					if account.Id == selectedAccountIDInt {
@@ -229,24 +191,21 @@ func main() {
 						break
 					}
 				}
-
 				if matchedAccount == nil {
 					log.Fatalf("selected account not found")
 				}
-
-				// Save mapping
-				err = mappingStore.AddMapping(accountName, matchedAccount.Name)
-				if err != nil {
-					log.Printf("WARN: failed to save mapping: %v", err)
-				}
-
-				// Warn if types don't match
 				expectedType := convertToAccountType(tx.StatementAccountType)
 				if matchedAccount.Type != expectedType {
 					log.Printf("WARN: account '%s' type mismatch - statement expects %s but account is %s (continuing anyway)", accountName, expectedType, matchedAccount.Type)
 				}
 			}
+
+			if err := arianClient.AddAccountAlias(matchedAccount.Id, accountName); err != nil {
+				log.Printf("WARN: failed to add alias: %v", err)
+			}
 		}
+
+		resolvedAccounts[accountName] = matchedAccount
 	}
 
 	// Second pass: assign account IDs to all transactions
@@ -258,26 +217,12 @@ func main() {
 			accountName = "Unknown"
 		}
 
-		arianAccountName := mappingStore.FindMapping(accountName)
-		if arianAccountName == "" {
-			// Try to match by name and type
-			matchedAccount := findMatchingAccount(accounts, accountName, tx.StatementAccountType)
-			if matchedAccount != nil {
-				tx.AccountID = int(matchedAccount.Id)
-				accountMatchStats[accountName]++
-			} else {
-				log.Fatalf("no account found for transaction with account '%s' (this shouldn't happen)", accountName)
-			}
-		} else {
-			// Resolve account by name
-			matchedAccount := mappingStore.ResolveAccount(arianAccountName, accounts)
-			if matchedAccount != nil {
-				tx.AccountID = int(matchedAccount.Id)
-				accountMatchStats[accountName]++
-			} else {
-				log.Fatalf("no account found for mapping '%s' -> '%s' (this shouldn't happen)", accountName, arianAccountName)
-			}
+		matchedAccount := resolvedAccounts[accountName]
+		if matchedAccount == nil {
+			log.Fatalf("no account resolved for '%s' (this shouldn't happen)", accountName)
 		}
+		tx.AccountID = int(matchedAccount.Id)
+		accountMatchStats[accountName]++
 	}
 
 	// Bulk upload transactions in batches

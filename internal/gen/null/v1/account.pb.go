@@ -35,7 +35,8 @@ type Account struct {
 	AnchorDate    *timestamppb.Timestamp `protobuf:"bytes,7,opt,name=anchor_date,json=anchorDate,proto3" json:"anchor_date,omitempty"`
 	CreatedAt     *timestamppb.Timestamp `protobuf:"bytes,8,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
 	UpdatedAt     *timestamppb.Timestamp `protobuf:"bytes,9,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
-	Alias         *string                `protobuf:"bytes,10,opt,name=alias,proto3,oneof" json:"alias,omitempty"`
+	FriendlyName  *string                `protobuf:"bytes,10,opt,name=friendly_name,json=friendlyName,proto3,oneof" json:"friendly_name,omitempty"`
+	Aliases       []string               `protobuf:"bytes,14,rep,name=aliases,proto3" json:"aliases,omitempty"`
 	MainCurrency  string                 `protobuf:"bytes,11,opt,name=main_currency,json=mainCurrency,proto3" json:"main_currency,omitempty"`
 	Colors        []string               `protobuf:"bytes,12,rep,name=colors,proto3" json:"colors,omitempty"`
 	Balance       *money.Money           `protobuf:"bytes,13,opt,name=balance,proto3" json:"balance,omitempty"`
@@ -136,11 +137,18 @@ func (x *Account) GetUpdatedAt() *timestamppb.Timestamp {
 	return nil
 }
 
-func (x *Account) GetAlias() string {
-	if x != nil && x.Alias != nil {
-		return *x.Alias
+func (x *Account) GetFriendlyName() string {
+	if x != nil && x.FriendlyName != nil {
+		return *x.FriendlyName
 	}
 	return ""
+}
+
+func (x *Account) GetAliases() []string {
+	if x != nil {
+		return x.Aliases
+	}
+	return nil
 }
 
 func (x *Account) GetMainCurrency() string {
@@ -244,7 +252,7 @@ var File_null_v1_account_proto protoreflect.FileDescriptor
 
 const file_null_v1_account_proto_rawDesc = "" +
 	"\n" +
-	"\x15null/v1/account.proto\x12\anull.v1\x1a\x13null/v1/enums.proto\x1a\x1bbuf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17google/type/money.proto\"\xf5\x04\n" +
+	"\x15null/v1/account.proto\x12\anull.v1\x1a\x17google/type/money.proto\x1a\x13null/v1/enums.proto\x1a\x1bbuf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xa6\x05\n" +
 	"\aAccount\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x03R\x02id\x12#\n" +
 	"\bowner_id\x18\x02 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\aownerId\x12\x1d\n" +
@@ -257,14 +265,15 @@ const file_null_v1_account_proto_rawDesc = "" +
 	"\n" +
 	"created_at\x18\b \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
 	"\n" +
-	"updated_at\x18\t \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\x12$\n" +
-	"\x05alias\x18\n" +
-	" \x01(\tB\t\xbaH\x06r\x04\x10\x01\x182H\x00R\x05alias\x88\x01\x01\x129\n" +
+	"updated_at\x18\t \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\x123\n" +
+	"\rfriendly_name\x18\n" +
+	" \x01(\tB\t\xbaH\x06r\x04\x10\x01\x182H\x00R\ffriendlyName\x88\x01\x01\x12\x18\n" +
+	"\aaliases\x18\x0e \x03(\tR\aaliases\x129\n" +
 	"\rmain_currency\x18\v \x01(\tB\x14\xbaH\x11r\x0f2\n" +
 	"^[A-Z]{3}$\x98\x01\x03R\fmainCurrency\x12<\n" +
 	"\x06colors\x18\f \x03(\tB$\xbaH!\x92\x01\x1e\b\x03\x10\x03\"\x18r\x162\x11^#[0-9a-fA-F]{6}$\x98\x01\aR\x06colors\x12,\n" +
-	"\abalance\x18\r \x01(\v2\x12.google.type.MoneyR\abalanceB\b\n" +
-	"\x06_alias\"\xc6\x01\n" +
+	"\abalance\x18\r \x01(\v2\x12.google.type.MoneyR\abalanceB\x10\n" +
+	"\x0e_friendly_name\"\xc6\x01\n" +
 	"\x0eAccountBalance\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x03R\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x127\n" +

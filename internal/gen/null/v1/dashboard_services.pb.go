@@ -991,7 +991,7 @@ var File_null_v1_dashboard_services_proto protoreflect.FileDescriptor
 
 const file_null_v1_dashboard_services_proto_rawDesc = "" +
 	"\n" +
-	" null/v1/dashboard_services.proto\x12\anull.v1\x1a\x15null/v1/account.proto\x1a\x16null/v1/category.proto\x1a\x17null/v1/dashboard.proto\x1a\x13null/v1/enums.proto\x1a\x16google/type/date.proto\x1a\x17google/type/money.proto\"\xbb\x01\n" +
+	" null/v1/dashboard_services.proto\x12\anull.v1\x1a\x15null/v1/account.proto\x1a\x16null/v1/category.proto\x1a\x17google/type/money.proto\x1a\x17null/v1/dashboard.proto\x1a\x13null/v1/enums.proto\x1a\x16google/type/date.proto\"\xbb\x01\n" +
 	"\x1aGetDashboardSummaryRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x125\n" +
 	"\n" +
